@@ -132,38 +132,38 @@ const sanitizeSection = (section: Element) => {
         switch (el.tagName.toLowerCase()) {
             case 'h2':
                 el.classList.add(
-                    'text-lg',
+                    'text-base',
                     'font-semibold',
                     'text-blue-700',
-                    'mt-5',
-                    'mb-2',
+                    'mt-4',
+                    'mb-1',
                     'border-b',
                     'border-blue-100',
-                    'pb-1',
+                    'pb-0.5',
                     'first:mt-0'
                 );
                 break;
             case 'h3':
             case 'h4':
-                el.classList.add('text-base', 'font-semibold', 'text-sky-700', 'mt-4', 'mb-1');
+                el.classList.add('text-sm', 'font-semibold', 'text-sky-700', 'mt-3', 'mb-1');
                 break;
             case 'p':
-                el.classList.add('text-[15px]', 'leading-snug', 'text-slate-700');
+                el.classList.add('text-sm', 'leading-tight', 'text-slate-700');
                 break;
             case 'ul':
-                el.classList.add('list-disc', 'pl-5', 'space-y-1', 'text-slate-700');
+                el.classList.add('list-disc', 'pl-4', 'space-y-0.5', 'text-slate-700');
                 if (el.parentElement && el.parentElement.tagName.toLowerCase() === 'li') {
-                    el.classList.add('mt-2');
+                    el.classList.add('mt-1.5');
                 }
                 break;
             case 'ol':
-                el.classList.add('list-decimal', 'pl-5', 'space-y-1', 'text-slate-700');
+                el.classList.add('list-decimal', 'pl-4', 'space-y-0.5', 'text-slate-700');
                 if (el.parentElement && el.parentElement.tagName.toLowerCase() === 'li') {
-                    el.classList.add('mt-2');
+                    el.classList.add('mt-1.5');
                 }
                 break;
             case 'li':
-                el.classList.add('leading-snug');
+                el.classList.add('leading-tight');
                 if (el.parentElement && el.parentElement.tagName.toLowerCase() === 'ul') {
                     el.classList.add('marker:text-slate-400');
                 }
@@ -171,7 +171,7 @@ const sanitizeSection = (section: Element) => {
             case 'table':
                 el.classList.add(
                     'w-full',
-                    'text-sm',
+                    'text-[13px]',
                     'text-left',
                     'border',
                     'border-slate-200',
@@ -183,16 +183,16 @@ const sanitizeSection = (section: Element) => {
                 el.classList.add('bg-slate-100');
                 break;
             case 'th':
-                el.classList.add('border', 'border-slate-200', 'px-3', 'py-1.5', 'text-sm', 'font-semibold', 'text-slate-900');
+                el.classList.add('border', 'border-slate-200', 'px-2', 'py-1', 'text-[13px]', 'font-semibold', 'text-slate-900');
                 break;
             case 'td':
-                el.classList.add('border', 'border-slate-200', 'px-3', 'py-1.5', 'align-top', 'text-slate-700');
+                el.classList.add('border', 'border-slate-200', 'px-2', 'py-1', 'align-top', 'text-slate-700', 'text-[13px]');
                 break;
             case 'blockquote':
                 el.classList.add('border-l-4', 'border-blue-300', 'pl-4', 'italic', 'text-slate-700');
                 break;
             case 'hr':
-                el.classList.add('my-6', 'border-slate-200');
+                el.classList.add('my-4', 'border-slate-200');
                 break;
             default:
                 break;
@@ -249,7 +249,7 @@ const parseSpecialtyTopics = (html: string) => {
         const shortTitle = createShortTitle(fullTitle);
         const bodyHtml = section.innerHTML.trim();
         const wrappedBody = bodyHtml
-            ? `<article class="space-y-4 text-[15px] leading-snug text-slate-700">${bodyHtml}</article>`
+            ? `<article class="space-y-3 text-sm leading-tight text-slate-700">${bodyHtml}</article>`
             : '';
 
         topics.push({
@@ -281,7 +281,7 @@ export const summaries: Record<SpecialtyName, SpecialtyDefinition> = orderedSpec
 }, {} as Record<SpecialtyName, SpecialtyDefinition>);
 
 const placeholderContent = (title: string, number: string) => `
-    <div class="space-y-4 text-sm leading-snug">
+    <div class="space-y-3 text-xs leading-tight">
         <p class="text-slate-500 italic">Contenido para este tema (${title}) aún no disponible.</p>
     </div>`;
 
@@ -309,7 +309,7 @@ const processSummaries = (): Topic[] => {
                     finalContent = placeholderContent(topicData.fullTitle, id);
                 }
 
-                const fullContentHtml = `<h2 class="text-xl font-semibold mb-3 text-blue-800">${id}. ${topicData.fullTitle}</h2>${finalContent}`;
+                const fullContentHtml = `<h2 class="text-lg font-semibold mb-2 text-blue-800">${id}. ${topicData.fullTitle}</h2>${finalContent}`;
 
                 topics.push({
                     id,
