@@ -203,104 +203,304 @@ const sanitizeSection = (section: Element) => {
     section.removeAttribute('class');
 };
 
+const splitIntoSentences = (text: string) => {
+    const normalized = cleanText(text);
+    if (!normalized) {
+        return [];
+    }
+
+    const segments = normalized
+        .split(/(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ0-9])/u)
+        .map(segment => segment.trim())
+        .filter(Boolean);
+
+    if (segments.length === 0) {
+        return normalized ? [normalized] : [];
+    }
+
+    return segments;
+};
+
+const countWords = (text: string) => text.split(/\s+/).filter(Boolean).length;
+
+const truncateToWordCount = (text: string, allowed: number) => {
+    if (allowed <= 0) {
+        return '';
+    }
+
+    const words = text.split(/\s+/).filter(Boolean);
+    if (words.length <= allowed) {
+        return words.join(' ');
+    }
+
+    return `${words.slice(0, allowed).join(' ')}…`;
+};
+
+const limitSentence = (sentence: string, maxWords = 42) => {
+    const trimmed = sentence.trim();
+    if (!trimmed) {
+        return '';
+    }
+
+    const words = trimmed.split(/\s+/).filter(Boolean);
+    if (words.length <= maxWords) {
+        return words.join(' ');
+    }
+
+    return `${words.slice(0, maxWords).join(' ')}…`;
+};
+
+const headingLabelMappings: { test: RegExp; label: string }[] = [
+    { test: /definición|concepto|resumen/i, label: 'Concepto clave' },
+    { test: /epidemiolog|factores|etiolog/i, label: 'Contexto y factores' },
+    { test: /fisiopat/i, label: 'Fisiopatología esencial' },
+    { test: /cl[íi]nica|manifest/i, label: 'Clínica dominante' },
+    { test: /diagn[oó]stic|evaluaci[óo]n|laboratorio/i, label: 'Diagnóstico esencial' },
+    { test: /tratamiento|manejo|terapia/i, label: 'Tratamiento base' },
+    { test: /complicaci|pron[oó]stico|evoluci[óo]n/i, label: 'Complicaciones y pronóstico' },
+    { test: /prevenci|seguimiento|educaci/i, label: 'Prevención y seguimiento' },
+];
+
+const normalizeHeadingLabel = (heading: string) => {
+    const cleanedHeading = heading.replace(/^\d+[\.\)\s-]*/, '').trim();
+    const lower = cleanedHeading.toLowerCase();
+
+    for (const mapping of headingLabelMappings) {
+        if (mapping.test.test(lower)) {
+            return mapping.label;
+        }
+    }
+
+    if (cleanedHeading.length === 0) {
+        return 'Aspectos clave';
+    }
+
+    return cleanedHeading.charAt(0).toUpperCase() + cleanedHeading.slice(1);
+};
+
+const extractSentencesFromElement = (element: Element): string[] => {
+    const tag = element.tagName.toLowerCase();
+    const sentences: string[] = [];
+
+    if (tag === 'p' || tag === 'blockquote') {
+        sentences.push(...splitIntoSentences(element.textContent ?? ''));
+    } else if (tag === 'li') {
+        sentences.push(cleanText(element.textContent ?? ''));
+    } else if (tag === 'ul' || tag === 'ol') {
+        Array.from(element.children).forEach(child => {
+            if (child instanceof Element && child.tagName.toLowerCase() === 'li') {
+                sentences.push(cleanText(child.textContent ?? ''));
+            }
+        });
+    } else {
+        Array.from(element.children).forEach(child => {
+            if (child instanceof Element) {
+                sentences.push(...extractSentencesFromElement(child));
+            }
+        });
+    }
+
+    return sentences
+        .map(sentence => limitSentence(sentence))
+        .filter(sentence => sentence.length > 0);
+};
+
 const generateHyperSummary = (section: Element, title: string) => {
     const maxWords = 250;
     const minWords = 200;
-    const summaryChunks: string[] = [];
-    let currentWordCount = 0;
+    const structuredSegments: { label: string; sentences: string[] }[] = [];
+    const globalSentences: string[] = [];
 
-    const addChunk = (rawText: string, options: { prefix?: string } = {}) => {
-        if (!rawText) {
-            return;
-        }
-
-        const prefix = options.prefix ?? '';
-        const cleaned = cleanText(rawText);
-        if (!cleaned) {
-            return;
-        }
-
-        const words = cleaned.split(/\s+/).filter(Boolean);
-        if (words.length === 0) {
-            return;
-        }
-
-        const targetWords = [] as string[];
-        for (const word of words) {
-            if (currentWordCount >= maxWords) {
-                break;
+    const registerSentences = (sentences: string[], target?: string[]) => {
+        sentences.forEach(sentence => {
+            const normalized = sentence.trim();
+            if (!normalized) {
+                return;
             }
-            targetWords.push(word);
-            currentWordCount += 1;
-        }
 
-        if (targetWords.length > 0) {
-            summaryChunks.push(`${prefix}${targetWords.join(' ')}`.trim());
-        }
+            if (target) {
+                target.push(normalized);
+            }
+
+            globalSentences.push(normalized);
+        });
     };
 
-    const traverse = (node: Element) => {
-        if (currentWordCount >= maxWords) {
-            return;
-        }
+    const children = Array.from(section.children).filter((child): child is Element => child instanceof Element);
+    let index = 0;
 
+    const getHeadingLevel = (tagName: string) => {
+        if (tagName === 'h2') {
+            return 2;
+        }
+        if (tagName === 'h3') {
+            return 3;
+        }
+        return 99;
+    };
+
+    while (index < children.length) {
+        const node = children[index];
         const tag = node.tagName.toLowerCase();
 
-        if (['h2', 'h3', 'h4'].includes(tag)) {
-            addChunk(node.textContent ?? '', { prefix: '' });
+        if (tag === 'h2' || tag === 'h3') {
+            const headingText = cleanText(node.textContent ?? '');
+            const label = normalizeHeadingLabel(headingText);
+            const segmentSentences: string[] = [];
+            const currentLevel = getHeadingLevel(tag);
+
+            index += 1;
+
+            while (index < children.length) {
+                const lookahead = children[index];
+                const lookaheadTag = lookahead.tagName.toLowerCase();
+
+                if (lookaheadTag === 'h2' || lookaheadTag === 'h3') {
+                    const lookaheadLevel = getHeadingLevel(lookaheadTag);
+                    if (lookaheadLevel <= currentLevel) {
+                        break;
+                    }
+                }
+
+                registerSentences(extractSentencesFromElement(lookahead), segmentSentences);
+                index += 1;
+            }
+
+            if (segmentSentences.length > 0) {
+                structuredSegments.push({ label, sentences: segmentSentences });
+            }
+
+            continue;
+        }
+
+        registerSentences(extractSentencesFromElement(node));
+        index += 1;
+    }
+
+    const summaryBlocks: string[] = [];
+    let totalWords = 0;
+    const usedSentences = new Set<string>();
+
+    const appendBlock = (label: string, sentences: string[]) => {
+        if (totalWords >= maxWords) {
             return;
         }
 
-        if (tag === 'p') {
-            addChunk(node.textContent ?? '');
-            return;
+        const blockSentences: string[] = [];
+
+        for (const sentence of sentences) {
+            if (totalWords >= maxWords) {
+                break;
+            }
+
+            if (usedSentences.has(sentence)) {
+                continue;
+            }
+
+            const wordsInSentence = countWords(sentence);
+            if (wordsInSentence === 0) {
+                continue;
+            }
+
+            const available = maxWords - totalWords;
+            let sentenceToUse = sentence;
+
+            if (wordsInSentence > available) {
+                sentenceToUse = truncateToWordCount(sentence, available);
+            }
+
+            const effectiveWords = countWords(sentenceToUse);
+            if (effectiveWords === 0) {
+                continue;
+            }
+
+            blockSentences.push(sentenceToUse);
+            usedSentences.add(sentence);
+            totalWords += effectiveWords;
         }
 
-        if (tag === 'li') {
-            addChunk(node.textContent ?? '', { prefix: '• ' });
-            return;
-        }
+        if (blockSentences.length > 0) {
+            const items = blockSentences
+                .map(sentence => `<li class="text-sm leading-snug text-slate-700">${sentence}</li>`)
+                .join('');
 
-        if (['table', 'figure'].includes(tag)) {
-            return;
+            summaryBlocks.push(
+                `<div class="space-y-1"><p class="text-xs font-semibold uppercase tracking-wide text-slate-500">${label}</p><ul class="list-disc pl-4 space-y-1 marker:text-blue-400">${items}</ul></div>`
+            );
         }
-
-        Array.from(node.children).forEach(child => traverse(child));
     };
 
-    Array.from(section.children).forEach(child => {
-        if (currentWordCount < maxWords) {
-            traverse(child as Element);
+    structuredSegments.forEach(segment => {
+        if (totalWords < maxWords) {
+            appendBlock(segment.label, segment.sentences.slice(0, 4));
         }
     });
 
-    if (currentWordCount < minWords) {
-        const fallbackText = cleanText(section.textContent ?? '');
-        const additionalWords = fallbackText.split(/\s+/).filter(Boolean);
-        let index = 0;
-        while (currentWordCount < minWords && index < additionalWords.length) {
-            const chunkWords: string[] = [];
-            while (currentWordCount < minWords && index < additionalWords.length && chunkWords.length < 40) {
-                chunkWords.push(additionalWords[index]);
-                currentWordCount += 1;
-                index += 1;
+    if (totalWords < minWords) {
+        const additionalSentences: string[] = [];
+
+        for (const sentence of globalSentences) {
+            if (totalWords >= minWords) {
+                break;
             }
-            if (chunkWords.length > 0) {
-                summaryChunks.push(chunkWords.join(' '));
+
+            if (usedSentences.has(sentence)) {
+                continue;
             }
+
+            const available = maxWords - totalWords;
+            if (available <= 0) {
+                break;
+            }
+
+            const wordsInSentence = countWords(sentence);
+            let sentenceToUse = sentence;
+
+            if (wordsInSentence > available) {
+                sentenceToUse = truncateToWordCount(sentence, available);
+            }
+
+            const effectiveWords = countWords(sentenceToUse);
+            if (effectiveWords === 0) {
+                continue;
+            }
+
+            additionalSentences.push(sentenceToUse);
+            usedSentences.add(sentence);
+            totalWords += effectiveWords;
+        }
+
+        if (additionalSentences.length > 0) {
+            const items = additionalSentences
+                .map(sentence => `<li class="text-sm leading-snug text-slate-700">${sentence}</li>`)
+                .join('');
+
+            summaryBlocks.push(
+                `<div class="space-y-1"><p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Detalles ampliados</p><ul class="list-disc pl-4 space-y-1 marker:text-blue-400">${items}</ul></div>`
+            );
         }
     }
 
-    const titleHtml = `<p class="text-sm font-semibold uppercase tracking-wide text-blue-700">${title}</p>`;
-    if (summaryChunks.length === 0) {
-        summaryChunks.push('Resumen detallado en preparación.');
+    if (totalWords < minWords) {
+        const fallbackWords = cleanText(section.textContent ?? '').split(/\s+/).filter(Boolean);
+        const remaining = Math.min(minWords - totalWords, maxWords - totalWords);
+        if (remaining > 0 && fallbackWords.length > 0) {
+            const chunk = fallbackWords.slice(0, remaining).join(' ');
+            summaryBlocks.push(
+                `<p class="text-sm leading-snug text-slate-700">${chunk}</p>`
+            );
+            totalWords += countWords(chunk);
+        }
     }
 
-    const summaryHtml = summaryChunks
-        .map(chunk => `<p class="text-sm leading-snug text-slate-700">${chunk}</p>`)
-        .join('');
+    if (summaryBlocks.length === 0) {
+        summaryBlocks.push(
+            `<p class="text-sm leading-snug text-slate-700">Resumen detallado en preparación.</p>`
+        );
+    }
 
-    return `<div class="space-y-2">${titleHtml}${summaryHtml}</div>`;
+    const titleHtml = `<p class="text-sm font-semibold uppercase tracking-wide text-blue-700">${title}</p>`;
+    return `<div class="space-y-3">${titleHtml}${summaryBlocks.join('')}</div>`;
 };
 
 const createShortTitle = (fullTitle: string) => {
