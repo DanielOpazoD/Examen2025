@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen de Neurología</title>
+  <style>
+    /* Tipografía y colores base */
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      background: #ffffff;
+      color: #0f172a;
+      margin: 0;
+      padding: 0;
+    }
+    /* Barra de herramientas para impresión */
+    .toolbar {
+      background: #f8fafc;
+      padding: 8px;
+      text-align: right;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .toolbar button {
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    /* Estilo de cada página/tema */
+    .page {
+      width: 816px;              /* equivalencia a 8½ × 11 pulgadas a 96 dpi */
+      min-height: 1056px;        /* altura mínima para hoja carta */
+      padding: 6mm 8mm 8mm 8mm;  /* márgenes asimétricos para cabecera y contenido */
+      margin: 0 auto;
+      box-sizing: border-box;
+      page-break-after: always;
+    }
+    h1 {
+      font-size: 18px;
+      color: #1d4ed8;
+      margin: 0 0 6px 0;
+    }
+    h2 {
+      font-size: 13px;
+      color: #1d4ed8;
+      margin: 14px 0 4px 0;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #cbd5e1;
+    }
+    p {
+      margin: 4px 0;
+      font-size: 12px;
+      line-height: 1.18;
+      color: #0f172a;
+    }
+    ul, ol {
+      margin: 4px 0 4px 16px;
+      padding: 0;
+      font-size: 12px;
+      line-height: 1.18;
+    }
+    ul li {
+      list-style-type: none;
+      position: relative;
+      padding-left: 12px;
+    }
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #475569;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 11px;
+      margin: 6px 0;
+    }
+    table th, table td {
+      border: 1px solid #cbd5e1;
+      padding: 2px 4px;
+      vertical-align: top;
+    }
+    table th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: bold;
+    }
+    .small {
+      font-size: 11px;
+    }
+    /* Ocultar barra de herramientas al imprimir y ajustar página */
+    @media print {
+      .toolbar {
+        display: none;
+      }
+      .page {
+        width: auto;
+        min-height: auto;
+        padding: 8mm;
+      }
+    }
+  </style>
+  <script>
+    function printSmart() {
+      // Despliega el cuadro de diálogo de impresión del navegador
+      window.print();
+    }
+  </script>
+</head>
+<body>
+  <!-- Barra superior con botón de impresión -->
+  <div class="toolbar">
+    <button onclick="printSmart()">Imprimir</button>
+  </div>
+
+  <!-- Tema 65: Demencia: Etiología -->
+  <section class="page">
+    <h1>65. Demencia: Etiología</h1>
+    <h2>1. Definición</h2>
+    <p><b>La demencia es un síndrome neurocognitivo adquirido</b> caracterizado por un descenso significativo de uno o más dominios cognitivos (memoria, lenguaje, funciones ejecutivas, atención compleja, habilidades perceptivo‑motoras y cognición social) de suficiente gravedad como para interferir con las actividades de la vida diaria. Este deterioro no ocurre exclusivamente en el contexto de un delirium ni se explica mejor por otros trastornos psiquiátricos. Las demencias se distinguen de la discapacidad intelectual y del deterioro cognitivo leve por su inicio progresivo y por comprometer la autonomía funcional. </p>
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: la enfermedad de Alzheimer es la causa más frecuente (60–80 %); le siguen la demencia vascular (15–20 %), la demencia por cuerpos de Lewy (10–15 %) y la degeneración lobular frontotemporal (5–15 %). Su prevalencia aumenta exponencialmente con la edad: afecta al 5–9 % de las personas ≥ 60 años y al 33 % de los mayores de 85; en Chile la prevalencia es del 7 % en mayores de 60 años. La demencia frontotemporal es la causa principal en menores de 65 años. </li>
+      <li><b>Complicaciones y carga social</b>: produce pérdida de autonomía funcional, disminución de calidad de vida, sobrecarga en cuidadores y elevado consumo de recursos sanitarios. La sobrevida depende de la etiología y del estadio clínico (GDS 4: 5–8 años; GDS 5: 4–6 años; GDS 6: 3–4 años; GDS 7: 1–2 años). La mortalidad se asocia a complicaciones como infecciones, caídas, desnutrición y trastornos de la marcha.</li>
+      <li><b>Factores y asociaciones</b>: los factores de riesgo incluyen edad avanzada, bajo nivel educacional, antecedentes familiares, síndrome de Down, hipertensión arterial, diabetes, obesidad, tabaquismo, dieta rica en grasas saturadas, aislamiento social y depresión. La demencia vascular se asocia con episodios isquémicos previos, fibrilación auricular y aterosclerosis. La demencia con cuerpos de Lewy se relaciona con parkinsonismo y trastornos del sueño REM. La frontotemporal tiene mayor carga genética.</li>
+      <li><b>Impacto en el diagnóstico y tratamiento</b>: requiere un enfoque integral centrado en el paciente y el cuidador. La identificación de etiologías reversibles (depresión mayor, fármacos, déficit de vitamina B12, hipotiroidismo, hidrocefalia normotensiva, hematoma subdural, neurosífilis, tumores, encefalopatía de Wernicke y demencias asociadas al VIH) permite intervenciones curativas. El tratamiento farmacológico específico es limitado y actualmente la mayoría de las terapias son sintomáticas, por lo que el diagnóstico temprano y el manejo de factores de riesgo son cruciales para retrasar la progresión.</li>
+    </ul>
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Por etiología</b>:
+        <ul>
+          <li><b>Primarias degenerativas</b>: enfermedad de Alzheimer (depósitos de β‑amiloide y ovillos de proteínas tau), demencia vascular (infartos múltiples, enfermedad de pequeños vasos), demencia con cuerpos de Lewy (acumulación de α‑sinucleína), demencia frontotemporal (depósitos de tau, TDP‑43 o FUS), demencia relacionada con enfermedad de Parkinson, enfermedades priónicas (enfermedad de Creutzfeldt–Jakob) y otros trastornos neurodegenerativos.</li>
+          <li><b>Secundarias</b>: hidrocefalia de presión normal, infecciones (VIH, neurosífilis, leucencefalopatía multifocal progresiva), endocrinometabólicas (hipotiroidismo, déficit de vitamina B12, encefalopatía hepática o urémica, alcoholismo), neoplásicas, traumáticas, fármacos, autoinmunes/inflamatorias (vasculitis, esclerosis múltiple, encefalitis límbica) y mixtas (coexistencia de enfermedad de Alzheimer y demencia vascular).</li>
+        </ul>
+      </li>
+      <li><b>Por severidad</b> (escala GDS): etapas 1‑3 sin demencia; etapa 4 demencia leve con incapacidad en actividades instrumentales; etapa 5 demencia moderada con problemas en actividades básicas; etapa 6 moderadamente grave con dependencia en ABVD; etapa 7 demencia grave con dependencia total.</li>
+    </ul>
+    <h2>4. Fisiopatología</h2>
+    <p>En la enfermedad de Alzheimer se depositan placas extracelulares de β‑amiloide y ovillos neurofibrilares de tau fosforilada que provocan pérdida sináptica y neuronal, inicialmente en el hipocampo y cortezas asociativas. La demencia vascular resulta de infartos múltiples o estratégicos, enfermedad de pequeños vasos y hemorragias, generando isquemia crónica y leucoencefalopatía. La demencia con cuerpos de Lewy implica agregados de α‑sinucleína en neuronas corticales y dopaminérgicas del tronco encefálico, alterando la neurotransmisión colinérgica y dopaminérgica. La frontotemporal se caracteriza por depósito de tau o TDP‑43, con degeneración focal en lóbulos frontal y temporal. En todas las demencias degenerativas existe desequilibrio entre factores genéticos (mutaciones en APP, PSEN1, MAPT, GRN, C9orf72) y ambientales (edad, vascular, estilo de vida), neuroinflamación y estrés oxidativo.</p>
+    <h2>5. Etiología</h2>
+    <p>Las demencias tienen múltiples causas. En las primarias degenerativas predomina la enfermedad de Alzheimer, seguida por la demencia vascular, la demencia por cuerpos de Lewy y la degeneración frontotemporal. Las formas mixtas son comunes. Aproximadamente el 5–10 % de las demencias corresponden a causas reversibles o imitadores, entre ellas: trastorno depresivo mayor, consumo de fármacos sedantes/anticolinérgicos, déficit de vitamina B12 o folato, hipotiroidismo, hidrocefalia normotensiva, hematoma subdural crónico, encefalitis autoinmune, neurosífilis, tumor cerebral, encefalopatía Wernicke‑Korsakoff y trastornos neurocognitivos asociados al VIH.</p>
+    <h2>6. Diagnóstico</h2>
+    <p><b>Evaluación inicial</b>: se basa en anamnesis detallada (evolución, impacto funcional, comorbilidades, fármacos), entrevista con familiares y cuidador, examen físico general y neurológico (evaluación de marcha, equilibrio, signos neurológicos focales) y uso de test cognitivos (MMSE, MoCA, test del reloj) para cuantificar el deterioro. Debe evaluarse la presencia de delirium, depresión y trastornos del sueño.</p>
+    <p><b>Estudio complementario</b>: incluir hemograma, bioquímica, TSH, vitamina B12, folato, VDRL, serologías virales; en casos seleccionados amonio, cortisol, marcadores autoinmunes y función hepática y renal. La neuroimagen (TAC o RM cerebral) sirve para descartar lesiones estructurales, hidrocefalia, infartos o hemorragias. La RM es más sensible para pequeños infartos y atrofia regional. El análisis de LCR con β‑amiloide42, tau total y fosforilada se utiliza en centros especializados. Otros estudios como PET con FDG o PET amiloide son auxiliares.</p>
+    <p><b>Diagnóstico diferencial</b>: debe diferenciarse del delirium (inicio agudo, curso fluctuante, alteración de la atención y conciencia), del deterioro cognitivo leve, depresión mayor (“pseudodemencia”), enfermedad de Parkinson con demencia, demencia frontotemporal y demencias reversibles. El examen físico debe buscar signos de enfermedades sistémicas (ictericia, hepatomegalia, hiperpigmentación, soplos cardíacos) que orienten a causas metabólicas.</p>
+    <h2>7. Tratamiento</h2>
+    <p><b>Medidas generales</b>: orientadas a retrasar la progresión y mejorar calidad de vida: control de factores de riesgo cardiovascular (HTA, diabetes, dislipidemia), abstinencia de alcohol y tabaco, dieta mediterránea rica en frutas, verduras y pescado, actividad física regular, estimulación cognitiva, participación social y tratamiento de depresión y trastornos del sueño. Los cuidadores deben recibir apoyo y formación, y se recomienda planificación anticipada de cuidados y designación de tutores legales en fases tempranas.</p>
+    <p><b>Terapia farmacológica</b>:</p>
+    <ul>
+      <li><b>Inhibidores de la colinesterasa</b> (donepezilo 5–10 mg/día, rivastigmina 6–12 mg/día, galantamina 16–24 mg/día): son de primera línea en demencia de Alzheimer leve a moderada y en demencia por cuerpos de Lewy; mejoran moderadamente la cognición y las actividades diarias.</li>
+      <li><b>Antagonista del receptor NMDA</b> (memantina 20 mg/día): se utiliza en demencia moderada a severa, en monoterapia o combinada con inhibidores de colinesterasa. Puede mejorar la conducta y reducir la agitación.</li>
+      <li><b>Anticuerpos monoclonales anti‑amiloide</b> (aducanumab, lecanemab): recientemente aprobados para enfermedad de Alzheimer inicial; reducen placas amiloides pero su beneficio clínico es modesto y requieren monitorización por edema vasogénico.</li>
+      <li><b>Tratamiento sintomático</b>: antipsicóticos atípicos (quetiapina, risperidona) sólo en síntomas conductuales graves y tras fracaso de medidas no farmacológicas; benzodiacepinas deben evitarse. La depresión se trata con ISRS (sertralina, escitalopram); el insomnio con melatonina o trazodona; los pacientes con demencia con cuerpos de Lewy son hipersensibles a neurolépticos.</li>
+      <li><b>💡</b> No se recomienda la suplementación con vitaminas antioxidantes o ginkgo biloba para prevenir o tratar la demencia; la evidencia es limitada.</li>
+    </ul>
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles clínicos</b>: cada 6–12 meses valorar progresión cognitiva y funcional, revaluar terapias y revisar problemas de seguridad (caídas, conducción, toma de medicación). Se recomienda un plan de cuidado multidisciplinario que incluya neurología, geriatría, psiquiatría y trabajo social.</li>
+      <li><b>Monitoreo de tratamientos</b>: evaluar respuesta a inhibidores de colinesterasa y memantina a los 3–6 meses; suspender si no hay beneficio clínico. Vigilar efectos adversos como bradicardia, náuseas, diarrea y trastornos del sueño.</li>
+      <li><b>Prevención secundaria y apoyo al cuidador</b>: gestionar comorbilidades (HTA, diabetes, dislipidemia), recomendar vacunación (influenza, neumococo), prevención de caídas y planificar cuidados paliativos. Educar a cuidadores sobre manejo del estrés y acceder a grupos de apoyo.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 66: Síncope: Diagnóstico diferencial -->
+  <section class="page">
+    <h1>66. Síncope: Diagnóstico diferencial</h1>
+    <h2>1. Definición</h2>
+    <p><b>El síncope es una pérdida transitoria de conciencia</b> debida a hipoperfusión cerebral global y reversible. Se caracteriza por inicio brusco, duración breve (segundos a minutos), recuperación espontánea y completa sin déficits neurológicos persistentes. El término excluye episodios causados por traumatismo, epilepsia, hipoglicemia, histeria o intoxicaciones.</p>
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: representa el 1–3 % de las consultas en servicios de urgencia y hasta el 6 % de las hospitalizaciones. Es más frecuente en mujeres y jóvenes cuando se trata de síncope vasovagal y en ancianos cuando hay etiologías cardiogénicas u ortostáticas. La causa permanece indeterminada en 10–30 % de los casos.</li>
+      <li><b>Complicaciones graves</b>: la mayoría de los síncopes reflejos son benignos; sin embargo, el síncope cardiogénico se asocia a mayor mortalidad y morbilidad por arritmias malignas, cardiopatía estructural o embolia pulmonar. La pérdida de conciencia puede ocasionar traumatismos y accidentes.</li>
+      <li><b>Factores y asociaciones</b>: los episodios pueden desencadenarse por emociones intensas, ortostatismo prolongado, micción, tos o dolor (síncope vasovagal y situacional), por deshidratación, polifarmacia (diuréticos, antihipertensivos), anemia, neuropatía autonómica (síncope ortostático) o por arritmias, cardiopatía isquémica, valvulopatías y miocardiopatías (síncope cardiogénico).</li>
+      <li><b>Impacto diagnóstico y terapéutico</b>: el desafío consiste en diferenciar entre causas benignas y potencialmente mortales. Un enfoque sistemático permite identificar a quienes requieren evaluación urgente, monitorización hospitalaria o tratamiento específico, reduciendo costos y mejorando el pronóstico.</li>
+    </ul>
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Reflejo (neuromediado)</b>: incluye síncope vasovagal (emocional u ortostático), situacional (tusígeno, miccional, defecatorio, post‑ejercicio) y síncope por hipersensibilidad del seno carotídeo (presión cervical al afeitarse o girar la cabeza). Representa 40–60 % de los casos.</li>
+      <li><b>Ortostático</b>: se debe a una caída de la presión arterial sistólica ≥ 20 mmHg o diastólica ≥ 10 mmHg o PAS &lt; 90 mmHg al ponerse de pie. Puede ser agudo (hipovolemia, shock) o crónico (neuropatía autonómica, fármacos). Afecta 10–20 % de los pacientes.</li>
+      <li><b>Cardiogénico</b>: debido a arritmias (bradicardias, bloqueos auriculoventriculares, taquicardias supraventriculares o ventriculares), trastornos estructurales (estenosis aórtica, miocardiopatía hipertrófica, insuficiencia aórtica severa), cardiopatía isquémica, embolia pulmonar o disección aórtica. Representa 5–15 % pero con alto riesgo de muerte súbita.</li>
+      <li><b>No sincopal</b>: condiciones que imitan el síncope como convulsiones, accidentes cerebrovasculares, hipotensión postprandial, hipoglucemia, ataques de pánico y trastornos psiquiátricos.</li>
+    </ul>
+    <h2>4. Fisiopatología</h2>
+    <p>El síncope ocurre por <b>disminución transitoria del flujo sanguíneo cerebral</b>. En el síncope vasovagal, estímulos desencadenantes activan mecanorreceptores cardíacos y provocan un reflejo paradójico de vasodilatación y bradicardia mediado por el sistema parasimpático. En el síncope ortostático, un déficit en la vasoconstricción refleja o hipovolemia causan caída de la presión arterial al asumir la postura erguida. En el síncope cardiogénico, una arritmia rápida o lenta o una obstrucción al flujo reducen el gasto cardíaco. Las alteraciones metabólicas (hipoglicemia, hipoxia) pueden contribuir, pero se clasifican como no sincopales.</p>
+    <h2>5. Etiología</h2>
+    <ul>
+      <li><b>Síncope vasovagal</b>: estrés emocional, dolor, vista de sangre, permanecer de pie mucho tiempo, calor, deshidratación.</li>
+      <li><b>Síncope situacional</b>: asociado a tos, micción, defecación, deglución, estornudo, relación sexual o ejercicio. Se debe a una respuesta autonómica exagerada.</li>
+      <li><b>Síncope ortostático</b>: hipovolemia (hemorragia, diarrea, vómitos), fármacos (diuréticos, nitratos, antihipertensivos, L‑dopa), falla autonómica primaria (atrofia multisistémica, enfermedad de Parkinson), neuropatía diabética, amiloidosis.</li>
+      <li><b>Síncope cardiogénico</b>: bradiarritmias (bloqueo AV completo, enfermedad del nodo sinusal), taquiarritmias (torsade de pointes, fibrilación ventricular, taquicardia supraventricular), enfermedad coronaria, embolia pulmonar, disección aórtica, hipertensión pulmonar, cardio miopatías (hipertrófica, restrictiva), valvulopatías (estenosis aórtica), mixoma auricular, síndrome de QT largo congénito o adquirido.</li>
+      <li><b>No sincopal</b>: convulsiones (movimientos tónicoclónicos prolongados, confusión posictal), isquemia cerebral (focal, TIA vertebrobasilar), hipoglucemia (sudoración, hambre, deterioro cognitivo), migrañas basilares, trastornos psiquiátricos y simuladores.</li>
+    </ul>
+    <h2>6. Diagnóstico</h2>
+    <p><b>Historia clínica</b>: es la herramienta más importante. Evaluar circunstancias del episodio (de pie, sentado, en decúbito, en ejercicio), presencia de pródromos (nauseas, calor, sudoración, visión borrosa) que orientan a síncope reflejo, actividad desencadenante, duración de la pérdida de conciencia y recuperación. Investigar antecedentes cardiovasculares, medicamentos y antecedentes familiares de muerte súbita.</p>
+    <p><b>Examen físico</b>: incluir medición ortostática de presión arterial y frecuencia cardiaca, auscultación cardiaca (soplos sugerentes de estenosis valvular), examen neurológico y búsqueda de signos de traumatismo. La presencia de cianosis, ausencia de pródromos y síncope en decúbito sugieren causa cardiaca.</p>
+    <p><b>Exámenes complementarios</b>: todo paciente debe tener ECG de 12 derivaciones (bradicardia, bloqueo AV, síndrome de Brugada, QT largo), hemograma y glucosa. Según sospecha: echocardiograma, prueba de esfuerzo, Holter, monitor implantable, tilt‑test, estudio del sueño, análisis de fármacos o drogodependencia. En ancianos se requiere evaluar polifarmacia. La monitorización cardíaca en urgencias está indicada cuando se sospecha arritmia, síncope con palpitaciones, cardiopatía conocida, trastornos del ECG, síncope con trauma grave o edad > 65 años.</p>
+    <p><b>Diagnóstico diferencial</b>: diferenciar de convulsiones (movimientos tónico–clónicos prolongados, confusión posictal, mordedura lingual), trastornos psicogénicos de pseudopérdida de conciencia (episodios prolongados sin hipoperfusión), hipoglucemia (confirmar con glucosa), accidente cerebrovascular o TIA (déficits focales), hemorragia subaracnoidea (cefalea intensa, rigidez nucal) y trastornos del sueño.</p>
+    <h2>7. Tratamiento</h2>
+    <p><b>Medidas generales</b>: la mayoría de los episodios reflejos no requiere tratamiento farmacológico. Se recomienda explicar al paciente el mecanismo, evitar desencadenantes, asegurar hidratación y aporte de sal, reconocer pródromos y realizar maniobras de contrapresión (cruzar piernas, tensar músculos de las extremidades, acostarse) para abortar el episodio. Revaluar medicamentos que puedan precipitar síncope.</p>
+    <p><b>Síncope ortostático</b>: corregir hipovolemia (fluidoterapia, tratar anemia), retirar fármacos contribuyentes, usar medias de compresión y elevar la cabecera de la cama. En neuropatía autonómica se pueden utilizar fludrocortisona (0,1 mg/día) o midodrina (2,5–10 mg cada 8 h). La piridostigmina y la droxidopa son alternativas en casos refractarios.</p>
+    <p><b>Síncope vasovagal recurrente</b>: además de las medidas generales se pueden considerar fármacos como betabloqueadores (controvertido), inhibidores selectivos de la recaptación de serotonina, midodrina o fludrocortisona en episodios frecuentes. La terapia con marcapasos de doble cámara se reserva para casos excepcionales con asistolia documentada prolongada y síntomas invalidantes.</p>
+    <p><b>Síncope cardiogénico</b>: requiere tratamiento específico de la arritmia o patología subyacente. Las bradiarritmias se tratan con marcapasos; las taquiarritmias con fármacos antiarrítmicos, cardioversión eléctrica o ablación; la cardiopatía isquémica con reperfusión coronaria; la estenosis aórtica severa con cirugía o TAVI; la embolia pulmonar con anticoagulación y trombolisis. En pacientes de alto riesgo, un desfibrilador automático implantable puede prevenir muerte súbita.</p>
+    <p><b>💡</b> El score de San Francisco (edad > 45 años, historia de enfermedad cardiovascular, falta de pródromos, valores anormales de presión arterial o ECG) ayuda a predecir mortalidad a corto plazo y decidir hospitalización.</p>
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles clínicos</b>: después de un primer episodio de síncope se debe reevaluar al paciente para detectar recurrencias, ajustar tratamiento y comprobar adherencia. En síncope vasovagal se recomienda seguimiento en atención primaria.</li>
+      <li><b>Monitorización</b>: los pacientes con arritmias sospechadas requieren Holter o monitor implantable; los que han recibido marcapasos o desfibrilador necesitan controles cardiológicos regulares.</li>
+      <li><b>Educación y prevención</b>: aconsejar a los pacientes evitar actividades peligrosas (conducir, nadar, operar maquinaria) hasta que se determine la causa. Enseñar técnicas de contrapresión y recordar la importancia de hidratarse. Ajustar tratamientos antihipertensivos en ancianos para prevenir hipotensión postural.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 67: Coma: Diagnóstico diferencial -->
+  <section class="page">
+    <h1>67. Coma: Diagnóstico diferencial</h1>
+    <h2>1. Definición</h2>
+    <p><b>El coma es un estado de inconsciencia profunda</b> en el que el paciente no abre los ojos, no despierta con estímulos dolorosos y no tiene respuestas motoras voluntarias, aunque puede presentar reflejos de tronco encefálico preservados. Se produce por alteración del sistema reticular activador ascendente en el tronco cerebral o por daño bilateral extenso de los hemisferios cerebrales. Se diferencia del estupor (respuesta a estímulos vigorosos), del estado vegetativo (despierta pero sin conciencia) y del “locked‑in” (conciencia preservada con parálisis motora). La confirmación de muerte encefálica exige ausencia de funciones corticales y troncoencefálicas y un test de apnea positivo.</p>
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: el coma es un motivo frecuente de ingreso en unidades de urgencias y cuidados intensivos. Las causas incluyen traumatismos craneales, accidentes cerebrovasculares, intoxicaciones, infecciones del sistema nervioso central y trastornos metabólicos. La mortalidad y el pronóstico funcional dependen en gran medida de la etiología y del tiempo transcurrido hasta iniciar tratamiento.</li>
+      <li><b>Complicaciones</b>: la falta de protección de la vía aérea, la hipotensión o la hipoxia pueden causar lesiones cerebrales secundarias. Sin un diagnóstico rápido pueden perderse oportunidades de intervención (p. ej., trombolisis en infarto, cirugía en hematomas, tratamiento de hipoglucemia). El coma prolongado conlleva riesgo de úlceras por presión, infecciones respiratorias y malnutrición.</li>
+      <li><b>Asociaciones</b>: puede ser consecuencia de trastornos metabólicos (hipoglucemia, hipoxemia, hipercapnia, hiponatremia, hipercalcemia, uremia, coma hepático), intoxicaciones (alcohol, opioides, sedantes, antidepresivos tricíclicos, CO), alteraciones endocrinas (coma mixedematoso, crisis addisoniana), epilepsia (status epiléptico), infecciones (meningoencefalitis, malaria cerebral), causas estructurales (hemorragia intracerebral, infarto masivo, tumor, absceso, edema cerebral) y causas psicógenas.</li>
+      <li><b>Impacto diagnóstico y terapéutico</b>: el manejo adecuado se basa en un algoritmo que prioriza la estabilización hemodinámica y respiratoria, identifica rápidamente causas reversibles y aplica tratamientos específicos. El reconocimiento oportuno de herniación cerebral y la corrección de trastornos metabólicos pueden salvar la vida y mejorar la recuperación.</li>
+    </ul>
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Coma estructural</b>: por lesión focal que compromete directa o indirectamente el sistema reticular activador ascendente (accidentes cerebrovasculares, hematomas epidurales o subdurales, hemorragia intraparenquimatosa, hidrocefalia aguda, tumores, abscesos, herniación transtentorial).</li>
+      <li><b>Coma metabólico</b>: por alteraciones sistémicas que afectan la función neuronal global (hipoglucemia, hiperglucemia, hipoxemia, hipercapnia, hipo/hipernatremia, insuficiencia hepática o renal, sepsis, porfiria). Suele asociarse a signos neurológicos simétricos y pupilas reactivas.</li>
+      <li><b>Coma tóxico</b>: causado por intoxicaciones exógenas (alcohol, opiáceos, benzodiacepinas, barbitúricos, anticolinérgicos) o endógenas (uremia, amonio). Se caracteriza por olor característico, miosis o midriasis y alteraciones cardiovasculares.</li>
+      <li><b>Coma epiléptico</b>: status epiléptico convulsivo o no convulsivo, con actividad epileptiforme continua que requiere EEG para su identificación.</li>
+      <li><b>Coma psicógeno</b>: simulación de coma sin alteración cerebral. Los pacientes tienen reflejos de tronco conservados, resistencia pasiva a los movimientos y respuestas oculares voluntarias (signo de Trömmer). Es un diagnóstico de exclusión.</li>
+    </ul>
+    <h2>4. Fisiopatología</h2>
+    <p>El despertar y la conciencia dependen de la actividad del sistema reticular activador ascendente situado en la protuberancia y el mesencéfalo y de la integridad de las cortezas cerebrales. Cualquier proceso que deprima ambas cortezas o que dañe el tronco encefálico puede producir coma. En lesiones focales supratentoriales, el aumento de la presión intracraneal y la herniación transtentorial pueden comprimir el tronco y causar coma. En trastornos metabólicos o tóxicos, la disfunción neuronal se generaliza. Las concentraciones extremas de glucosa, sodio, urea o amoniaco alteran la excitabilidad y provocan edema cerebral.</p>
+    <h2>5. Etiología</h2>
+    <ul>
+      <li><b>Traumática</b>: traumatismo craneoencefálico con hemorragia epidural, subdural, subaracnoidea o parenquimatosa; contusiones cerebrales; concusión severa.</li>
+      <li><b>Vascular</b>: infarto masivo de la arteria cerebral media, infarto de tronco cerebral, hemorragia intracerebral, hemorragia subaracnoidea con hidrocefalia, trombosis venosa cerebral, infartos talámicos bilaterales.</li>
+      <li><b>Metabólica</b>: hipoglucemia, hiperglucemia hiperosmolar, hipoxia, hipercapnia, hipo/hipernatremia, hipocalcemia, hipomagnesemia, acidosis láctica, insuficiencia hepática (encefalopatía hepática), uremia, hipotiroidismo grave, insuficiencia suprarrenal.</li>
+      <li><b>Tóxica</b>: intoxicación por alcohol, opioides (miosis, respiración deprimida), benzodiacepinas, barbitúricos, anticolinérgicos, antidepressivos tricíclicos, inhibidores de colinesterasa, envenenamiento por monóxido de carbono (lips rojos cereza), metanol, etilenglicol, organofosforados.</li>
+      <li><b>Infecciosa</b>: meningitis bacteriana, encefalitis viral (herpes simple, rabia), absceso cerebral, malaria cerebral, meningitis tuberculosa, sepsis con encefalopatía.</li>
+      <li><b>Endocrina</b>: coma mixedematoso, crisis tirotóxica, crisis addisoniana.</li>
+      <li><b>Epilepsia</b>: estado epiléptico convulsivo o no convulsivo; epilepsia postictal prolongada.</li>
+      <li><b>Otros</b>: hipotermia, hipertermia severa, encefalopatía hipertensiva, pseudocoma psicógeno.</li>
+    </ul>
+    <h2>6. Diagnóstico</h2>
+    <p>El abordaje debe seguir la secuencia <b>ABC</b> (vía aérea, respiración, circulación) para estabilizar al paciente. Se administra oxígeno, se obtiene acceso venoso, se controla el nivel de conciencia (Glasgow Coma Scale) y se realiza glucemia capilar; si hay hipoglucemia, administrar <i>bolo de dextrosa 25 g</i>. En pacientes alcohólicos se administra tiamina antes de la glucosa para prevenir síndrome de Wernicke.</p>
+    <p><b>Exploración neurológica</b>: valorar pupilas (tamaño y respuesta), movimientos oculares (reflejos oculocefálico y oculovestibular), reflejo corneal, respuesta motora y signos meníngeos. La pupila en “ojo de buey” unilateral sugiere herniación transtentorial, miosis bilateral sugiere opioides o pons, midriasis fija bilateral sugiere lesión mesencefálica. Los reflejos del tronco disminuidos sugieren daño estructural.</p>
+    <p><b>Exámenes complementarios</b>: hemograma, gases arteriales, electrolitos, urea, creatinina, función hepática, TSH, cortisol, niveles de tóxicos (alcohol, opioides, barbitúricos, salicilatos, paracetamol), ECG, radiografía de tórax. La TAC de cráneo sin contraste se realiza de urgencia para descartar hemorragia, infarto extenso, hidrocefalia o masa. La RM es más sensible para lesiones de fosa posterior y lesiones isquémicas precoces. El EEG se utiliza para detectar estado epiléptico no convulsivo. La punción lumbar está indicada si se sospecha meningitis o encefalitis (luego de descartar hipertensión intracraneana significativa). La ecografía abdominal valora insuficiencia hepática (ascitis, hepatomegalia). El diagnóstico etiológico requiere integrar datos clínicos, de laboratorio y de imagen.</p>
+    <p><b>Diagnóstico diferencial</b>: deben considerarse el delirium hipoactivo (fluctuante y con curso ondulante), el estado vegetativo persistente (ojos abiertos sin conciencia), el síndrome de “locked‑in” (parálisis motora con conciencia intacta: paciente parpadea o mueve ojos verticalmente), el coma psicógeno (resistencia pasiva, reflejos conservados, EEG normal) y la muerte encefálica.</p>
+    <h2>7. Tratamiento</h2>
+    <p><b>Reanimación inicial</b>: asegurar oxígeno, ventilación y circulación; mantener saturación &gt; 94 %, perfusión adecuada (PA sistólica &gt; 100 mmHg) y temperatura normotérmica. Administrar glucosa si hipoglucemia, naloxona si sospecha de opioides, flumazenil si intoxicación por benzodiacepinas (con precaución en pacientes con convulsiones crónicas). Corregir electrolitos (hiponatremia, hipercalcemia), acidemia o alcalosis. Iniciar antibióticos de amplio espectro y aciclovir si se sospecha infección del SNC.</p>
+    <p><b>Tratamiento específico según etiología</b>: en hemorragia intracerebral o hematoma epidural se realiza cirugía descompresiva; en infarto extenso se considera trombolisis o trombectomía si es candidato. La presión intracraneal elevada se maneja con elevación de la cabeza, osmoterapia (mannitol o solución salina hipertónica), sedación y hiperventilación controlada; puede ser necesario drenaje ventricular externo. En coma hepático se administra lactulosa y rifaximina; en uremia, hemodiálisis; en crisis tiroidea, propanolol y antitiroideos; en coma mixedematoso, levotiroxina IV e hidrocortisona. El status epiléptico se trata con benzodiacepinas, seguido de levetiracetam, fenitoína o valproato, y anestesia general si refractario. Las intoxicaciones se tratan con antídotos específicos (N‑acetilcisteína, fomepizol, atropina/pralidoxima, antivenenos). Se deben evitar hipoxia, hipotensión y fiebre.</p>
+    <p><b>💡</b> Siempre considerar causas reversibles y tratarlas de inmediato: hipoglucemia, hipoxia, hipotensión, hipotermia, intoxicaciones, convulsiones. La evaluación inicial con la regla del “punch coma” (glucosa, oxígeno, tiamina, naloxona) puede salvar vidas.</p>
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Monitoreo continuo</b>: en UCI con vigilancia neurológica y hemodinámica continua. Realizar evaluación neurológica seriada y ajustar sedación. Prevenir complicaciones: úlceras por presión, trombosis venosa profunda (heparina de bajo peso molecular o dispositivos de compresión), neumonía asociada a ventilación, hipoglucemia.</li>
+      <li><b>Rehabilitación</b>: una vez estabilizado, iniciar movilización precoz, fisioterapia y terapia ocupacional. El pronóstico depende de la causa y del tiempo de intervención: los comas metabólicos suelen revertirse con mejor pronóstico; los comas estructurales tienen mejor pronóstico cuando se pueden tratar (hematomas extraaxiales, hidrocefalia) y peor cuando existe daño irreparable.</li>
+      <li><b>Consejería y cuidado paliativo</b>: en comas irreversibles se debe informar a la familia sobre el pronóstico y discutir directrices anticipadas y decisiones sobre soporte vital. Para la muerte encefálica se sigue la normativa legal, con verificación por dos médicos y consideración de donación de órganos.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 68: Accidente cerebrovascular: Diagnóstico diferencial y tratamiento -->
+  <section class="page">
+    <h1>68. Accidente cerebro vascular: Diagnóstico diferencial y tratamiento</h1>
+    <h2>1. Definición</h2>
+    <p><b>El accidente cerebrovascular (ACV) es un síndrome clínico</b> caracterizado por el inicio súbito de un déficit neurológico focal que dura más de 24 horas o causa muerte, atribuible a una causa vascular. Se clasifica en <b>isquémico</b> (80–85 %) por oclusión arterial y <b>hemorrágico</b> (15–20 %) por ruptura vascular (hemorragia intraparenquimatosa o subaracnoidea). Los ataques isquémicos transitorios (TIA) duran menos de 24 horas y no dejan secuelas; constituyen un factor de riesgo mayor para ACV. El ACV es una emergencia médica: “el tiempo es cerebro”.</p>
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: una de las principales causas de discapacidad y la segunda de mortalidad global. En Chile, el ACV es responsable de un importante porcentaje de muertes y de discapacidad a largo plazo. Más de 70 % de los sobrevivientes tienen alguna forma de incapacidad funcional.</li>
+      <li><b>Complicaciones</b>: los ACV isquémicos pueden evolucionar a edema cerebral, transformación hemorrágica, crisis epilépticas, depresión post ictus y demencia vascular. Las hemorragias intracraneales tienen mayor mortalidad inmediata por hipertensión intracraneal y herniación. El retraso en la atención disminuye la eficacia de la trombolisis y trombectomía.</li>
+      <li><b>Factores de riesgo</b>: hipertensión arterial, diabetes mellitus, dislipidemia, tabaquismo, obesidad, fibrilación auricular, valvulopatías, uso de anticonceptivos orales, enfermedad carotídea, consumo excesivo de alcohol y drogas (cocaína).</li>
+      <li><b>Impacto diagnóstico y terapéutico</b>: identificar un ACV y su naturaleza (isquémico vs hemorrágico) permite activar protocolos de “código ACV”, optimizar tiempos puerta–aguja y seleccionar terapias específicas (trombolisis IV, trombectomía mecánica, reversión de anticoagulantes). La prevención secundaria (anticoagulación, antiagregación, tratamiento de factores de riesgo) evita recurrencias.</li>
+    </ul>
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Por mecanismo</b>:
+        <ul>
+          <li><b>Isquémico</b>:
+            <ul>
+              <li><b>Oclusión trombótica</b> de grandes arterias (aterosclerosis carotídea, intracraneal) o pequeñas arterias perforantes (lacunar).</li>
+              <li><b>Émbolos</b> originados en el corazón (fibrilación auricular, infarto ventricular, valvulopatías, endocarditis), arterias proximales o fuentes paradoxales (foramen oval permeable).</li>
+              <li><b>Otras causas</b>: disección arterial, vasculitis, hipercoagulabilidad, aneurismas infectados.</li>
+            </ul>
+          </li>
+          <li><b>Hemorrágico</b>:
+            <ul>
+              <li><b>Hemorragia intraparenquimatosa (HIP)</b>: ruptura de microaneurismas arterioescleróticos secundarios a hipertensión crónica; malformaciones arteriovenosas; angiopatía amiloide en ancianos; consumo de anticoagulantes o drogas.</li>
+              <li><b>Hemorragia subaracnoidea (HSA)</b>: ruptura de aneurisma sacular (mayormente en la arteria comunicante anterior o carótida interna) o trauma. Produce cefalea intensa súbita, rigidez nucal y pérdida de conciencia.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><b>TOAST (etiología del ACV isquémico)</b>: clasificación en cinco categorías: a) aterosclerosis de gran vaso; b) cardioembolia; c) oclusión de pequeño vaso (lacunar); d) causa determinada menos frecuente (disección, hipercoagulabilidad, vasculitis); e) causa indeterminada.</li>
+      <li><b>Topografía</b>: se divide en territorio anterior (arteria carótida interna, cerebral media, cerebral anterior) y posterior (vertebrobasilar: cerebeloso, tronco encefálico, talámico, occipital).</li>
+    </ul>
+    <h2>4. Fisiopatología</h2>
+    <p>En el ACV isquémico, la interrupción del flujo sanguíneo reduce el aporte de oxígeno y glucosa, provocando fallo energético y necrosis neuronal. La región del núcleo infartado está rodeada por la penumbra, un tejido hipoperfundido potencialmente reversible si se restaura el flujo. En el ACV hemorrágico, la extravasación sanguínea causa efecto masa, edema y toxicidad por productos hemáticos. La hipertensión súbita y la ruptura de microaneurismas son mecanismos frecuentes. La inflamación y la excitotoxicidad exacerban el daño.</p>
+    <h2>5. Etiología</h2>
+    <p>Las causas del ACV isquémico incluyen aterosclerosis (formación de placas en bifurcación carotídea y arterias intracraneales), cardioembolia (fibrilación auricular, infarto auricular o ventricular, prótesis valvulares, endocarditis), enfermedad de pequeño vaso (hipertensión crónica, diabetes), disección arterial (trauma, síndrome de Marfan), trombosis venosa cerebral, vasculitis (arteritis de células gigantes, lupus, síndrome antifosfolípido), trastornos hematológicos (anemia de células falciformes, trombocitosis) y causas iatrogénicas (cirugía). Las causas del ACV hemorrágico incluyen hipertensión arterial mal controlada, malformaciones arteriovenosas, angiopatía amiloide, trastornos de la coagulación, uso de anticoagulantes, tumores, drogas simpaticomiméticas (cocaína, anfetaminas) y aneurismas cerebrales.</p>
+    <h2>6. Diagnóstico</h2>
+    <p><b>Abordaje inicial</b>: valorar ABC y glucosa, obtener anamnesis (hora de inicio/síntomas, factores de riesgo), realizar examen neurológico (escala NIHSS) y medición de presión arterial. Identificar rápidamente síntomas cardinales: desviación facial, debilidad de extremidades, trastorno del lenguaje, pérdida de visión, diplopía, ataxia, vértigo y cefalea súbita.</p>
+    <p><b>Imagen</b>: la <b>TAC sin contraste</b> es la primera prueba para diferenciar entre isquemia y hemorragia. Un TAC normal en las primeras horas no descarta infarto; puede mostrar signos tempranos de infarto (pérdida de diferenciación gris‑blanco, hipodensidad, signo de la arteria cerebral media). La resonancia magnética con difusión detecta infarto en minutos. La <b>TAC o RM angiográfica</b> permite identificar oclusiones de grandes vasos y aneurismas. La <b>angiografía digital</b> se reserva para procedimientos endovasculares.</p>
+    <p><b>Laboratorio</b>: hemograma, tiempos de coagulación (INR, TTPa), glicemia, electrolitos, función renal y hepática, perfil lipídico, marcadores cardíacos. El ECG y la monitorización cardíaca detectan arritmias. Se completa con ecocardiograma y doppler carotídeo en la evaluación etiológica. El estudio hipercoagulable se realiza en pacientes jóvenes o sin factores de riesgo.</p>
+    <p><b>Diagnóstico diferencial</b>: incluye hipoglucemia, epilepsia con déficit postictal, migraña hemipléjica, esclerosis múltiple, encefalitis, tumor cerebral, parálisis de Todd, absceso cerebral, intoxicación por drogas y sepsis. La evaluación rápida del nivel de glucosa es crucial para descartar hipoglucemia.</p>
+    <h2>7. Tratamiento</h2>
+    <p><b>Fase aguda del ACV isquémico</b>:</p>
+    <ul>
+      <li><b>Soporte inicial</b>: mantener saturación &gt; 94 %, tratar hipertensión aguda si presión arterial > 220/120 mmHg o > 185/110 mmHg en candidatos a trombolisis; administrar IV de salina y corrección de hipoglucemia; evitar hipotensión y fiebre.</li>
+      <li><b>Trombolisis intravenosa</b>: <i>alteplasa</i> 0,9 mg/kg (10 % bolo, 90 % infusión), iniciada dentro de las primeras 4,5 horas del inicio de síntomas, tras descartar contraindicaciones (hemorragia intracraneal, cirugía reciente, plaquetas < 100.000/µL). En algunos países se utiliza <i>tenecteplasa</i> por su administración en bolo único.</li>
+      <li><b>Trombectomía mecánica</b>: indicada en oclusiones de grandes vasos (arteria cerebral media, carótida interna), con selección basada en imágenes (CT perfusión) hasta 24 horas desde el inicio de síntomas. Se realiza mediante catéter con aspiración o stent retriever. Debe efectuarse en centros especializados.</li>
+      <li><b>Terapia antitrombótica</b>: si no recibió trombolisis, iniciar aspirina 160–325 mg una vez confirmada la ausencia de hemorragia; si recibió trombolisis, iniciar aspirina 24 horas después. El uso de doble antiagregación (aspirina + clopidogrel por 21 días) se recomienda en TIA o infarto menor. La anticoagulación se indica para cardioembolia (anticoagulantes orales de acción directa o warfarina) después de 4–14 días según gravedad.</li>
+      <li><b>Tratamientos específicos</b>: controlar glucemia, temperatura, tratar edema cerebral con manitol o salina hipertónica, usar antihipertensivos gradualmente (labetalol, nicardipino), y prevenir complicaciones (profilaxis de trombosis venosa profunda, fisioterapia precoz).</li>
+    </ul>
+    <p><b>Fase aguda del ACV hemorrágico</b>:</p>
+    <ul>
+      <li><b>Control de la presión arterial</b>: reducir rápidamente la PAS a 140 mmHg con infusión de labetalol o nicardipino en hemorragia intraparenquimatosa. Evitar hipotensión.</li>
+      <li><b>Revertir coagulopatía</b>: en pacientes anticoagulados se administran concentrados de complejo protrombínico o vitamina K (warfarina), idarucizumab (dabigatrán) o andexanet alfa (apixabán, rivaroxabán). Plaquetas y ácido tranexámico si se asocia trombocitopenia o coagulopatía secundaria.</li>
+      <li><b>Manejo de hipertensión intracraneal</b>: elevación de la cabeza, sedación, intubación y ventilación controlada, manitol, drenaje ventricular externo si hay hidrocefalia obstructiva. La cirugía de descompresión se considera en hematomas cerebelosos > 3 cm o lobares superficiales con deterioro neurológico.</li>
+      <li><b>Hemorragia subaracnoidea</b>: estabilizar al paciente, controlar presión arterial, evitar manejo excesivo de líquidos y tratar el vasoespasmo con nimodipino 60 mg cada 4 horas. El aneurisma roto debe ser tratado mediante clip quirúrgico o embolización endovascular lo antes posible.</li>
+    </ul>
+    <p><b>💡</b> En todo ACV, registrar la hora de inicio y activar el sistema de emergencias. La rehabilitación (fisioterapia, terapia ocupacional, fonoaudiología) debe iniciarse precozmente para mejorar la funcionalidad. La prevención secundaria incluye control estricto de la presión arterial (meta &lt; 130/80 mmHg), estatinas, antidiabéticos, supresión del tabaquismo y consumo moderado de alcohol.</p>
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles clínicos</b>: monitoreo en unidades de ictus o UCI, con evaluación neurológica frecuente, control de presión arterial, glucemia y temperatura. Vigilar signos de transformación hemorrágica, edema cerebral y complicaciones sistémicas.</li>
+      <li><b>Rehabilitación</b>: programas de recuperación multidisciplinaria dirigidos a restaurar funciones motoras, sensoriales, del lenguaje y cognitivas. La participación activa del paciente y su familia es clave para la adherencia.</li>
+      <li><b>Prevención secundaria</b>: iniciar antiagregantes o anticoagulación según etiología, control estricto de factores de riesgo, dieta y ejercicio. Considerar endarterectomía carotídea o angioplastia en estenosis carotídea severa. Los pacientes con fibrilación auricular deben recibir anticoagulantes de acción directa o warfarina manteniendo INR 2–3. Ajustar medicamentos antihipertensivos y estatinas para lograr metas terapéuticas.</li>
+      <li><b>Seguimiento a largo plazo</b>: visitas periódicas para monitorizar adherencia, manejar comorbilidades, evaluar depresión post ictus y cognitivamente. Proporcionar educación sobre signos de recurrencia y medidas de emergencia.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 69: Meningitis bacteriana: Diagnóstico y tratamiento -->
+  <section class="page">
+    <h1>69. Meningitis bacteriana: Diagnóstico y tratamiento</h1>
+    <h2>1. Definición</h2>
+    <p><b>La meningitis bacteriana es una infección aguda de las meninges</b> causada por bacterias que invaden el líquido cefalorraquídeo (LCR). Se caracteriza por inflamación purulenta de las leptomeninges y del espacio subaracnoideo, con edema cerebral, aumento de la presión intracraneana y daño neuronal. Es una emergencia médica que requiere diagnóstico y tratamiento precoz.</p>
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: la incidencia anual en países desarrollados es de 3–5 por 100.000 habitantes. Las bacterias causantes varían según edad y condición: <i>Streptococcus pneumoniae</i> y <i>Neisseria meningitidis</i> en adultos y niños; <i>Streptococcus agalactiae</i>, <i>Escherichia coli</i> y <i>Listeria monocytogenes</i> en neonatos y ancianos; <i>Staphylococcus aureus</i> y bacilos gramnegativos en casos postquirúrgicos o con dispositivos intracraneales.</li>
+      <li><b>Complicaciones y mortalidad</b>: la mortalidad se sitúa entre 10 y 30 % dependiendo del patógeno y la rapidez del tratamiento. Las secuelas neurológicas incluyen pérdida auditiva, déficit cognitivo, epilepsia, hidrocefalia y hemiparesia. La meningitis meningocócica puede ocasionar sepsis fulminante y púrpura fulminans.</li>
+      <li><b>Factores de riesgo</b>: edad extrema (neonatos, mayores de 60 años), inmunosupresión, esplenectomía, alcoholismo, diabetes, fístulas de líquido cefalorraquídeo, otitis media, sinusitis, trauma craneoencefálico, dispositivos ventriculares y no vacunación contra neumococos o meningococos.</li>
+      <li><b>Impacto diagnóstico y terapéutico</b>: el reconocimiento temprano y la administración inmediata de antibióticos empíricos reducen la mortalidad y previenen secuelas. La demora en iniciar tratamiento se asocia a mayor muerte. La profilaxis antibiótica a contactos y la vacunación son estrategias clave para el control.</li>
+    </ul>
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Por edad y condición</b>:
+        <ul>
+          <li><b>Neonatos (&lt;1 mes)</b>: <i>Streptococcus agalactiae</i>, <i>E. coli</i> (productora de K1), <i>Listeria monocytogenes</i>, <i>Klebsiella</i>.</li>
+          <li><b>Niños (1–3 meses)</b>: <i>Streptococcus pneumoniae</i>, <i>N. meningitidis</i>, <i>S. agalactiae</i>, <i>L. monocytogenes</i>.</li>
+          <li><b>Adultos y adolescentes</b>: <i>S. pneumoniae</i>, <i>N. meningitidis</i>, <i>H. influenzae</i> tipo b (en países sin vacunación), bacilos gramnegativos.</li>
+          <li><b>Ancianos y pacientes inmunocomprometidos</b>: <i>S. pneumoniae</i>, <i>L. monocytogenes</i>, bacilos gramnegativos.</li>
+          <li><b>Postquirúrgico/neurotrauma</b>: <i>S. aureus</i>, <i>Staphylococcus coagulasa negativos</i>, <i>Pseudomonas</i>, <i>Acinetobacter</i>.</li>
+        </ul>
+      </li>
+      <li><b>Por mecanismo de adquisición</b>: adquirida en la comunidad o asociada a cuidados de salud. La primera se transmite por colonización nasofaríngea y bacteriemia; la segunda se relaciona con dispositivos o procedimientos neuroquirúrgicos.</li>
+    </ul>
+    <h2>4. Fisiopatología</h2>
+    <p>La colonización de la nasofaringe por bacterias invasoras precede a la infección. Mediante invasión transmucosa y bacteriemia, las bacterias cruzan la barrera hematoencefálica, se multiplican en el LCR y desencadenan una respuesta inflamatoria intensa. La liberación de citocinas y radicales libres aumenta la permeabilidad vascular, produce edema cerebral y disminuye el flujo sanguíneo cerebral. La vasculitis de pequeñas arterias puede provocar infartos isquémicos. La inflamación compromete el drenaje de LCR, aumentando la presión intracraneana.</p>
+    <h2>5. Etiología</h2>
+    <p>Los patógenos más comunes dependen de la edad y de condiciones predisponentes: <i>S. pneumoniae</i> es la causa principal en adultos; <i>N. meningitidis</i> en adolescentes y adultos jóvenes; <i>H. influenzae</i> tipo b en no vacunados; <i>L. monocytogenes</i> en neonatos, ancianos y embarazadas; <i>S. agalactiae</i> en recién nacidos; <i>S. aureus</i> y bacilos gramnegativos en pacientes con trauma craneal o derivaciones ventriculares.</p>
+    <h2>6. Diagnóstico</h2>
+    <p><b>Presentación clínica</b>: fiebre, cefalea, rigidez nucal y alteración del nivel de conciencia (tria clásica) pueden estar ausentes, especialmente en ancianos e inmunocomprometidos. Otros signos incluyen fotofobia, vómitos, crisis epilépticas, rash petequial (meningococcemia), signos de Kernig y Brudzinski, y fontanela abombada en lactantes.</p>
+    <p><b>Examen físico</b>: evaluar signos meníngeos, petequias, focos infecciosos (otitis, sinusitis, neumonía), status neurológico y hemodinámico. La rigidez nucal tiene sensibilidad limitada pero es sugerente.</p>
+    <p><b>Laboratorio</b>: hemograma, hemocultivos (previos a antibióticos), PCR, lactato, coagulación. La <b>punción lumbar</b> es clave: medir presión de apertura, recabar LCR para análisis citoquímico (glucosa, proteínas), recuento celular y fórmula (pleocitosis neutrofílica &gt; 1000 células/µL), Gram y cultivo, y pruebas moleculares (PCR para meningococo, neumococo). El LCR en meningitis bacteriana muestra glucosa &lt; 40 mg/dl o cociente glucosa LCR/plasma &lt; 0,4, proteínas &gt; 100 mg/dl y lactato elevado &gt; 3,5 mmol/l. Si hay signos de hipertensión intracraneal (papiledema, déficit focal, convulsiones), se debe realizar TAC antes de la punción lumbar.</p>
+    <p><b>Diagnóstico diferencial</b>: la meningitis viral (linfocitosis en LCR, proteínas moderadamente elevadas, glucosa normal), meningitis tuberculosa (evolución subaguda, glucosa muy baja, bacilos ácido‑alcohol resistentes), meningoencefalitis herpética (afecta lóbulos temporales, convulsiones) y absceso cerebral (deficits focales, LCR normal o poco alterado) deben considerarse. La hemorragia subaracnoidea se diferencia por la presencia de xantocromía y ausencia de pleocitosis neutrofílica.</p>
+    <h2>7. Tratamiento</h2>
+    <p><b>Inicio precoz de antibióticos</b>: la terapia empírica debe comenzar lo antes posible (idealmente en la primera hora) tras obtener hemocultivos y, si la condición lo permite, el LCR. En adultos inmunocompetentes se administra <i>ceftriaxona</i> 2 g cada 12 h más <i>vancomicina</i> 15 mg/kg cada 8 h para cubrir <i>S. pneumoniae</i> resistente. En mayores de 50 años, embarazadas e inmunodeprimidos se añade <i>ampicilina</i> 2 g cada 4 h para cubrir <i>Listeria</i>. En pacientes posneuroquirúrgicos o con traumatismo craneal se utiliza <i>vancomicina</i> más <i>ceftazidima</i> o <i>cefepime</i>. La duración del tratamiento depende del patógeno (10–14 días para <i>S. pneumoniae</i>, 7 días para <i>N. meningitidis</i>, 21 días para <i>L. monocytogenes</i>).</p>
+    <p><b>Dexametasona</b>: 10 mg IV cada 6 h durante 4 días, iniciada 10–20 min antes o junto con el primer antibiótico en casos de neumococo, reduce mortalidad y secuelas neurológicas. No debe administrarse si ya se han iniciado antibióticos o en meningitis por <i>Listeria</i>.</p>
+    <p><b>Manejo de complicaciones</b>: controlar la presión intracraneal (elevación de la cabeza, manitol), tratar crisis epilépticas con benzodiacepinas y levetiracetam, manejar shock séptico con fluidoterapia y vasopresores, corregir hiponatremia y prevenir hipoglucemia. La hidrocefalia requiere derivación externa. La sepsis meningocócica con coagulación intravascular diseminada puede requerir hemoderivados.</p>
+    <p><b>Profilaxis y prevención</b>: los contactos cercanos de pacientes con meningitis meningocócica deben recibir quimioprofilaxis con <i>rifampicina</i> 600 mg cada 12 h por 2 días o <i>ciprofloxacina</i> 500 mg dosis única. Las vacunas conjugadas contra <i>S. pneumoniae</i>, <i>N. meningitidis</i> serogrupos A,C,W,Y y B y contra <i>H. influenzae</i> tipo b son estrategias efectivas. La vacunación se recomienda en niños, adultos mayores, inmunosuprimidos y viajeros.</p>
+    <p><b>💡</b> La prontitud en el tratamiento determina el pronóstico. No esperar resultados de laboratorio para iniciar antibióticos empíricos. La vacunación y la profilaxis en contactos estrechos son pilares para reducir brotes de meningitis.</p>
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles clínicos</b>: monitorizar signos vitales, nivel de conciencia y respuestas neurológicas durante la hospitalización. Repetir la punción lumbar en meningitis neumocócica con mala evolución o en meningitis meningocócica que persiste febril tras 48 horas.</li>
+      <li><b>Laboratorio</b>: controles seriados de LCR no son rutinarios salvo falta de respuesta. Monitorizar parámetros inflamatorios, función renal y hepática, niveles de antibióticos en LCR si hay dudas de penetración.</li>
+      <li><b>Complicaciones a largo plazo</b>: evaluar audición y neurodesarrollo en niños; en adultos controlar déficit cognitivo, trastornos del equilibrio y epilepsia. Derivar a rehabilitación si persisten secuelas.</li>
+      <li><b>Prevención</b>: completar esquemas de vacunación y educar a la población sobre síntomas de alerta y necesidad de atención precoz. Los pacientes esplenectomizados deben recibir vacunas neumocócicas y meningocócicas.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 70: Enfermedad de Parkinson -->
+  <section class="page">
+    <h1>70. Enfermedad de Parkinson</h1>
+    <h2>1. Definición</h2>
+    <p><b>La enfermedad de Parkinson (EP) es una neuropatía degenerativa</b> caracterizada por pérdida progresiva de neuronas dopaminérgicas en la sustancia negra pars compacta y acumulación de cuerpos de Lewy compuestos por α‑sinucleína. Clinicamente se manifiesta con bradicinesia (lentitud de movimientos) asociada a al menos uno de los siguientes: temblor de reposo, rigidez, inestabilidad postural o bloqueo de la marcha. Además de los síntomas motores hay numerosas manifestaciones no motoras que afectan significativamente la calidad de vida.</p>
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: es la segunda enfermedad neurodegenerativa más frecuente después de Alzheimer. Afecta a aproximadamente el 1 % de la población mayor de 60 años y su prevalencia aumenta con la edad. La proporción hombre:mujer es 3:2. La mayoría de los casos son esporádicos; menos del 10 % son hereditarios.</li>
+      <li><b>Complicaciones y progresión</b>: sin tratamiento la enfermedad progresa a discapacidad motora severa. Las complicaciones motoras incluyen fluctuaciones de la respuesta a levodopa y discinesias; las no motoras incluyen depresión, ansiedad, deterioro cognitivo, trastornos del sueño REM, hipotensión ortostática, constipación, trastornos urinarios y disfunción sexual. Las caídas y neumonía por aspiración son causas frecuentes de hospitalización.</li>
+      <li><b>Factores y asociaciones</b>: la genética (mutaciones en LRRK2, SNCA, PARK2), la exposición a pesticidas, la residencia en áreas rurales, el consumo de agua de pozo y traumatismos craneanos aumentan el riesgo. La cafeína y el tabaquismo parecen tener un efecto protector. La demencia con cuerpos de Lewy comparte patogénesis con EP.</li>
+      <li><b>Impacto en el diagnóstico y tratamiento</b>: el diagnóstico es clínico y temprano; permite iniciar terapias que mejoran los síntomas y prolongan la autonomía. Los tratamientos actuales no detienen la progresión pero modulan la dopamina en el sistema nigroestriado. La educación del paciente y familia, el ejercicio regular y el tratamiento de comorbilidades son pilares del manejo integral.</li>
+    </ul>
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Según causa</b>:
+        <ul>
+          <li><b>Idiopática</b> (85–90 %): etiología desconocida, asociación con cuerpos de Lewy.</li>
+          <li><b>Genética</b> (<10 %): mutaciones autosómicas dominantes (LRRK2, SNCA) o recesivas (PARK2, PINK1, DJ‑1). Suelen debutar en edades tempranas.</li>
+          <li><b>Parkinsonismo secundario</b>: inducido por fármacos (antipsicóticos típicos, metoclopramida, reserpina), toxinas (MPTP), accidentes cerebrovasculares, traumatismo repetitivo, hidrocefalia normotensiva, tumores y parkinsonismos atípicos (atrofia multisistémica, parálisis supranuclear progresiva, degeneración corticobasal).</li>
+        </ul>
+      </li>
+      <li><b>Por fenotipo clínico</b>: predominio de temblor vs rigidez y bradicinesia, aparición temprana vs tardía, y presencia de síntomas no motores. Este fenotipo puede influir en el pronóstico y la respuesta a fármacos.</li>
+    </ul>
+    <h2>4. Fisiopatología</h2>
+    <p>La EP se caracteriza por degeneración de las neuronas dopaminérgicas en la sustancia negra pars compacta, con reducción de dopamina en el cuerpo estriado. La acumulación de proteínas α‑sinucleína en cuerpos de Lewy y neuritas de Lewy sugiere un proceso de “proteinopatía” con propagación priónica a través del sistema nervioso central y periférico. La desregulación de la autofagia, el estrés oxidativo, la inflamación microglial y la disfunción mitocondrial contribuyen a la muerte neuronal. La degeneración es multisistémica: afecta al sistema nervioso autónomo, locus coeruleus, núcleos del rafe y corteza cerebral, explicando los síntomas no motores.</p>
+    <h2>5. Etiología</h2>
+    <p>En la mayoría de los casos no se identifica causa específica (idiopática). La predisposición genética (mutaciones en genes PARK), factores ambientales (exposición a pesticidas como paraquat y rotenona, herbicidas, consumo de agua de pozo, encefalitis viral, trauma craneano) y envejecimiento interactúan para desencadenar la enfermedad. Algunos parkinsonismos secundarios se deben a medicamentos dopaminérgicos o depleción de dopamina. La acumulación de hierro y la excitotoxicidad del glutamato también participan en la neurodegeneración.</p>
+    <h2>6. Diagnóstico</h2>
+    <p><b>Criterios clínicos</b>: se basa en la presencia de <b>bradicinesia</b> más al menos uno de los siguientes: temblor de reposo (4–6 Hz, disminuye con acción), rigidez plástica (rueda dentada) o inestabilidad postural no explicada por otra causa. El inicio unilateral y la buena respuesta a levodopa apoyan el diagnóstico. La enfermedad de Parkinson se diferencia de parkinsonismos atípicos por la presencia de respuesta sustancial a levodopa y la progresión lenta.</p>
+    <p><b>Examen físico</b>: incluye observación del temblor de reposo, lentitud de movimientos (prueba de golpeteo de dedos, pronosupinación), rigidez al movimiento pasivo y evaluación de la postura y marcha (pasos cortos, arrastre de pies, dificultad para iniciar, pérdida del braceo). Las manifestaciones no motoras (hiposmia, estreñimiento, trastornos del sueño REM, depresión) pueden preceder a los síntomas motores por años.</p>
+    <p><b>Evaluación adicional</b>: la resonancia magnética cerebral suele ser normal; se utiliza para descartar lesiones estructurales. La tomografía por emisión de positrones (PET) o la tomografía SPECT con marcado dopaminérgico (DaTSCAN) pueden confirmar déficit presináptico en casos dudosos. Pruebas genéticas se reservan para casos familiares o debut temprano. Se deben descartar causas secundarias (niveles de cobre para enfermedad de Wilson, pruebas de función tiroidea, historia medicamentosa).</p>
+    <p><b>Diferencial</b>: incluye parkinsonismo vascular (infartos múltiples, síntomas en escalera), atrofia multisistémica (disautonomía severa, ataxia), parálisis supranuclear progresiva (caídas tempranas, parálisis vertical de la mirada), degeneración corticobasal (distonia, mioclonus), demencia con cuerpos de Lewy (alucinaciones visuales tempranas, demencia precoz), demencia frontotemporal y efectos secundarios de antipsicóticos.</p>
+    <h2>7. Tratamiento</h2>
+    <p><b>Medidas generales</b>: explicación de la enfermedad, promoción de ejercicio aeróbico y entrenamiento de fuerza y flexibilidad, logopedia para trastornos del habla y deglución, fisioterapia y terapia ocupacional. Se deben tratar comorbilidades como hipertensión, depresión y osteoporosis.</p>
+    <p><b>Terapia farmacológica</b>:</p>
+    <ul>
+      <li><b>Levodopa/carbidopa</b>: fármaco más efectivo para los síntomas motores. Iniciar con 300–600 mg/día divididos; ajustar según respuesta y efectos adversos. Puede causar náuseas, hipotensión ortostática, discinesias y fluctuaciones motoras (“fenómeno de on‑off”) tras varios años. Añadir inhibidores de la descarboxilasa periférica (benserazida o carbidopa) reduce efectos gastrointestinales y permite que más levodopa alcance el SNC.</li>
+      <li><b>Agonistas dopaminérgicos</b> (pramipexol, ropinirol, rotigotina): útiles en pacientes jóvenes o como terapia combinada para reducir la dosis de levodopa. Efectos adversos: edema, somnolencia, trastornos del control de impulsos (adicción al juego, hipersexualidad), alucinaciones.</li>
+      <li><b>Inhibidores de la MAO‑B</b> (rasagilina, selegilina): inhiben la degradación de dopamina y tienen efecto sintomático leve. La rasagilina puede tener efecto neuroprotector. Interacciones con antidepresivos y alimentos ricos en tiramina son raras.</li>
+      <li><b>Inhibidores de la COMT</b> (entacapona, opicapona): prolongan la acción de levodopa al inhibir su degradación periférica. Útiles en fluctuaciones motoras. Efectos secundarios: diarrea, orina de color oscuro.</li>
+      <li><b>Amantadina</b>: antiviral con propiedades antidiscinéticas; reduce discinesias inducidas por levodopa y mejora la rigidez. Efectos adversos: edema, livedo reticularis.</li>
+      <li><b>Anticolinérgicos</b> (biperideno, trihexifenidilo): alivian el temblor en pacientes jóvenes, pero su uso se limita por efectos adversos cognitivos, visuales y urinarios.</li>
+      <li><b>💡</b> La individualización del tratamiento es fundamental: en pacientes jóvenes se prefiere iniciar con agonistas dopaminérgicos o inhibidores de MAO‑B; en ancianos con afectación funcional predominante se prefiere levodopa. Ajustar dosis para minimizar discinesias y fluctuaciones.</li>
+    </ul>
+    <p><b>Terapias avanzadas</b>:</p>
+    <ul>
+      <li><b>Estimulación cerebral profunda (DBS)</b>: indicada en pacientes con enfermedad idiopática de más de 4 años, con fluctuaciones motoras o discinesias intratables pese a tratamiento óptimo y sin deterioro cognitivo severo. Se implantan electrodos en el núcleo subtalámico o globo pálido interno y se conectan a un generador. Mejora significativamente la calidad de vida y reduce la dosis de medicamentos.</li>
+      <li><b>Bombas de infusión</b>: infusión intestinal continua de levodopa/carbidopa (Duodopa) o infusión subcutánea de apomorfina para pacientes con fluctuaciones motoras severas no controladas con pastillas. Requieren evaluación especializada y manejo de complicaciones (nódulos subcutáneos, infección de la gastrostomía).</li>
+      <li><b>Tratamiento de síntomas no motores</b>: los inhibidores de la colinesterasa (rivastigmina) y memantina se utilizan para la demencia asociada a Parkinson; los ISRS y bupropión para depresión; los laxantes y agentes proquinéticos para constipación; la clonazepam y melatonina para trastornos del sueño REM; la midodrina y fludrocortisona para hipotensión ortostática.</li>
+    </ul>
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles clínicos</b>: revisar cada 3–6 meses la respuesta a los tratamientos, ajustar dosis, detectar complicaciones (discinesias, fluctuaciones, impulsividad) y evaluar síntomas no motores. Realizar escalas de gravedad (UPDRS, Hoehn y Yahr).</li>
+      <li><b>Rehabilitación y ejercicio</b>: incentivar terapia física y ocupacional, ejercicios de equilibrio y fuerza, tai‑chi, danza o canto para mejorar motricidad y calidad de vida. La dieta mediterránea, ingesta de fibra y agua ayudan a la constipación.</li>
+      <li><b>Apoyo psicológico</b>: manejo de depresión y ansiedad con terapia cognitivo‑conductual y farmacoterapia. Educar al paciente y familia sobre la evolución y complicaciones; derivar a grupos de apoyo.</li>
+      <li><b>Planificación anticipada</b>: discutir oportunamente decisiones sobre conducción, empleo, soporte social y cuidados de largo plazo. En etapas avanzadas considerar cuidados paliativos y control del dolor.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

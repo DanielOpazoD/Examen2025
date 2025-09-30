@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen de Hematología</title>
+  <style>
+    /* Tipografía y colores base */
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      background: #ffffff;
+      color: #0f172a;
+      margin: 0;
+      padding: 0;
+    }
+    /* Barra de herramientas para impresión */
+    .toolbar {
+      background: #f8fafc;
+      padding: 8px;
+      text-align: right;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .toolbar button {
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    /* Estilo de cada página/tema */
+    .page {
+      width: 816px;              /* equivalencia a 8½ × 11 pulgadas a 96 dpi */
+      min-height: 1056px;        /* altura mínima para hoja carta */
+      padding: 6mm 8mm 8mm 8mm;  /* márgenes asimétricos para cabecera y contenido */
+      margin: 0 auto;
+      box-sizing: border-box;
+      page-break-after: always;
+    }
+    h1 {
+      font-size: 18px;
+      color: #1d4ed8;
+      margin: 0 0 6px 0;
+    }
+    h2 {
+      font-size: 13px;
+      color: #1d4ed8;
+      margin: 14px 0 4px 0;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #cbd5e1;
+    }
+    p {
+      margin: 4px 0;
+      font-size: 12px;
+      line-height: 1.18;
+      color: #0f172a;
+    }
+    ul, ol {
+      margin: 4px 0 4px 16px;
+      padding: 0;
+      font-size: 12px;
+      line-height: 1.18;
+    }
+    ul li {
+      list-style-type: none;
+      position: relative;
+      padding-left: 12px;
+    }
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #475569;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 11px;
+      margin: 6px 0;
+    }
+    table th, table td {
+      border: 1px solid #cbd5e1;
+      padding: 2px 4px;
+      vertical-align: top;
+    }
+    table th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: bold;
+    }
+    .small {
+      font-size: 11px;
+    }
+    /* Ocultar barra de herramientas al imprimir y ajustar página */
+    @media print {
+      .toolbar {
+        display: none;
+      }
+      .page {
+        width: auto;
+        min-height: auto;
+        padding: 8mm;
+      }
+    }
+  </style>
+  <script>
+    function printSmart() {
+      // Despliega el cuadro de diálogo de impresión del navegador
+      window.print();
+    }
+  </script>
+</head>
+<body>
+  <!-- Barra superior con botón de impresión -->
+  <div class="toolbar">
+    <button onclick="printSmart()">Imprimir</button>
+  </div>
+
+  <!-- Tema 60: Anemia ferropriva: Diagnóstico y tratamiento -->
+  <section class="page">
+    <h1>60. Anemia ferropriva: Diagnóstico y tratamiento</h1>
+    <h2>1.&nbsp;Definición</h2>
+    <p><strong>La anemia ferropriva es la forma más frecuente de anemia y se caracteriza por un descenso de la hemoglobina acompañado de eritrocitos microcíticos e hipocrómicos debido a un déficit de hierro.</strong> La OMS define anemia como hemoglobina &lt;13&nbsp;g/dl en hombres y &lt;12&nbsp;g/dl en mujeres; la ferropenia implica agotamiento de las reservas de hierro (ferritina &lt;30&nbsp;ng/ml) con saturación de transferrina (TSAT) &lt;20%.</p>
+    <h2>2.&nbsp;Importancia clínica</h2>
+    <ul>
+      <li><strong>Epidemiología.</strong> Es la causa más prevalente de anemia en todo el mundo, especialmente en niños y mujeres en edad fértil; se estima que afecta a 20–40&nbsp;% de las mujeres según el nivel de ingresos del país. La causa gastrointestinal es la más habitual en hombres y mujeres postmenopáusicas.</li>
+      <li><strong>Complicaciones.</strong> Produce fatiga, intolerancia al ejercicio, palpitaciones, alteraciones neurológicas (síndrome de piernas inquietas, pica) y en gestantes incrementa el riesgo de parto prematuro, bajo peso al nacer y hemorragia postparto.</li>
+      <li><strong>Asociaciones clínicas.</strong> A menudo es manifestación de pérdidas crónicas por úlceras, neoplasias gastrointestinales o sangrado ginecológico; puede coexistir con inflamación crónica, insuficiencia renal o síndrome de malabsorción.</li>
+      <li><strong>Impacto en el manejo.</strong> Su abordaje requiere determinar la causa subyacente, reponer hierro y prevenir complicaciones; la respuesta a la suplementación guía la investigación de etiologías como talasemias o anemias inflamatorias.</li>
+    </ul>
+    <h2>3.&nbsp;Clasificaciones</h2>
+    <p>La anemia ferropénica puede clasificarse por <strong>severidad</strong> (leve ≥10&nbsp;g/dl, moderada &lt;10&nbsp;g/dl y severa ≤7&nbsp;g/dl), por <strong>temporalidad</strong> (aguda vs crónica) y por <strong>mecanismo fisiopatológico</strong> (pérdida sanguínea, producción disminuida, inflamatoria, hemolítica). En un contexto práctico se clasifica por <strong>nivel de ferritina y saturación de transferrina</strong> en déficit absoluto (ferritina &lt;30&nbsp;ng/ml) o déficit funcional (ferritina normal/elevada con TSAT &lt;20&nbsp;% en enfermedades inflamatorias).</p>
+    <h2>4.&nbsp;Fisiopatología</h2>
+    <p>El hierro es esencial para la síntesis de hemoglobina, función mitocondrial y síntesis de ADN. El cuerpo contiene 3–4&nbsp;g de hierro, almacenados principalmente en ferritina hepática y macrófagos. La absorción se realiza en duodeno y yeyuno, siendo más eficaz el hierro hemo de carnes. La hormona hepcidina regula la homeostasis: su elevación por inflamación o sobrecarga bloquea la ferroportina y disminuye la absorción y liberación de hierro. El déficit crónico reduce la síntesis de hemoglobina, generando eritrocitos pequeños y pálidos con baja hemoglobina corpuscular media (HCM) y volumen corpuscular medio (VCM). En estados inflamatorios se produce “secuestro” de hierro: depósitos normales o altos pero no disponibles para la eritropoyesis por aumento de hepcidina y supresión medular.</p>
+    <h2>5.&nbsp;Etiología</h2>
+    <ul>
+      <li><strong>Pérdida de sangre.</strong> Hemorragias digestivas altas o bajas (úlceras pépticas, cáncer gástrico/colónico), menstruación abundante, patologías urológicas y pulmonares.</li>
+      <li><strong>Ingesta o absorción inadecuada.</strong> Dieta vegetariana/vegana, enfermedad celíaca, bypass gástrico, hipoclorhidria por gastritis autoinmune o uso crónico de inhibidores de bomba de protones, infección por <em>Helicobacter pylori</em>.</li>
+      <li><strong>Aumento de requerimientos.</strong> Embarazo, lactancia, crecimiento en la infancia y adolescencia.</li>
+      <li><strong>Trastornos inflamatorios.</strong> Enfermedad renal crónica, cardiaca, tumores y enfermedades inflamatorias que aumentan hepcidina y suprimen la eritropoyesis.</li>
+    </ul>
+    <h2>6.&nbsp;Diagnóstico</h2>
+    <p><strong>Tipo.</strong> Clínico y bioquímico. La presentación clásica incluye palidez, taquicardia y signos de fragilidad ungueal; el frotis muestra microcitos y eliptocitos. <strong>Laboratorio:</strong> hemograma con VCM &lt;80&nbsp;fL, HCM &lt;27&nbsp;pg, amplitud de distribución eritrocitaria alta; ferritina sérica &lt;30&nbsp;ng/ml confirma déficit absoluto; TSAT &lt;20&nbsp;% y capacidad total de fijación de hierro alta son típicos. En inflamación crónica una ferritina &lt;100&nbsp;ng/ml asociada a TSAT baja sugiere déficit funcional. El recuento de reticulocitos es normal o bajo. Es necesario investigar la causa mediante endoscopía digestiva alta y colonoscopía, estudio ginecológico, pesquisa de enfermedad celíaca y pruebas de imagen si se sospechan tumores.</p>
+    <h2>7.&nbsp;Tratamiento</h2>
+    <ul>
+      <li><strong>General y empírico.</strong> Identificar y tratar la causa subyacente (sangrado, malabsorción) es fundamental.</li>
+      <li><strong>Reposición oral de hierro.</strong> El sulfato ferroso (200&nbsp;mg) aporta 65&nbsp;mg de hierro elemental; el fumarato ferroso (330&nbsp;mg) aporta 109&nbsp;mg. Estudios recientes recomiendan administrarlo en días alternos para mejorar la absorción y tolerancia sin disminuir la eficacia; se continúa 3–6&nbsp;meses tras normalizar la hemoglobina, buscando ferritina &gt;50&nbsp;ng/ml. La absorción mejora con vitamina C y disminuye con calcio, té/café y fibra, por lo que se aconseja evitar estos durante 1–2&nbsp;horas alrededor de la dosis. Controlar hemograma y ferritina cada 2–3&nbsp;meses permite ajustar la terapia; se espera un incremento de ~1&nbsp;g/dl de hemoglobina cada 2–3&nbsp;semanas con hierro oral.</li>
+      <li><strong>Hierro intravenoso.</strong> Indicado cuando hay intolerancia o falta de respuesta al hierro oral, malabsorción severa, pérdidas activas que exceden la reposición oral, necesidad de corrección rápida (preoperatorio, anemia severa) o condiciones inflamatorias crónicas (EII, ERC, ICC, cáncer). Se utiliza carboximaltosa férrica o complejo de hidróxido férrico sacaro-sucroso en dosis calculadas por déficit de hierro.</li>
+      <li><strong>Transfusión de glóbulos rojos.</strong> Reservada para anemia severa (Hb &lt;7&nbsp;g/dl) con síntomas o inestabilidad hemodinámica; en caso de isquemia miocárdica se considera con Hb &lt;9&nbsp;g/dl.</li>
+      <li><strong>Consejos clínicos 💡.</strong> La combinación de hierro con vitamina C ha mostrado mejorar de forma modesta la absorción según metaanálisis recientes; sin embargo, no sustituye tratar la causa de base. Valorar saturación de transferrina para distinguir déficit funcional en anemias inflamatorias. En mujeres en edad fértil es crucial descartar embarazo y anticipar mayor requerimiento.</li>
+    </ul>
+    <h2>8.&nbsp;Seguimiento</h2>
+    <p><strong>Controles.</strong> Revisión clínica y de hemograma a las 4–6&nbsp;semanas de iniciado el tratamiento, luego cada 2–3&nbsp;meses hasta normalizar la hemoglobina y ferritina. Se recomienda continuar la suplementación 3–6&nbsp;meses adicionales para repletar los depósitos. <strong>Complicaciones.</strong> Persistencia de anemia o ausencia de respuesta obliga a revisar la adherencia, descartar pérdidas ocultas o diagnósticos alternativos como talasemia, anemia sideroblástica o anemia inflamatoria. <strong>Duración y criterios de éxito.</strong> Se considera éxito cuando hemoglobina se normaliza y ferritina alcanza valores &gt;50&nbsp;ng/ml; el tratamiento se individualiza según la causa y se repite en pérdidas crónicas.</p>
+  </section>
+
+  <!-- Tema 61: Anemia megaloblástica: Diagnóstico y tratamiento -->
+  <section class="page">
+    <h1>61. Anemia megaloblástica: Diagnóstico y tratamiento</h1>
+    <h2>1.&nbsp;Definición</h2>
+    <p><strong>La anemia megaloblástica es una anemia macrocítica debida a un defecto en la síntesis de ADN de los precursores hematopoyéticos, la cual suele originarse por déficit de vitamina B12 y/o ácido fólico.</strong> Esta deficiencia provoca una maduración nuclear retrasada con citoplasma normal, generando eritrocitos grandes (macroovalocitos) y neutrófilos hipersegmentados.</p>
+    <h2>2.&nbsp;Importancia clínica</h2>
+    <ul>
+      <li><strong>Epidemiología.</strong> El déficit de vitamina B12 afecta al 2–7 % de la población general y hasta 15 % de los adultos mayores. La anemia perniciosa, debida a gastritis autoinmune con anticuerpos contra el factor intrínseco, tiene una prevalencia de 0.1–0.2 %. El déficit de folato es menos frecuente en Chile gracias a la fortificación de la harina.</li>
+      <li><strong>Complicaciones.</strong> Además de la anemia sintomática (fatiga, irritabilidad), el déficit de B12 puede causar neuropatía periférica, alteraciones cognitivas, trastornos de la marcha y degeneración combinada subaguda de la médula espinal; el déficit de folato se asocia a defectos del tubo neural en gestantes. Tanto B12 como folato aumentan los niveles de homocisteína, favoreciendo riesgo cardiovascular y trombosis.</li>
+      <li><strong>Asociaciones clínicas.</strong> Existen vínculos con dietas veganas, enfermedad celíaca, enfermedad de Crohn, gastritis autoinmune, cirugía bariátrica, uso crónico de inhibidores de bomba de protones o metformina y alcoholismo. La anemia perniciosa se asocia a otras enfermedades autoinmunes (DM1, tiroiditis) y aumenta el riesgo de cáncer gástrico.</li>
+      <li><strong>Impacto en el manejo.</strong> Distinguir entre déficit de B12 y folato es crucial porque la suplementación aislada de folato puede corregir la anemia pero empeorar la neuropatía por déficit de B12. El tratamiento temprano previene secuelas irreversibles.</li>
+    </ul>
+    <h2>3.&nbsp;Clasificaciones</h2>
+    <p>Se clasifican según el nutriente deficitario (<strong>B12 vs folato</strong>), su severidad (leve ≥10&nbsp;g/dl, moderada &lt;10&nbsp;g/dl, severa ≤7&nbsp;g/dl) y su duración (aguda vs crónica). Además se distingue la anemia perniciosa (déficit de B12 por falta de factor intrínseco) de otras causas de malabsorción o ingesta disminuida.</p>
+    <h2>4.&nbsp;Fisiopatología</h2>
+    <p>La vitamina B12 (cobalamina) se obtiene de alimentos de origen animal; su absorción requiere factor intrínseco en el íleon distal y su reserva corporal es de 3–5 mg, suficiente para varios años. El ácido fólico se obtiene de vegetales y cereales fortificados; se absorbe en duodeno y yeyuno y sus reservas se agotan en meses. La falta de estos cofactores impide la síntesis de timidilato y purinas, ralentizando la replicación del ADN y provocando discordancia entre maduración nuclear y citoplasmática. Esto produce megaloblastos en la médula ósea y hemólisis intramedular con elevación de LDH y bilirrubina indirecta. La acumulación de homocisteína y ácido metilmalónico se utiliza como marcador bioquímico: ambos están elevados en el déficit de B12, mientras que en el déficit de folato solo aumenta la homocisteína.</p>
+    <h2>5.&nbsp;Etiología</h2>
+    <ul>
+      <li><strong>Déficit de vitamina B12.</strong> Reducción de la ingesta (dietas veganas, alcoholismo), malabsorción por gastrectomía o cirugía bariátrica, enfermedad de Crohn, insuficiencia pancreática exocrina, infección por <em>Helicobacter pylori</em> y fármacos (IBP, metformina). La anemia perniciosa se debe a anticuerpos contra el factor intrínseco o células parietales, asociada a gastritis atrófica y mayor riesgo de cáncer gástrico.</li>
+      <li><strong>Déficit de ácido fólico.</strong> Ingesta insuficiente (alcoholismo), aumento de requerimientos (embarazo, hemólisis), malabsorción (cirugía bariátrica, enfermedad celíaca), fármacos inhibidores de la síntesis de folatos (metotrexato, sulfasalazina, trimetoprim).</li>
+      <li><strong>Elevación de vitamina B12.</strong> Ocurre en enfermedades hepáticas, trastornos mieloproliferativos y fallo renal; no suele causar anemia pero orienta la etiología.</li>
+    </ul>
+    <h2>6.&nbsp;Diagnóstico</h2>
+    <p><strong>Tipo.</strong> Clínico y bioquímico. Los pacientes pueden presentar palidez, glositis, úlceras orales (déficit de folato) o neuropatía (déficit de B12). <strong>Laboratorio:</strong> hemograma con VCM &gt;100&nbsp;fL, anemia macroovalocítica y neutrófilos hipersegmentados; pancitopenia en casos severos. Se realiza dosificación de vitamina B12 y folato séricos: niveles &lt;200&nbsp;pg/ml indican déficit de B12 y &lt;2&nbsp;ng/ml déficit de folato. La determinación de homocisteína y ácido metilmalónico ayuda a diferenciar ambos déficit. El estudio etiológico incluye anticuerpos anti-factor intrínseco y anti-células parietales, serologías de enfermedad celíaca y niveles de vitamina D, TSH y otros marcadores. Es importante descartar otras causas de macrocitosis como alcoholismo, hipotiroidismo o fármacos.</p>
+    <h2>7.&nbsp;Tratamiento</h2>
+    <ul>
+      <li><strong>Déficit de vitamina B12.</strong> Cuando existe malabsorción se prefiere la vía parenteral: cianocobalamina 1&nbsp;000&nbsp;mcg intramuscular semanal durante 4&nbsp;semanas, seguida de 1 000&nbsp;mcg mensual; si hay síntomas neurológicos se administran tres dosis semanales por 1–2 semanas antes de la pauta mensual. Alternativamente pueden usarse preparados orales de alta dosis (1 000–2 000 mcg/día) que logran absorción pasiva suficiente. En anemia perniciosa el tratamiento suele ser de por vida.</li>
+      <li><strong>Déficit de folato.</strong> Se administra ácido fólico 1–5 mg/día durante 1–4 meses o hasta corregir la causa subyacente. Es indispensable descartar déficit de B12 concomitante antes de iniciar folato para evitar empeorar la neuropatía.</li>
+      <li><strong>Soporte y monitoreo.</strong> Se recomienda suplementar hierro si existe deficiencia mixta. La respuesta al tratamiento se evalúa: la reticulocitosis aparece al tercer o cuarto día; la hemoglobina se incrementa durante la primera semana y se normaliza en 4–8 semanas; la desaparición de neutrófilos hipersegmentados ocurre hacia los días 10–14 y la normalización de leucopenia/trombocitopenia en 2–4 semanas.</li>
+      <li><strong>Consejos clínicos 💡.</strong> No administrar folato en ausencia de diagnóstico definitivo: puede corregir la anemia pero enmascara el déficit de B12. En pacientes con anemia perniciosa se recomienda seguimiento endoscópico cada 3–5 años debido al mayor riesgo de cáncer gástrico. Ajustar dosis en insuficiencia renal.</li>
+    </ul>
+    <h2>8.&nbsp;Seguimiento</h2>
+    <p><strong>Controles.</strong> Revisión clínica y hemograma a la segunda semana; valorar síntomas neurológicos en cada visita. La suplementación se mantiene hasta normalizar niveles y, en el caso de anemia perniciosa, indefinidamente. <strong>Complicaciones.</strong> Persistencia de anemia o falta de respuesta sugiere malabsorción, falta de adherencia, anemia de causa mixta o trastornos mielodisplásicos. <strong>Éxito terapéutico.</strong> Se define por normalización de hemoglobina, VCM y reticulocitos junto a niveles normales de vitamina B12/folato y desaparición de síntomas.</p>
+  </section>
+
+  <!-- Tema 62: Linfomas no Hodgkin: Diagnóstico y tratamiento -->
+  <section class="page">
+    <h1>62. Linfomas no Hodgkin: Diagnóstico y tratamiento</h1>
+    <h2>1.&nbsp;Definición</h2>
+    <p><strong>Los linfomas no Hodgkin (LNH) constituyen un grupo heterogéneo de neoplasias malignas del sistema linfático originadas en linfocitos B, T o NK maduros.</strong> Representan alrededor del 90 % de todos los linfomas y comprenden más de 90 subtipos, la mayoría de origen B. A diferencia del linfoma de Hodgkin, carecen de células de Reed-Sternberg y pueden presentar un patrón de diseminación no contiguo.</p>
+    <h2>2.&nbsp;Importancia clínica</h2>
+    <ul>
+      <li><strong>Epidemiología.</strong> Son la neoplasia hematológica más frecuente (≈4 % de todos los cánceres); predominan en edades medias (45–70 años) y hay una ligera predominancia masculina.</li>
+      <li><strong>Complicaciones.</strong> La presentación es variable: adenopatías, hepatoesplenomegalia, citopenias, síntomas B (fiebre, sudoración nocturna, pérdida de peso), compresión de estructuras y síndromes paraneoplásicos. Las emergencias incluyen síndrome de vena cava superior, síndrome de lisis tumoral y hipercalcemia.</li>
+      <li><strong>Asociaciones clínicas.</strong> LNH puede asociarse a inmunodeficiencia (VIH, trasplante), enfermedades autoinmunes (Sjögren, lupus, artritis reumatoidea) y exposición a pesticidas, herbicidas y virus (EBV, HTLV‑1, HCV, <em>Helicobacter pylori</em>).</li>
+      <li><strong>Impacto en el manejo.</strong> Su heterogeneidad condiciona un enfoque individualizado: algunos subtipos indolentes pueden manejarse con vigilancia, mientras que los agresivos requieren quimioterapia inmediata. El internista cumple un rol crucial en la sospecha, derivación, manejo de complicaciones y seguimiento.</li>
+    </ul>
+    <h2>3.&nbsp;Clasificaciones</h2>
+    <p>Los LNH se clasifican por su <strong>origen celular</strong> (B, T o NK), por su <strong>localización</strong> (nodal vs extranodal) y por su comportamiento clínico:</p>
+    <ul>
+      <li><strong>Indolentes (bajo grado).</strong> Incluyen linfoma folicular, de zona marginal, linfocítico de células pequeñas y linfoplasmocítico; suelen crecer lentamente y comportarse como enfermedades crónicas con medianas de sobrevida de 8–10&nbsp;años; muchos no requieren tratamiento inmediato.</li>
+      <li><strong>Agresivos y muy agresivos.</strong> El linfoma difuso de células B grandes (LDCBG) es el subtipo más común (30–40&nbsp;% de LNH) y representa la forma agresiva típica; otros subtipos agresivos incluyen linfoma de manto, linfoma de Burkitt y linfoma linfoblástico.</li>
+    </ul>
+    <p>Para la extensión se emplea el <strong>clasificación de Ann Arbor</strong> (estadios I a IV) y el Índice Pronóstico Internacional (IPI) que evalúa edad, estadio, LDH, funcionalidad y número de sitios extraganglionares para estratificar riesgo.</p>
+    <h2>4.&nbsp;Fisiopatología y etiología</h2>
+    <p>La etiopatogenia es multifactorial e incluye predisposición genética, exposiciones ambientales (pesticidas, herbicidas), disfunción inmune y factores infecciosos. Las enfermedades autoinmunes (síndrome de Sjögren, lupus y artritis reumatoidea) y la inmunosupresión farmacológica aumentan el riesgo de LNH. Virus como EBV están asociados a linfoma de Burkitt y linfomas T/NK; VIH se asocia a LDCBG y linfoma de Burkitt; VHC a LDCBG; <em>H. pylori</em> al linfoma MALT gástrico. Estas agresiones conducen a reordenamientos genéticos (translocaciones, amplificaciones) que activan oncogenes, desregulan señales de supervivencia y conducen a proliferación clonal.</p>
+    <h2>5.&nbsp;Presentación clínica y diagnóstico</h2>
+    <p><strong>Sospecha clínica.</strong> La presencia de adenopatías persistentes &gt;1&nbsp;cm, síntomas B, masas extranodales o hallazgos de imagen (adenomegalias profundas, hepatoesplenomegalia) obliga a considerar LNH. <strong>Manifestaciones generales</strong> incluyen adenopatías indoloras y gomosas, hepatosplenomegalia y síntomas B por secreción de citocinas; síntomas locales dependen del sitio afectado (síndrome de vena cava superior, compresión medular, obstrucción de vía aérea o intestinal). LNH puede presentar complicaciones hematológicas (citopenias, anemia hemolítica, síndrome de hiperviscosidad) o paraneoplásicas (dermatomiositis, síndrome de Sweet).</p>
+    <p><strong>Confirmación diagnóstica.</strong> Se realiza mediante biopsia ganglionar excisional con estudio histológico, inmunofenotípico y citogenético. El estudio de extensión utiliza TAC/CT-PET y aspirado/biopsia de médula ósea. El sistema Ann Arbor determina el estadio y el IPI estratifica el pronóstico. El diagnóstico diferencial incluye otras neoplasias, infecciones (tuberculosis, VIH), enfermedades inflamatorias (sarcoidosis, enfermedad de Castelman) y enfermedades autoinmunes.</p>
+    <h2>6.&nbsp;Tratamiento</h2>
+    <ul>
+      <li><strong>Linfomas agresivos.</strong> El esquema estándar para LDCBG es R‑CHOP (rituximab, ciclofosfamida, doxorubicina, vincristina y prednisona) administrado en 6–8 ciclos cada 21 días. En subtipos de alto riesgo o recaída se usan regímenes como EPOCH (etopósido, prednisona, vincristina, ciclofosfamida, doxorubicina) o ICE (ifosfamida, carboplatino, etopósido) y se considera quimioterapia de rescate con trasplante autólogo de progenitores hematopoyéticos o terapias celulares como CAR‑T. La toxicidad de R‑CHOP incluye neutropenia febril, neuropatía por vincristina y cardiotoxicidad por doxorubicina.</li>
+      <li><strong>Linfomas indolentes.</strong> Muchos pacientes asintomáticos se manejan con «watch and wait»; el tratamiento se reserva para síntomas o progresión. Regímenes comunes incluyen bendamustina con rituximab (BR), rituximab en monoterapia o R‑CVP (rituximab, ciclofosfamida, vincristina, prednisona). La indicación de tratamiento en linfoma folicular se basa en los criterios GELF: síntomas B, citopenias significativas, masa ganglionar bulky (&gt;7&nbsp;cm), compromiso de múltiples áreas o derrames serosos.</li>
+      <li><strong>Tratamientos dirigidos.</strong> Se emplean terapias biológicas como anticuerpos anti‑CD20 (rituximab), inhibidores de BTK (ibrutinib) y PI3K, radioinmunoterapia y, en algunos subtipos, erradicación de <em>H. pylori</em> (linfoma MALT gástrico). En linfomas asociados a infección por VHC se agrega tratamiento antiviral.</li>
+      <li><strong>Consejos clínicos 💡.</strong> La estratificación correcta determina la intensidad del tratamiento: no tratar de forma agresiva un linfoma indolente asintomático evita toxicidad innecesaria. El internista debe vigilar las complicaciones del tratamiento (infecciones oportunistas, neutropenia, mucositis) y coordinar profilaxis (Pneumocystis jirovecii, vacunación). En casos de hiperviscosidad por macroglobulinemia de Waldenström se requiere plasmaféresis urgente.</li>
+    </ul>
+    <h2>7.&nbsp;Seguimiento</h2>
+    <p><strong>Controles.</strong> Evaluación clínica y exámenes (hemograma, LDH, estudio de imágenes) cada 3–6 meses durante los primeros años y luego anual. Es importante detectar recaídas tempranas y monitorizar efectos adversos tardíos de la quimioterapia (cardiotoxicidad, segundas neoplasias). <strong>Duración.</strong> La vigilancia se individualiza según subtipo y riesgo; algunos linfomas indolentes requieren seguimiento de por vida. <strong>Criterios de éxito.</strong> Respuesta completa en PET/CT y normalización de marcadores; el pronóstico se valora con IPI y respuesta al tratamiento. El internista debe coordinar vacunación y manejo de comorbilidades.</p>
+  </section>
+
+  <!-- Tema 63: Mieloma Múltiple: Diagnóstico y tratamiento -->
+  <section class="page">
+    <h1>63. Mieloma Múltiple: Diagnóstico y tratamiento</h1>
+    <h2>1.&nbsp;Definición</h2>
+    <p><strong>El mieloma múltiple es una neoplasia plasmocítica de médula ósea caracterizada por la proliferación clonal de células plasmáticas que producen inmunoglobulina monoclonal (proteína M) o cadenas ligeras, generando daño orgánico sistémico.</strong> Forma parte del espectro de gammapatías monoclonales que incluye la gammapatía monoclonal de significado incierto (MGUS) y la forma asintomática (“smoldering”).</p>
+    <h2>2.&nbsp;Importancia clínica</h2>
+    <ul>
+      <li><strong>Epidemiología.</strong> Representa el 10–15 % de las neoplasias hematológicas, con incidencia de 3–8 por 100 000 habitantes/año y edad media al diagnóstico de 65–70 años. Afecta ligeramente más a hombres y su prevalencia aumenta con la edad y la exposición a pesticidas o obesidad.</li>
+      <li><strong>Complicaciones.</strong> Produce las manifestaciones CRAB: hipercalcemia, insuficiencia renal, anemia y lesiones óseas líticas que ocasionan fracturas patológicas; también cursa con infecciones recurrentes, hiperviscosidad sanguínea, hipercalemia, polineuropatía y síndrome POEMS. La insuficiencia renal puede deberse a precipitación de cadenas ligeras (lesión tubular), hipercalcemia o nefropatía por amiloidosis.</li>
+      <li><strong>Asociaciones clínicas.</strong> El mieloma se asocia a antecedente de MGUS o mieloma quiescente, exposiciones ambientales (radiación, solventes), raza afrodescendente y trastornos autoinmunes. También se relaciona con complicaciones como amiloidosis AL y plasmocitomas extramedulares.</li>
+      <li><strong>Impacto en el manejo.</strong> Es una enfermedad incurable pero tratable. El internista debe reconocer síntomas sugerentes para derivar al hematólogo, manejar complicaciones (hipercalcemia, insuficiencia renal) y coordinar terapias intensivas como trasplante autólogo.</li>
+    </ul>
+    <h2>3.&nbsp;Clasificaciones</h2>
+    <p>Las gammapatías monoclonales incluyen <strong>MGUS</strong> (proteína monoclonal &lt;3&nbsp;g/dl y &lt;10 % de células plasmáticas en médula), <strong>mieloma múltiple quiescente</strong> (proteína monoclonal ≥3&nbsp;g/dl y/o 10–60 % de plasma células sin eventos definitorios) y <strong>mieloma sintomático</strong> (≥10 % de células plasmáticas clonales en médula más al menos un evento CRAB o biomarcador de malignidad). Otras entidades afines incluyen leucemia de células plasmáticas y amiloidosis AL. El International Staging System (ISS) y el R‑ISS combinan albumina, β2‑microglobulina, LDH y citogenética para estratificar riesgo.</p>
+    <h2>4.&nbsp;Fisiopatología</h2>
+    <p>El mieloma se origina a partir de un linfocito B post-germinal que sufre eventos genéticos como deleción del cromosoma 13 y translocaciones del gen de la cadena pesada de inmunoglobulina (14q32) que promueven la proliferación clonal. Las células plasmáticas neoplásicas interactúan con el microambiente medular y secretan citoquinas (IL‑6, TNF‑α) que estimulan osteoclastos y suprimen osteoblastos, provocando lesiones óseas líticas. La secreción excesiva de inmunoglobulina monoclonal y cadenas ligeras produce hiperviscosidad y precipitación tubular renal; la amiloidosis AL se debe al depósito extracelular de cadenas ligeras mal plegadas.</p>
+    <h2>5.&nbsp;Presentación clínica y diagnóstico</h2>
+    <p><strong>Síntomas CRAB.</strong> Se deben a hipercalcemia (&gt;11 mg/dl) con náuseas, confusión y estreñimiento; insuficiencia renal (creatinina &gt;2 mg/dl o filtrado glomerular &lt;40 ml/min); anemia normocítica (Hb &lt;10 g/dl) con fatiga; y lesiones óseas líticas o fracturas patológicas que causan dolor óseo. <strong>Otros síntomas.</strong> Fatiga, pérdida de peso, infecciones recurrentes, polineuropatía, eventos trombóticos y síndrome de hiperviscosidad (cefalea, visión borrosa, sangrado).</p>
+    <p><strong>Evaluación diagnóstica.</strong> Incluye hemograma, perfil bioquímico, cuantificación de inmunoglobulinas y electroforesis de proteínas séricas y urinarias con inmunofijación; medición de cadenas ligeras libres y proteinuria de 24 horas. El estudio de imágenes utiliza radiografías de esqueleto axial, TC o RMN para detectar lesiones osteolíticas; la presencia de ≥2 lesiones focales en RMN (≥5 mm) sugiere enfermedad activa. La confirmación requiere aspirado y biopsia de médula ósea con inmunofenotipo y citogenética; el diagnóstico se establece con &gt;10 % de células plasmáticas clonales más CRAB o biomarcadores de malignidad (cociente de cadenas libres &gt;100, ≥60 % de plasma células clonales o ≥2 lesiones en RMN).</p>
+    <h2>6.&nbsp;Tratamiento</h2>
+    <ul>
+      <li><strong>Objetivos.</strong> Reducir la carga tumoral, prevenir daño orgánico y prolongar la supervivencia. La primera respuesta terapéutica suele ser la más duradera, por lo que se utilizan regímenes de alta eficacia.</li>
+      <li><strong>Pacientes candidatos a trasplante autólogo (TPH).</strong> Generalmente &lt;65 años con buen estado funcional. Se realiza inducción de 4–6 ciclos con esquemas de tres fármacos, como VRD (bortezomib, lenalidomida y dexametasona), VTD (bortezomib, talidomida, dexametasona) o CyBorD (bortezomib, ciclofosfamida, dexametasona), seguida de movilización y recolección de células madre, acondicionamiento con melfalán y trasplante; luego se puede administrar quimioterapia de consolidación y terapia de mantención con lenalidomida o bortezomib.</li>
+      <li><strong>Pacientes no candidatos a trasplante.</strong> Se estratifican en pacientes «fit» o frágiles. En los aptos se usan los mismos esquemas de inducción (VRD, VTD, CyBorD) durante 8–12 ciclos; los frágiles reciben regímenes menos intensivos como RD (lenalidomida–dexametasona), VMP (bortezomib–melfalán–prednisona) o talidomida con corticoides. La terapia de mantención prolonga la remisión.</li>
+      <li><strong>Tratamientos dirigidos y de soporte.</strong> Anticuerpos monoclonales como daratumumab (anti‑CD38) o elotuzumab (anti‑SLAMF7) se combinan con regímenes estándar para aumentar la respuesta. Los inhibidores del proteasoma de segunda generación (carfilzomib, ixazomib) y los inhibidores de exportina (selinexor) son opciones en recaídas. La radioterapia es útil para plasmocitomas localizados. El soporte incluye manejo del dolor óseo con analgésicos y radioterapia, bisfosfonatos o denosumab para prevenir fracturas, hidratación y diuréticos para hipercalcemia, corrección de anemia con eritropoyetina y profilaxis antiinfecciosa.</li>
+      <li><strong>Consejos clínicos 💡.</strong> Iniciar tratamiento de soporte ante hipercalcemia o insuficiencia renal incluso antes de confirmar el diagnóstico definitivo. Evaluar la necesidad de plasmaféresis en síndrome de hiperviscosidad. Vacunar contra neumococo e influenza. Durante la terapia, monitorizar neuropatía periférica por bortezomib, citopenias y riesgos trombóticos por inmunomoduladores; usar profilaxis con aspirina o anticoagulación según riesgo.</li>
+    </ul>
+    <h2>7.&nbsp;Seguimiento</h2>
+    <p><strong>Controles.</strong> Medición de proteína M, cadenas ligeras libres, hemograma y creatinina mensual durante el tratamiento y luego cada 3 meses. Realizar estudios de imagen periódicos para detectar progresión ósea. <strong>Duración y recaída.</strong> La terapia de mantenimiento se mantiene por al menos 24 meses; las recaídas se tratan con regímenes de rescate individualizados. <strong>Criterios de éxito.</strong> Se define respuesta completa por la ausencia de proteína M en suero y orina, normalización de cadenas ligeras libres y desaparición de plasmocitos en médula; la enfermedad mínima residual negativa se correlaciona con mejor pronóstico. Los pacientes requieren seguimiento a largo plazo por riesgo de segundas neoplasias y complicaciones del tratamiento.</p>
+  </section>
+
+  <!-- Tema 64: Púrpura trombocitopénico inmune: Etiología, diagnóstico y tratamiento -->
+  <section class="page">
+    <h1>64. Púrpura trombocitopénico: Etiología, diagnóstico y tratamiento</h1>
+    <h2>1.&nbsp;Definición</h2>
+    <p><strong>La púrpura trombocitopénico inmune (PTI) es un trastorno autoinmune caracterizado por la destrucción acelerada y/o producción inadecuada de plaquetas mediada por autoanticuerpos, dando lugar a una trombocitopenia aislada (&lt;100&nbsp;000/µl).</strong> Se trata de un diagnóstico de exclusión: no debe existir otra causa de trombocitopenia ni esplenomegalia apreciable.</p>
+    <h2>2.&nbsp;Importancia clínica</h2>
+    <ul>
+      <li><strong>Epidemiología.</strong> Tiene dos picos de incidencia: uno en jóvenes adultos (20–30 años) con predominio femenino y otro en mayores de 60 años sin predominio por sexo. Hasta un 30 % se detecta de forma incidental y 5 % se presenta con sangrado severo.</li>
+      <li><strong>Complicaciones.</strong> El riesgo de sangrado espontáneo aumenta con recuentos plaquetarios &lt;20 000/µl, especialmente &lt;10 000/µl; pueden presentarse petequias, equimosis, epistaxis, gingivorragia, menorragia, sangrado gastrointestinal y, raramente, hemorragia intracraneal. También produce fatiga y repercute en la calidad de vida.</li>
+      <li><strong>Asociaciones clínicas.</strong> PTI puede ser primario o secundario a trastornos autoinmunes (lupus, artritis reumatoide, síndrome antifosfolípido), infecciones (HIV, hepatitis C, hepatitis B, H. pylori), inmunodeficiencias, neoplasias linfoproliferativas y fármacos (heparina, quinina, antimicrobianos).</li>
+      <li><strong>Impacto en el manejo.</strong> El objetivo no es normalizar el recuento sino lograr niveles seguros que minimicen el sangrado y permitir una vida diaria sin restricciones. El internista debe identificar rápidamente la causa secundaria, instaurar terapia apropiada y educar sobre actividades y medicamentos que aumenten el riesgo de sangrado.</li>
+    </ul>
+    <h2>3.&nbsp;Clasificaciones</h2>
+    <p>Se clasifica según su <strong>etiología</strong> (PTI primario vs secundario) y su <strong>duración</strong>: de nuevo diagnóstico (&lt;3&nbsp;meses), persistente (3–12 meses) y crónica (&gt;12 meses).</p>
+    <h2>4.&nbsp;Fisiopatología</h2>
+    <p>La PTI se produce por autoanticuerpos (generalmente IgG) dirigidos contra glicoproteínas de la membrana plaquetaria (GPIIb/IIIa y GPIb/IX), lo que marca las plaquetas para fagocitosis en el bazo y el hígado. Además, existen anticuerpos contra megacariocitos y linfocitos T citotóxicos que reducen la producción de plaquetas. La vida media plaquetaria disminuye de 7–10 días a horas. El 50–60 % de los pacientes presentan anticuerpos detectables; la sensibilización puede ocurrir tras infecciones virales, embarazo o exposición a fármacos.</p>
+    <h2>5.&nbsp;Etiología</h2>
+    <ul>
+      <li><strong>Primaria.</strong> Idiopática o autoinmune sin causa evidente (la forma más común).</li>
+      <li><strong>Secundaria.</strong> Asociada a enfermedades autoinmunes (lupus, síndrome antifosfolípido, enfermedad tiroidea), inmunodeficiencias (inmunodeficiencia común variable), infecciones crónicas (VIH, VHB, VHC, EBV, <em>H. pylori</em>), neoplasias (linfomas, leucemias), medicamentos (heparina, quinina, sulfamidas, linezolid) y vacunas.</li>
+      <li><strong>Mecanismos alternativos.</strong> Otras causas de trombocitopenia como pseudotrombocitopenia, disminución de producción medular (mielodisplasia, infiltración), microangiopatías trombóticas (PTT, CID, SHU), secuestro esplénico o hemodilución deben considerarse en el diagnóstico diferencial.</li>
+    </ul>
+    <h2>6.&nbsp;Diagnóstico</h2>
+    <p><strong>Tipo.</strong> Es esencialmente clínico y por exclusión. Se considera PTI primario cuando hay trombocitopenia &lt;100 000/µl sin otra causa identificable, el resto del hemograma es normal y no hay esplenomegalia ni linfadenopatías. El estudio inicial incluye hemograma con frotis (macroplaquetas frecuentes), serologías de VIH, VHB, VHC, antígeno de <em>H. pylori</em>, pruebas autoinmunes (ANA, ENA, anti‑ADN, complemento) y tiempos de coagulación. La biopsia medular se reserva para pacientes mayores o refractarios. El diagnóstico diferencial abarca pseudotrombocitopenia, insuficiencia medular, trombocitopenia inducida por heparina, microangiopatías, hepatopatías y trombocitopenia gestacional.</p>
+    <h2>7.&nbsp;Tratamiento</h2>
+    <ul>
+      <li><strong>Objetivo.</strong> Mantener un recuento plaquetario seguro (habitualmente &gt;20 000–30 000/µl) que minimice el riesgo de sangrado y permitir una vida normal, minimizando la toxicidad del tratamiento.</li>
+      <li><strong>Primer línea.</strong> Corticoides: prednisona 1–2 mg/kg/día durante 1–4 semanas con disminución progresiva y suspensión a las 6–8 semanas; dexametasona 40 mg/día por 4 días repetido cada 2–4 semanas hasta 4 ciclos. En caso de sangrado severo o necesidad de cirugía urgente se añade inmunoglobulina intravenosa 1 g/kg/día por 1–2 días, que bloquea receptores Fc en macrófagos y reduce la destrucción plaquetaria. Se recomienda hospitalizar a pacientes con plaquetas &lt;20 000/µl o con sangrado activo.</li>
+      <li><strong>Segunda línea.</strong> Indicada cuando la PTI es persistente o crónica y el paciente no responde o depende de corticoides. Incluye agonistas del receptor de trombopoyetina como eltrombopag (25–75 mg/día) o romiplostim, que estimulan la producción plaquetaria; rituximab 1 g intravenoso repetido a las dos semanas; y agentes inmunosupresores como micofenolato 500–1 000 mg cada 12 horas. La elección depende de la duración de la PTI, la frecuencia de episodios hemorrágicos, la edad, comorbilidades y preferencias.</li>
+      <li><strong>Tercera línea.</strong> La esplenectomía es considerada en casos refractarios tras al menos 6–12 meses de tratamiento y ofrece la mayor probabilidad de remisión completa sostenida. Debe realizarse tras vacunación contra bacterias capsuladas (neumococo, meningococo, <em>Haemophilus influenzae</em>). Otras opciones incluyen inhibidores de Syk o BTK en ensayos clínicos.</li>
+      <li><strong>Consejos clínicos 💡.</strong> Tratar causas secundarias (infección por <em>H. pylori</em>, VIH) puede normalizar el recuento plaquetario. Evitar aspirina, AINE y anticoagulantes a menos que sean imprescindibles. En mujeres embarazadas con PTI, el tratamiento se individualiza y suele preferirse corticoides o IVIG; se considera transfusión de plaquetas y parto por cesárea si el recuento es muy bajo.</li>
+    </ul>
+    <h2>8.&nbsp;Seguimiento</h2>
+    <p><strong>Controles.</strong> Recuento plaquetario semanal tras iniciar tratamiento y luego mensual; educar al paciente para reconocer signos de sangrado. <strong>Duración.</strong> La mayoría de los episodios agudos remiten en 3–6 meses, pero el 20–30 % evoluciona a forma crónica. <strong>Complicaciones.</strong> Los efectos secundarios de los corticoides incluyen ganancia de peso, hiperglucemia y osteoporosis; los agonistas de trombopoyetina pueden elevar el riesgo de trombosis. <strong>Criterios de éxito.</strong> Mantener plaquetas &gt;30 000–50 000/µl sin sangrado significativo y con buena calidad de vida; los pacientes deben llevar pulsera de alerta médica y evitar deportes de contacto.</p>
+  </section>
+
+</body>
+</html>

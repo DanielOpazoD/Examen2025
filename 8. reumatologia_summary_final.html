@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen de Reumatología</title>
+  <style>
+    /* Tipografía y colores base */
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      background: #ffffff;
+      color: #0f172a;
+      margin: 0;
+      padding: 0;
+    }
+    /* Barra de herramientas para impresión */
+    .toolbar {
+      background: #f8fafc;
+      padding: 8px;
+      text-align: right;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .toolbar button {
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    /* Estilo de cada página/tema */
+    .page {
+      width: 816px;              /* equivalencia a 8½ × 11 pulgadas a 96 dpi */
+      min-height: 1056px;        /* altura mínima para hoja carta */
+      padding: 6mm 8mm 8mm 8mm;  /* márgenes asimétricos para cabecera y contenido */
+      margin: 0 auto;
+      box-sizing: border-box;
+      page-break-after: always;
+    }
+    h1 {
+      font-size: 18px;
+      color: #1d4ed8;
+      margin: 0 0 6px 0;
+    }
+    h2 {
+      font-size: 13px;
+      color: #1d4ed8;
+      margin: 14px 0 4px 0;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #cbd5e1;
+    }
+    p {
+      margin: 4px 0;
+      font-size: 12px;
+      line-height: 1.18;
+      color: #0f172a;
+    }
+    ul, ol {
+      margin: 4px 0 4px 16px;
+      padding: 0;
+      font-size: 12px;
+      line-height: 1.18;
+    }
+    ul li {
+      list-style-type: none;
+      position: relative;
+      padding-left: 12px;
+    }
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #475569;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 11px;
+      margin: 6px 0;
+    }
+    table th, table td {
+      border: 1px solid #cbd5e1;
+      padding: 2px 4px;
+      vertical-align: top;
+    }
+    table th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: bold;
+    }
+    .small {
+      font-size: 11px;
+    }
+    /* Ocultar barra de herramientas al imprimir y ajustar página */
+    @media print {
+      .toolbar {
+        display: none;
+      }
+      .page {
+        width: auto;
+        min-height: auto;
+        padding: 8mm;
+      }
+    }
+  </style>
+  <script>
+    function printSmart() {
+      // Despliega el cuadro de diálogo de impresión del navegador
+      window.print();
+    }
+  </script>
+</head>
+<body>
+  <!-- Barra superior con botón de impresión -->
+  <div class="toolbar">
+    <button onclick="printSmart()">Imprimir</button>
+  </div>
+
+  <!-- Tema 71: Osteoporosis -->
+  <section class="page">
+    <h1>71. Osteoporosis: Diagnóstico y tratamiento</h1>
+    <h2>1. Definición</h2>
+    <p><b>Enfermedad sistémica esquelética</b> caracterizada por <b>baja masa ósea y deterioro de la microarquitectura trabecular</b> que se traduce en un incremento del riesgo de fracturas por fragilidad.  En términos operativos la Organización Mundial de la Salud la define por densitometría ósea cuando el <b>T‑score ≤ −2,5</b> desviaciones estándar respecto a adultos jóvenes del mismo sexo y raza.  Sin embargo, hasta dos tercios de las fracturas osteoporóticas ocurren en personas con T‑score mayor de −2,5, lo que subraya que la fragilidad ósea depende de múltiples factores.</p>
+
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología y carga</b>: afecta aproximadamente a 1 de cada 3 mujeres y a 1 de cada 5 hombres mayores de 50 años; en Chile la prevalencia en mujeres mayores de 50 años es del 20 % con osteopenia en un 45 %.  La masa ósea alcanza su máximo en la tercera década y luego desciende 0,5 %/año; durante la posmenopausia la pérdida puede llegar a 3–5 % anual.</li>
+      <li><b>Complicaciones graves</b>: las fracturas por fragilidad ocurren habitualmente en cadera, columna vertebral, húmero proximal y antebrazo distal.  Las fracturas de cadera presentan una mortalidad del 20–30 % al año y la mitad de los supervivientes no recupera su funcionalidad previa.  Las fracturas vertebrales pueden ser silentes y un episodio aumenta el riesgo de fracturas subsecuentes.</li>
+      <li><b>Factores y asociaciones clínicas</b>: edad > 65 años, peso &lt; 58 kg, tabaquismo, consumo crónico de alcohol, menopausia precoz, uso prolongado de glucocorticoides (> 5 mg de prednisona/día por ≥ 3 meses), artritis reumatoide y otras enfermedades inflamatorias.  A nivel secundario destacan causas nutricionales (anorexia, malabsorción), endocrinas (hipertiroidismo, hipogonadismo, hiperparatiroidismo, síndrome de Cushing), neoplásicas (mieloma múltiple) y fármacos como inhibidores de aromatasa o levotiroxina en exceso.</li>
+      <li><b>Impacto en diagnóstico y tratamiento</b>: la osteoporosis condiciona mayor mortalidad, deterioro funcional y pérdida de independencia.  El diagnóstico oportuno mediante densitometría y la estratificación del riesgo usando herramientas como <i>FRAX</i> permiten iniciar tratamiento farmacológico o no farmacológico para reducir fracturas.  La prevención y tratamiento requieren abordar factores modificables (nutrición, ejercicio, caídas), tratar causas secundarias y utilizar agentes antiresortivos o anabólicos según el riesgo individual.</li>
+    </ul>
+
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Etiológica</b>: <b>primaria</b> (relacionada con envejecimiento y déficit estrogénico posmenopáusico) y <b>secundaria</b> (consecuencia de enfermedades o fármacos: déficit nutricional, endocrinopatías, inflamación crónica, neoplasias, fármacos).</li>
+      <li><b>Densitométrica (OMS 1994)</b>:</li>
+    </ul>
+    <table>
+      <tr><th>Clasificación</th><th>T‑score</th></tr>
+      <tr><td>Normal</td><td>≥ –1,0</td></tr>
+      <tr><td>Osteopenia</td><td>–1,0 a &lt; –2,5</td></tr>
+      <tr><td>Osteoporosis</td><td>≤ –2,5</td></tr>
+      <tr><td>Osteoporosis severa</td><td>≤ –2,5 + fractura por fragilidad</td></tr>
+    </table>
+
+    <h2>4. Fisiopatología</h2>
+    <p>El hueso es un tejido dinámico en el que los osteoclastos reabsorben matriz y los osteoblastos forman hueso nuevo.  La <b>osteoporosis</b> surge por un <b>desequilibrio entre resorción y formación</b> debido a disminución en la actividad de los osteoblastos y aumento de la actividad osteoclástica.  Factores clave incluyen la caída de estrógenos en la posmenopausia (que aumenta la expresión de <i>RANK‑L</i> y favorece la osteoclastogénesis), el envejecimiento con reducción en número y función de células progenitoras, déficits nutricionales (calcio/vitamina D), actividad física limitada, consumo de glucocorticoides y enfermedades crónicas inflamatorias.  La proteína RANK‑L sintetizada por osteoblastos se une a receptores RANK en osteoclastos, promoviendo su maduración; su antagonista <i>Osteoprotegerina</i> actúa como cebo y se reduce con la falta de estrógeno.  Además, factores como la interleucina‑6, PTH y glucocorticoides modulan la resorción.  El resultado es microarquitectura porosa, pérdida de conectividad trabecular y cortical y disminución de la resistencia mecánica.</p>
+
+    <h2>5. Etiología</h2>
+    <p>Además del deterioro asociado a la edad, diversas enfermedades y fármacos pueden inducir osteoporosis secundaria:</p>
+    <ul>
+      <li><b>Déficit nutricionales</b>: anorexia nerviosa, desnutrición, enfermedad celíaca, malabsorción, bypass gástrico, consumo excesivo de alcohol.</li>
+      <li><b>Enfermedades inflamatorias crónicas</b>: enfermedad inflamatoria intestinal, artritis reumatoide, lupus eritematoso sistémico, enfermedad pulmonar obstructiva crónica avanzada.</li>
+      <li><b>Endocrinopatías</b>: hipertiroidismo, hipopituitarismo, hiperparatiroidismo, hipogonadismo, síndrome de Cushing, diabetes mal controlada.</li>
+      <li><b>Neoplasias y hemopatías</b>: mieloma múltiple, neoplasias sólidas con metástasis óseas.</li>
+      <li><b>Fármacos</b>: glucocorticoides, inhibidores de la aromatasa, exceso de levotiroxina, anticonvulsivantes, heparina, inhibidores de la bomba de protones a largo plazo, tacrolimus y ciclosporina.</li>
+    </ul>
+
+    <h2>6. Diagnóstico</h2>
+    <p><b>Diagnóstico clínico‑densitométrico</b>.  La mayoría de los pacientes son asintomáticos hasta la fractura, por lo que el cribado es esencial en mujeres ≥ 65 años y hombres ≥ 70 años, así como en adultos más jóvenes con factores de riesgo.  La densitometría ósea mediante absorciometría de rayos X de doble energía (DXA) en columna lumbar y cadera proporciona el T‑score; el <i>FRAX</i> incorpora factores clínicos (edad, sexo, antecedentes familiares, tabaquismo, alcohol, corticoterapia, artritis reumatoide) para estimar el riesgo de fractura a 10 años y guiar la decisión terapéutica.</p>
+    <p><b>Presentación clínica</b>: en la fase silente se observa disminución de estatura, cifosis dorsal, distancia pared‑occipucio &gt; 0 cm, pérdida dental o dolor lumbar.  Las fracturas de vértebras pueden cursar con dolor agudo o crónico, deformidad e incapacidad.  La fractura de cadera se manifiesta con dolor inguinal intenso e imposibilidad de apoyar el peso.</p>
+    <p><b>Examen físico</b>: búsqueda de deformidades, cifosis, contracturas, analgesia local; evaluar equilibrio y marcha para estimar riesgo de caídas.  Deben investigarse signos de patologías secundarias (p. ej., facies cushingoide, hipertiroidismo).</p>
+    <p><b>Exámenes complementarios</b>: hemograma, VSG/PCR, calcio, fósforo, vitamina D, PTH, función renal y hepática, TSH; en casos seleccionados cortisol libre urinario, anticuerpos transglutaminasa, proteínas en suero y orina, niveles de testosterona o estrógenos y marcadores de remodelación ósea.  Las radiografías dorsolumbares laterales pueden revelar aplastamientos vertebrales.  El estudio sirve para descartar osteomalacia, enfermedad de Paget, mieloma o metástasis, que constituyen el diagnóstico diferencial.</p>
+
+    <h2>7. Tratamiento</h2>
+    <p><b>Empírico / medidas generales</b>: mantener un <i>IMC</i> ≥ 19 kg/m², aportar calcio dietético 1000–1200 mg/día y vitamina D 800–1000 UI/día para mantener niveles séricos &gt; 30 ng/ml, practicar ejercicio de fuerza y equilibrio (caminar, pesas, tai‑chi), suspender tabaco y limitar alcohol (≤ 2 tragos/día), corregir visión y riesgos domésticos para prevenir caídas.  Tratar condiciones asociadas (hipertiroidismo, hipogonadismo, enfermedad celíaca), optimizar control glucémico y prescribir suplementos de proteína cuando corresponda.</p>
+    <p><b>Dirigido / farmacológico</b>:</p>
+    <ul>
+      <li><b>Bifosfonatos</b>: inhiben la resorción osteoclástica e incrementan la densidad mineral.  <i>Alendronato</i> 70 mg/semana, <i>risedronato</i> 35 mg/semana o <i>ácido zoledrónico</i> 5 mg intravenoso al año reducen fracturas vertebrales y de cadera.  Tras 3 años de terapia intravenosa o 5 años de vía oral se reevalúa el riesgo; si es bajo se puede interrumpir temporalmente (“vacaciones terapéuticas”).  Efectos adversos: esofagitis, osteonecrosis mandibular y fracturas femorales atípicas (riesgo acumulado en tratamientos prolongados).</li>
+      <li><b>Denosumab</b>: anticuerpo monoclonal contra RANK‑L.  Dosis 60 mg subcutánea cada 6 meses.  Indicado en pacientes con intolerancia o fracaso a bifosfonatos o con riesgo muy alto de fractura.  Debe evitarse su interrupción abrupta; tras finalizar se recomienda transicionar a un bifosfonato para prevenir efecto rebote.</li>
+      <li><b>Anabólicos</b>: <i>Teriparatida</i> (análogos de PTH) 20 µg diarios durante un máximo de 2 años y <i>romosozumab</i> (anticuerpo anti‑esclerostina) mensual estimulan la formación de hueso; están reservados para pacientes con riesgo extremadamente alto (T‑score ≤ −3 o fracturas múltiples) o para aquellos que no responden a antiresortivos.  Tras el ciclo anabólico se continúa con un antiresortivo para consolidar las ganancias.</li>
+      <li><b>Otros</b>: moduladores selectivos del receptor de estrógeno (raloxifeno) en mujeres posmenopáusicas con contraindicaciones a otros fármacos; calcitonina intranasal como analgésico en fracturas vertebrales agudas; suplementos de vitamina D analogada en déficits graves.</li>
+      <li><b>💡</b> Ajustar la terapia al riesgo individual utilizando FRAX; en osteopenia con riesgo de fractura mayor ≥ 20 % o de cadera ≥ 3 % considerar tratamiento farmacológico.  Revisar adherencia y efectos adversos en cada consulta.</li>
+    </ul>
+
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles clínicos</b>: evaluar cada 6–12 meses peso, equilibrio, caídas y adherencia terapéutica.  Valorar aparición de dolores de cadera o muslos (posible fractura atípica).</li>
+      <li><b>Controles de laboratorio</b>: medir calcio, creatinina y 25‑OH‑vitamina D antes de iniciar tratamiento y periódicamente; monitorizar PTH en pacientes con denosumab; revisar hemograma y perfil hepático si se usan otros fármacos.</li>
+      <li><b>Densitometría ósea</b>: realizar DXA basal y repetir cada 1–2 años para valorar respuesta.  Un aumento de densidad o estabilidad sugiere eficacia; descenso significativo indica necesidad de reevaluar el tratamiento o investigar causas secundarias.</li>
+      <li><b>Duración del tratamiento</b>: bifosfonatos por 3–5 años con reevaluación; denosumab hasta 10 años con transición a bifosfonatos; terapia anabólica máximo 24 meses.  La suspensión debe planificarse para evitar rebote; las fracturas o disminución de densidad exigen prolongar o cambiar el régimen.</li>
+      <li><b>Complicaciones y criterios de éxito</b>: ausencia de nuevas fracturas y estabilización o incremento de BMD constituyen objetivos de éxito.  Aparecerán complicaciones como osteonecrosis mandibular, fracturas atípicas, hipocalcemia; requieren vigilancia dental, educación y derivación temprana al especialista.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 72: Lupus Eritematoso Sistémico -->
+  <section class="page">
+    <h1>72. Lupus Eritematoso Sistémico: Diagnóstico y tratamiento</h1>
+    <h2>1. Definición</h2>
+    <p><b>Enfermedad autoinmune crónica, multisistémica e inflamatoria</b> caracterizada por pérdida de la tolerancia inmunológica, producción de autoanticuerpos (anticuerpos antinucleares, anti‑DNA, anti‑Sm) y depósito de inmunocomplejos.  Puede afectar prácticamente cualquier órgano o sistema, cursa con periodos de remisión y brotes y presenta gran heterogeneidad clínica, desde manifestaciones cutáneo‑articulares leves hasta compromiso severo y potencialmente mortal de riñón, corazón, pulmón o sistema nervioso.</p>
+
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: prevalencia inferior al 0,1 % de la población, con clara predilección por mujeres jóvenes (relación mujer:hombre 10:1).  Es más frecuente y grave en personas de ascendencia africana o hispana; la edad típica de inicio es entre 15 y 45 años.  En hombres o en edades extremas el curso suele ser más agresivo y se asocia a mayor riesgo de nefritis.</li>
+      <li><b>Complicaciones y mortalidad</b>: la supervivencia ha mejorado pero la mortalidad sigue siendo 2–3 veces mayor que en la población general.  Durante los primeros 5 años las muertes suelen deberse a actividad lúpica o infecciones oportunistas; en fases tardías predominan enfermedad cardiovascular y neoplasias.  Hasta un 30–50 % de pacientes desarrolla nefritis lúpica, principal determinante de pronóstico, y la enfermedad cardiovascular es causa frecuente de muerte.</li>
+      <li><b>Asociaciones clínicas</b>: factores genéticos (HLA‑DR2/DR3), ambientales (luz ultravioleta, infección por virus de Epstein–Barr), farmacológicos (hidralazina, procainamida, isoniazida), hormonales (estrógenos) y epigenéticos contribuyen al desencadenamiento.  Existen asociaciones con otros trastornos autoinmunes como síndrome de Sjögren, antiphospholipid syndrome (SAF) y tiroiditis autoinmune.</li>
+      <li><b>Impacto diagnóstico y terapéutico</b>: el lupus es “el gran imitador” y requiere un alto índice de sospecha.  El diagnóstico combina criterios clínicos y serológicos según la clasificación EULAR/ACR 2019 (obligatorio ANA ≥ 1:80 y puntuación ≥ 10).  Su manejo debe ser multidisciplinario e individualizado; la terapia precoz con antimaláricos e inmunosupresores reduce daño orgánico, mientras que la prevención cardiovascular, vacunación y educación son fundamentales para mejorar el pronóstico a largo plazo.</li>
+    </ul>
+
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Por gravedad y sistema</b>: se distinguen formas cutáneo‑articulares (limitadas a piel y articulaciones), enfermedad sistémica no grave (con afectación moderada de órganos como serositis o hematológico) y lupus severo amenazante para la vida (nefritis proliferativa, neurolupus, hemofagocitosis, vasculitis severa).</li>
+      <li><b>Nefritis lúpica (ISN/RPS 2003)</b>: seis clases histológicas basadas en biopsia renal.  Las clases I–II son mesangiales (mínima proliferación), clase III focal y clase IV difusa proliferativa, clase V membranosa y clase VI esclerosis avanzada.  La clasificación orienta la elección de tratamientos de inducción y mantenimiento.</li>
+      <li><b>Criterios EULAR/ACR 2019</b>: después de cumplir ANA ≥ 1:80, se asignan puntos a dominios clínicos (constitucional, hematológico, neuropsiquiátrico, mucocutáneo, seroso, articular, renal) e inmunológicos (SAF, hipocomplementemia, anti‑DNA/anti‑Sm).  Diez o más puntos confirman la clasificación de lupus.</li>
+    </ul>
+
+    <h2>4. Fisiopatología</h2>
+    <p>El lupus resulta de una <b>disregulación compleja del sistema inmune</b>.  La susceptibilidad genética (polimorfismos en genes del complemento, receptores de Fc, interferón, Toll‑like) se combina con desencadenantes ambientales (radiación UV que induce apoptosis e inmunogenicidad de células nucleadas, infecciones virales, medicamentos) y hormonales (estrógenos aumentan la respuesta humoral).  La pérdida de tolerancia conduce a la formación de autoanticuerpos contra componentes nucleares; los inmunocomplejos depositados activan el complemento y desencadenan inflamación en tejidos blanco.  Existe una hiperactividad del interferón de tipo I, expansión de células B autoreactivas y linfocitos T auxiliares foliculares, y disminución de células T reguladoras.  Factores epigenéticos como hipometilación del DNA y miARN contribuyen al fenotipo.  Las exacerbaciones se deben a desequilibrio entre señales proinflamatorias y reguladoras.</p>
+
+    <h2>5. Etiología</h2>
+    <p>El lupus no tiene una causa única; su etiología es multifactorial.  Se reconocen:</p>
+    <ul>
+      <li><b>Genética</b>: múltiples loci confieren susceptibilidad; familiares de primer grado tienen mayor riesgo.</li>
+      <li><b>Factores ambientales</b>: exposición a luz ultravioleta, infecciones (virus Epstein–Barr, citomegalovirus), tabaquismo, toxinas, estrés emocional.</li>
+      <li><b>Fármacos</b>: hidralazina, procainamida, isoniazida, anti‑TNF pueden inducir lupus medicamentoso; suele ser reversible al suspender el agente.</li>
+      <li><b>Hormonas y género</b>: el predominio femenino y la aparición durante la edad reproductiva sugieren el papel de los estrógenos; el embarazo puede exacerbar la enfermedad.</li>
+    </ul>
+
+    <h2>6. Diagnóstico</h2>
+    <p><b>Diagnóstico clínico‑inmunológico</b>.  Tras documentar ANA ≥ 1:80 mediante inmunofluorescencia, se evalúan manifestaciones clínicas y anticuerpos específicos.  El diagnóstico diferencial incluye artritis reumatoide, dermatomiositis, infecciones (p. ej., parvovirus B19), síndromes autoinflamatorios, lupus inducido por fármacos y vasculitis.</p>
+    <p><b>Presentación clínica</b>: los síntomas constitucionales (fatiga, fiebre, pérdida de peso) ocurren en 70 % de los pacientes; el compromiso mucocutáneo se manifiesta con fenómeno de Raynaud, úlceras orales, alopecia, rash malar, lesiones anulares o discoides y fotosensibilidad.  La artritis lúpica es no erosiva, poliarticular y simétrica.  La serositis puede causar pleuritis, pericarditis y ascitis.  El compromiso hematológico incluye anemia inflamatoria o hemolítica, trombocitopenia y leucopenia/linfopenia.  La nefritis se presenta con proteinuria, hematuria, cilindros hemáticos, hipertensión y deterioro renal.  El compromiso neurológico abarca deterioro cognitivo, psicosis, cefalea, accidente cerebrovascular, mielitis transversa; el compromiso periférico puede ser neuropatía sensitivo‑motora o mononeuritis múltiple.  Otras manifestaciones son síndrome de Sjögren secundario, vasculitis cutánea, enfermedad pulmonar intersticial y endocarditis de Libman‑Sacks.</p>
+    <p><b>Examen físico</b>: explorar piel y mucosas, buscar alopecia difusa, eritema malar que no respeta surcos nasogenianos, úlceras mucosas, lesiones discoides y anulares.  Palpar articulaciones en busca de sinovitis no deformante; auscultar ruidos cardiacos y respiratorios para detectar roces pleuropericárdicos; medir presión arterial y evaluar edema; examinar signos neurológicos focales y estado mental.  Realizar examen oftalmológico basal cuando se prescriba hidroxicloroquina.</p>
+    <p><b>Exámenes complementarios</b>: hemograma (anemia, leucopenia, trombocitopenia), VSG/CRP, creatinina y depuración de creatinina, examen de orina con sedimento y proteinuria en 24 h, complementos C3/C4 (descenso indica actividad), ANA por inmunofluorescencia, anticuerpos anti‑DNA de doble cadena, anti‑Sm, anti‑Ro/La, anti‑RNP, antifosfolípidos (anticardiolipina, anti‑β2GP1 y anticoagulante lúpico), perfil hepático y tiroideo.  En casos seleccionados se realiza biopsia renal o cutánea.</p>
+
+    <h2>7. Tratamiento</h2>
+    <p><b>Medidas generales</b>: protección solar (ropa, sombreros, filtros ≥ 50), evitar tabaquismo (interfiere con eficacia de hidroxicloroquina y belimumab), ejercicio regular adaptado al estado físico, alimentación balanceada, vacunas al día (no vivas durante inmunosupresión intensa) y manejo de factores de riesgo cardiovascular.  La hidroxicloroquina ≤ 5 mg/kg/día se recomienda en todos los pacientes por su efecto sobre brotes, mortalidad, trombosis y dislipidemia; requiere control oftalmológico basal y anual tras 5 años de uso.</p>
+    <p><b>Empírico</b>: para pacientes con SAF se indica aspirina a dosis bajas como prevención primaria y anticoagulación indefinida con antagonistas de vitamina K en prevención secundaria.  El control de la proteinuria mediante inhibidores del eje renina‑angiotensina y, más recientemente, inhibidores de SGLT‑2 proporciona protección renal.</p>
+    <p><b>Inmunosupresores convencionales</b>:</p>
+    <ul>
+      <li><b>Glucocorticoides</b>: administrados en la menor dosis y duración posible.  Prednisona oral a 0,1–1 mg/kg/día controla brotes leves a moderados; en brotes severos o compromiso de órganos vitales se utilizan pulsos de metilprednisolona 500–1000 mg/día durante 1–3 días.</li>
+      <li><b>Micofenolato mofetilo</b>: 2–3 g/día en inducción y 1–2 g/día en mantenimiento de la nefritis proliferativa (clase III/IV/V), neurolupus o enfermedad severa multiorgánica.</li>
+      <li><b>Ciclofosfamida</b>: 500 mg IV cada 2 semanas durante 3 meses (esquema Euro‑Lupus) para nefritis proliferativa grave o neurolupus.  Su uso se reserva a casos amenazantes para la vida y se asocia a gonadotoxicidad.</li>
+      <li><b>Azatioprina</b>: 1–2 mg/kg/día como mantenimiento después de la inducción, especialmente en mujeres que deseen embarazo; también útil en lupus hematológico.</li>
+      <li><b>Metotrexato</b>: 10–25 mg/semana para control de artritis persistente y lupus cutáneo; requiere ácido fólico suplementario.</li>
+      <li><b>Tacrolimus</b>: 0,05–0,1 mg/kg/día oral como opción en nefritis lúpica con proteinuria persistente o en combinación con otros agentes.</li>
+    </ul>
+    <p><b>Biológicos</b>:</p>
+    <ul>
+      <li><b>Belimumab</b> (anticuerpo anti‑BAFF): 10 mg/kg IV cada 4 semanas o 200 mg SC semanalmente; indicado en lupus refractario con afectación articular, cutánea u hematológica leve.  Se utiliza como adyuvante en nefritis lúpica activa.</li>
+      <li><b>Rituximab</b> (anti‑CD20): 375 mg/m² semanal × 4 dosis o 1 g cada 2 semanas × 2; reservado para compromisos hematológicos severos, neurolupus o nefritis lúpica refractaria, especialmente clase V.  Puede combinarse con ciclofosfamida en casos muy graves.</li>
+    </ul>
+    <p><b>Nefritis lúpica</b>: la terapia de inducción de 6 meses para la clase III/IV ± V combina micofenolato o ciclofosfamida con glucocorticoides y, en los últimos años, belimumab o inhibidores de calcineurina (como tacrolimus o ciclosporina).  La terapia de mantenimiento dura al menos 3–5 años, siendo micofenolato el fármaco de elección; azatioprina es alternativa en mujeres que planifican embarazo.  En la nefritis membranosa pura (clase V) se recomienda bloqueo del sistema renina‑angiotensina, control estricto de la presión arterial y, según el nivel de proteinuria, inmunosupresión con micofenolato o un inhibidor de calcineurina.  En casos con proteinuria nefrótica se inicia micofenolato 2–3 g/día combinado con glucocorticoides; si no hay respuesta a 6 meses se cambia a tacrolimus o se añade rituximab.</p>
+    <p><b>💡</b> Individualizar el tratamiento según actividad y daño acumulado, edad, deseo de fertilidad y comorbilidades.  Minimizar la exposición a glucocorticoides e instruir al paciente sobre adherencia y reconocimiento temprano de brotes.</p>
+
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles</b>: se programan visitas cada 3–6 meses con evaluación clínica (síntomas constitucionales, actividad articular y cutánea, presión arterial, peso), examen de orina y proteinuria, hemograma, perfil bioquímico, C3/C4 y anti‑DNA para monitorizar actividad.  La evaluación de actividad puede realizarse con índices como SLEDAI o BILAG.</li>
+      <li><b>Laboratorios</b>: monitorizar toxicidad de medicamentos (transaminasas y hemograma con azatioprina o metotrexato; función renal con tacrolimus; recuento de linfocitos B CD19+ tras rituximab).  Ajustar dosis de hidroxicloroquina en función de filtrado glomerular y peso.</li>
+      <li><b>Duración y controles posteriores</b>: mantener antimaláricos indefinidamente mientras no exista contraindicación; continuar inmunosupresión de mantenimiento al menos 24–48 meses tras remisión completa de nefritis; suspender gradualmente bajo supervisión.  Planificar el embarazo durante períodos de remisión y utilizar agentes compatibles (hidroxicloroquina, azatioprina).</li>
+      <li><b>Complicaciones y criterios de éxito</b>: ausencia de brotes clínicos, estabilización o normalización de complementos y anti‑DNA, preservación de función renal y disminución del daño acumulado.  Las complicaciones incluyen infecciones oportunistas, toxicidad medicamentosa, osteonecrosis, osteoporosis, eventos trombóticos y cardiovascular; requieren profilaxis (trimetoprim‑sulfametoxazol en tratamientos prolongados con esteroides > 20 mg/día, calcio/vitamina D, estatinas y aspirina según riesgo).  Las recidivas suelen asociarse a suspensión de tratamiento o infecciones y exigen ajuste terapéutico.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 73: Artritis Reumatoidea -->
+  <section class="page">
+    <h1>73. Artritis Reumatoidea: Diagnóstico y tratamiento</h1>
+    <h2>1. Definición</h2>
+    <p><b>Enfermedad autoinmune sistémica crónica</b> caracterizada por inflamación persistente y simétrica de las articulaciones sinoviales que conduce a destrucción progresiva de cartílago y hueso.  La enfermedad puede acompañarse de manifestaciones extra‑articulares (piel, ojos, pulmones, corazón, sistema nervioso) y conlleva pérdida de funcionalidad, discapacidad y aumento de la mortalidad.</p>
+
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: prevalencia mundial de 0,5–1 %, con predominio femenino (2–3 : 1).  Puede iniciarse a cualquier edad, con pico de incidencia entre 50 y 60 años.  Los autoanticuerpos (factor reumatoide [FR] y anticuerpos anti‑péptidos citrulinados [anti‑CCP]) están presentes en 75–80 % de los casos.</li>
+      <li><b>Complicaciones</b>: cursa con disminución de la calidad de vida y capacidad laboral.  La inflamación sistémica aumenta el riesgo de enfermedad cardiovascular, osteoporosis y linfoma.  El pronóstico es peor en presencia de anti‑CCP de alto título, daño radiográfico temprano o fallo a dos o más DMARD convencionales.</li>
+      <li><b>Asociaciones</b>: factores genéticos (HLA‑DRB1 alelos de “epítopo compartido”), ambientales (tabaquismo, obesidad, microbiota intestinal, enfermedad periodontal, exposición a sílice), y factores hormonales y epigenéticos predisponen a la pérdida de tolerancia inmunológica con generación de autoanticuerpos.</li>
+      <li><b>Impacto diagnóstico/terapéutico</b>: el diagnóstico temprano y el inicio rápido de terapia modificadora de la enfermedad son cruciales para prevenir daño irreversible y discapacidad.  Las estrategias <i>treat‑to‑target</i> buscan alcanzar la remisión o baja actividad mediante ajuste frecuente de la terapia basada en índices de actividad como DAS28.  El acceso a medicamentos biológicos (p. ej., Ley Ricarte Soto en Chile) está reservado a casos de enfermedad severa refractaria.</li>
+    </ul>
+
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Serológica</b>: <b>seropositiva</b> (FR y/o anti‑CCP positivos) y <b>seronegativa</b> (autoanticuerpos negativos).  La forma seropositiva suele tener evolución más agresiva.</li>
+      <li><b>Duración</b>: <b>artritis temprana</b> (&lt; 6 meses de síntomas), <b>establecida</b> (≥ 6 meses) y <b>remisión</b> (DAS28 &lt; 2,6).  La identificación de artritis temprana permite iniciar tratamiento intensivo.</li>
+      <li><b>Criterios de clasificación EULAR/ACR 2010</b>: asignan puntos según número y tamaño de articulaciones afectadas (0–5 p), serología (FR y anti‑CCP; 0–3 p), reactantes de fase aguda (VSG o PCR; 0–1 p) y duración de síntomas (0–1 p).  Un total ≥ 6 puntos confirma la clasificación de artritis reumatoide.</li>
+      <li><b>Actividad</b>: se evalúa mediante índices como <b>DAS28</b> (incluye recuento de 28 articulaciones dolorosas e inflamadas, PCR/VSG y percepción global del paciente).  DAS28 &lt; 2,6 define remisión; 2,6–3,2 actividad baja; 3,2–5,1 moderada; &gt; 5,1 alta.</li>
+    </ul>
+
+    <h2>4. Fisiopatología</h2>
+    <p>La artritis reumatoidea resulta de la interacción de predisposición genética (alelos HLA‑DRB1 que comparten el epítopo “QKRAA”), factores ambientales y modificaciones epigenéticas.  El tabaquismo, la gingivitis por <i>Porphyromonas gingivalis</i> y agentes virales inducen citrulinación de proteínas; la presentación de péptidos citrulinados a células T provoca activación de linfocitos B y producción de autoanticuerpos (anti‑CCP, FR) años antes de los síntomas.  La sinovitis crónica se perpetúa por infiltración de linfocitos T CD4+, macrófagos y células plasmáticas; se liberan citoquinas proinflamatorias (TNF‑α, IL‑6, IL‑1) que activan fibroblastos sinoviales y osteoclastos, formando un tejido de granulación (“pannus”) que erosiona cartílago y hueso.  Los anticuerpos promueven la formación de complejos inmunes y activación complementaria.  La inflamación sistémica contribuye a aterogénesis y osteoporosis.</p>
+
+    <h2>5. Etiología</h2>
+    <p>La causa exacta es desconocida; contribuyen:</p>
+    <ul>
+      <li><b>Factores genéticos</b>: alelos HLA‑DRB1, PTPN22, STAT4.</li>
+      <li><b>Factores ambientales</b>: tabaquismo (principal factor de riesgo; aumenta citrulinación pulmonar), exposición ocupacional a sílice, obesidad, enfermedad periodontal e infecciones (Epstein–Barr, virus del sarampión).  Las bacterias intestinales <i>Prevotella copri</i> pueden inducir autoinmunidad.</li>
+      <li><b>Factores hormonales y metabólicos</b>: el predominio femenino sugiere influencia de estrógenos; el riesgo disminuye durante el embarazo y aumenta en el posparto.</li>
+    </ul>
+
+    <h2>6. Diagnóstico</h2>
+    <p><b>Diagnóstico clínico</b>: se basa en una artritis inflamatoria de más de 6 semanas que afecta típicamente a pequeñas articulaciones de manos y pies de forma simétrica, acompañada de rigidez matutina &gt; 30 minutos y sin explicación alternativa.  En estadios tempranos las radiografías pueden ser normales, por lo que la ecografía o la resonancia magnética ayudan a detectar sinovitis y erosiones precoces.</p>
+    <p><b>Presentación clínica</b>: poliartritis crónica, rigidez y dolor de articulaciones metacarpofalángicas, interfalángicas proximales, metatarsofalángicas y muñecas.  Las articulaciones grandes (codos, hombros, rodillas, tobillos) pueden afectarse.  La desviación cubital, deformidades en “cuello de cisne” y “botonera” surgen en enfermedad avanzada.  Manifestaciones extra‑articulares incluyen nódulos reumatoideos subcutáneos, vasculitis cutánea, síndrome de Felty (neutropenia/esplenomegalia), enfermedad intersticial pulmonar, pleuritis, pericarditis, epiescleritis, síndrome del túnel carpiano y osteoporosis secundaria.</p>
+    <p><b>Examen físico</b>: evaluación sistemática de articulaciones para sinovitis, dolor a la presión, rango de movimiento y deformidades; búsqueda de nódulos reumatoideos en codos y dedos; examen de piel y uñas; auscultación cardiopulmonar; palpación de abdomen para esplenomegalia.</p>
+    <p><b>Exámenes complementarios</b>: hemograma (anemia normocítica, trombocitosis), PCR/VSG elevadas, factor reumatoide (sensibilidad ~70 %, especificidad 70–80 %), anti‑CCP (sensibilidad 70–75 %, especificidad > 95 %), anticuerpos antinucleares (positivos en 30 %), perfil hepático y renal antes de iniciar fármacos, pruebas de tuberculosis y hepatitis B/C antes de biológicos.  Radiografías de manos y pies para detectar erosiones marginales y pérdida del espacio articular; ecografía y resonancia permiten cuantificar sinovitis y erosiones tempranas.</p>
+    <p><b>Diagnóstico diferencial</b>: osteoartritis (afecta articulaciones interfalángicas distales y empeora con el uso), artritis psoriásica, gota/pseudogota (ataques agudos, cristales en líquido sinovial), lupus eritematoso sistémico (artritis no erosiva con ANA positivos), infecciones virales (parvovirus B19) y síndromes autoinflamatorios.</p>
+
+    <h2>7. Tratamiento</h2>
+    <p><b>Medidas no farmacológicas</b>: educación del paciente, suspensión del tabaco (reduce actividad y mejora respuesta a fármacos), programas de rehabilitación física y ocupacional para preservar la función, control del peso y dieta equilibrada con suplementación de calcio y vitamina D, ejercicio aeróbico de bajo impacto y entrenamiento de fuerza para mantener masa muscular, y prevención de comorbilidades cardiovasculares.</p>
+    <p><b>Farmacológico</b>:</p>
+    <ul>
+      <li><b>Analgesia / AINEs</b>: proporcionan alivio sintomático pero no modifican la progresión; usar la dosis eficaz más baja.  Evitar uso prolongado por riesgo de gastritis, nefrotoxicidad y efectos cardiovasculares.</li>
+      <li><b>Glucocorticoides</b>: útiles como puente terapéutico en dosis bajas (prednisona ≤ 5 mg/día) o pulsos cortos para brotes; deben suspenderse lo antes posible por efectos adversos (osteoporosis, diabetes, hipertensión).</li>
+      <li><b>DMARD convencionales</b> (fármacos modificadores de la enfermedad):
+        <ul>
+          <li><b>Metotrexato</b> es el pilar del tratamiento inicial: 15–25 mg/semana por vía oral o subcutánea; se acompaña de folato 5 mg/semana para disminuir toxicidad.  Ajustar según función renal y hepática.</li>
+          <li><b>Leflunomida</b> 20 mg/día como alternativa o complementaria a metotrexato; requiere control de transaminasas y presión arterial.</li>
+          <li><b>Sulfasalazina</b> hasta 3 g/día; opción para mujeres embarazadas o con contraindicación a metotrexato.</li>
+          <li><b>Hidroxicloroquina</b> 200–400 mg/día, especialmente útil en formas leves y seronegativas; mejora fatiga y dislipidemia.  Requiere control oftalmológico.</li>
+        </ul>
+      </li>
+      <li><b>DMARD biológicos y moléculas pequeñas</b> (para pacientes con actividad persistente pese a DMARD convencionales):
+        <ul>
+          <li><b>Inhibidores del TNF‑α</b>: etanercept, adalimumab, infliximab, certolizumab y golimumab; eficaces en 50–60 % de pacientes con respuesta insuficiente a metotrexato.  Requieren screening de tuberculosis y hepatitis.</li>
+          <li><b>Inhibidores de IL‑6</b>: tocilizumab (iv o sc) y sarilumab; mejoran signos articulares y parámetros agudos; útiles en pacientes con respuesta inadecuada a anti‑TNF.</li>
+          <li><b>Inhibidores de la coestimulación</b>: abatacept (fusionado de CTLA‑4) reduce activación de linfocitos T.</li>
+          <li><b>Depleción de células B</b>: rituximab se usa en seropositivos con enfermedad refractaria o con manifestaciones extra‑articulares graves.</li>
+          <li><b>Inhibidores de JAK</b>: tofacitinib, baricitinib, upadacitinib; son moléculas sintéticas orales que bloquean señales de citoquinas; pueden usarse como alternativa o en combinación con metotrexato.</li>
+        </ul>
+      </li>
+      <li><b>Estrategia treat‑to‑target</b>: iniciar metotrexato lo antes posible, evaluar actividad cada 1–3 meses y ajustar dosis o añadir fármacos hasta alcanzar remisión (DAS28 &lt; 2,6) o actividad baja.  Si no hay respuesta a 2–3 DMARD convencionales en dosis máximas, considerar biológicos o inhibidores de JAK según disponibilidad y perfil de seguridad.  En Chile, la Ley Ricarte Soto financia biológicos en casos de enfermedad severa con DAS &gt; 5,1 pese a 3 DMARD por ≥ 6 meses.</li>
+      <li><b>💡</b> Antes de iniciar biológicos realizar pruebas de tuberculosis (PPD o IGRA), hepatitis B/C y vacunación contra neumococo e influenza; durante el tratamiento controlar infecciones, perfil lipídico y citopenias.</li>
+    </ul>
+
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Evaluaciones periódicas</b>: monitorizar la actividad (DAS28) cada 1–3 meses al inicio y luego cada 3–6 meses.  Ajustar medicación según respuesta y tolerancia.  Realizar radiografías de manos y pies cada 1–2 años para evaluar progresión.</li>
+      <li><b>Laboratorios</b>: hemograma, transaminasas y creatinina antes y durante la terapia con metotrexato, leflunomida y sulfasalazina; perfil lipídico y enzimas hepáticas con inhibidores JAK; medir ácido fólico y vitamina B12; revisar frecuencia de infecciones.</li>
+      <li><b>Duración y controles posteriores</b>: la terapia modificadora suele ser de por vida; se puede considerar reducción gradual en remisión sostenida, manteniendo la vigilancia.  Suspender glucocorticoides tan pronto como sea posible.  En mujeres en edad fértil planificar embarazo y suspender metotrexato y leflunomida (requieren lavado con colestiramina).</li>
+      <li><b>Complicaciones, recidivas y éxito</b>: el éxito se define por remisión clínica, normalización de marcadores inflamatorios y ausencia de erosiones nuevas.  Vigilar complicaciones por fármacos (hepatotoxicidad, mielosupresión, infecciones oportunistas, trombosis, hipercolesterolemia) y comorbilidades (enfermedad cardiovascular, osteoporosis, depresión).  Utilizar suplementos de calcio/vitamina D, densitometría ósea y profilaxis anti‑reabsortiva para prevenir osteoporosis asociada a glucocorticoides.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 74: Gota -->
+  <section class="page">
+    <h1>74. Gota: Diagnóstico y tratamiento</h1>
+    <h2>1. Definición</h2>
+    <p><b>Enfermedad metabólica inflamatoria crónica</b> debida al depósito de cristales de <b>urato monosódico</b> en articulaciones y tejidos periarticulares secundario a hiperuricemia persistente.  La hiperuricemia se define por uricemia &gt; 7 mg/dl en hombres y &gt; 6 mg/dl en mujeres; sin embargo, sólo una fracción de los sujetos hiperuricémicos desarrollará gota clínica.</p>
+
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: la gota es la artropatía inflamatoria más frecuente.  La prevalencia global es del 1–4 % con predominio masculino (2–4:1) y aumento de incidencia a partir de la quinta década.  La hiperuricemia severa (&gt; 10 mg/dl) conlleva un riesgo de gota de menos del 50 % a 15 años.</li>
+      <li><b>Complicaciones</b>: las crisis agudas causan dolor intenso, edema y limitación funcional; la gota tofácea crónica produce erosiones óseas, deformidades y discapacidad.  La hiperuricemia se asocia a hipertensión, enfermedad renal crónica, nefrolitiasis, síndrome metabólico y aumento de mortalidad cardiovascular.</li>
+      <li><b>Asociaciones</b>: factores de riesgo incluyen sexo masculino, obesidad, hipertensión arterial, diabetes tipo 2, dislipidemia, enfermedad renal crónica, dieta rica en purinas (carnes rojas, mariscos), alcohol (cerveza, vino), bebidas azucaradas con fructosa y fármacos (diuréticos tiazídicos y de asa, ciclosporina, tacrolimus, aspirina baja dosis).  Variantes genéticas en transportadores renales (ABCG2, SLC2A9) predisponen a hiperuricemia.</li>
+      <li><b>Impacto diagnóstico/terapéutico</b>: la identificación de una crisis aguda y el inicio precoz de tratamiento antiinflamatorio reducen la duración y dolor de la artritis.  La intervención en el estilo de vida y la terapia hipouricemiante a dosis ajustadas disminuyen recidivas y previenen tofos y daño articular.  Se debe valorar la presencia de comorbilidades para optimizar el manejo integral.</li>
+    </ul>
+
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Por fase clínica</b>:
+        <ul>
+          <li><b>Gota aguda intermitente</b>: crisis autolimitadas de artritis monoarticular u oligoarticular que duran días a semanas con períodos asintomáticos entre episodios.</li>
+          <li><b>Gota tofácea crónica</b>: depósito crónico de cristales con formación de tofos subcutáneos (nódulos amarillentos en articulaciones, bursas, tendones); cursa con artritis crónica poliarticular, erosiones óseas y rigidez.</li>
+        </ul>
+      </li>
+      <li><b>Por etiología de la hiperuricemia</b>:
+        <ul>
+          <li><b>Sobreproducción</b>: déficit de HGPRT (síndrome de Lesch–Nyhan), enfermedades mieloproliferativas, hemólisis, consumo excesivo de purinas, alcohol, quimioterapia.</li>
+          <li><b>Subexcreción renal</b> (90 % de casos): insuficiencia renal, resistencia a insulina, uso de diuréticos, acidemia láctica, hipertensión.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>4. Fisiopatología</h2>
+    <p>El ácido úrico es el producto final del metabolismo de purinas; los humanos carecen de uricasa, por lo que se elimina principalmente por filtración, reabsorción y secreción en el túbulo proximal renal y parcialmente por el tracto gastrointestinal.  La hiperuricemia persistente provoca sobresaturación y precipitación de cristales de urato monosódico.  Durante una crisis, cambios bruscos de uricemia (por trauma, consumo de alcohol, transgresiones dietéticas o inicio de terapia hipouricemiante) desencadenan nucleación de cristales.  Los cristales activan receptores toll‑like y el inflamasoma NLRP3 en macrófagos, liberando interleucina‑1β y otros mediadores proinflamatorios que atraen neutrófilos y producen una respuesta inflamatoria intensa y autolimitada.  Con el tiempo, los cristales se depositan en tejidos periarticulares y subcutáneos formando tofos.</p>
+
+    <h2>5. Etiología</h2>
+    <ul>
+      <li><b>Factores no modificables</b>: sexo masculino, edad avanzada, predisposición genética (mutaciones en transportadores de urato, síndrome de Lesch–Nyhan).</li>
+      <li><b>Factores modificables</b>: dieta rica en purinas (carnes rojas, vísceras, mariscos), bebidas azucaradas con fructosa, alcohol (cerveza, licores), consumo excesivo de fructosa y jarabes de maíz, aumento de peso, sedentarismo.</li>
+      <li><b>Comorbilidades</b>: hipertensión, síndrome metabólico, insulinorresistencia, insuficiencia renal crónica, psoriasis, hipotiroidismo.</li>
+      <li><b>Fármacos</b>: diuréticos tiazidas y de asa, aspirina a bajas dosis, ciclosporina, tacrolimus, pirazinamida, etambutol, niacina, ribavirina, levodopa.</li>
+    </ul>
+
+    <h2>6. Diagnóstico</h2>
+    <p><b>Diagnóstico de certeza</b> mediante identificación de cristales de urato monosódico en líquido sinovial o material de tofo usando microscopio de luz polarizada: cristales con forma de aguja y birrefringencia negativa.  Sin embargo, en la práctica clínica se puede realizar diagnóstico presuntivo ante ataque monoarticular típico en paciente con hiperuricemia conocida y ausencia de causas secundarias.</p>
+    <p><b>Presentación clínica</b>: las crisis agudas se caracterizan por inicio brusco de dolor intenso y tumefacción en una articulación (frecuentemente la primera metatarsofalángica o <i>podagra</i>), con rubor, calor y limitación funcional.  El dolor alcanza su pico en &lt; 24 h y se resuelve en días o semanas.  Los factores precipitantes incluyen dietas ricas en purinas, alcohol, traumatismos o enfermedades agudas.  La segunda fase (gotosa crónica) presenta tofos, artritis crónica con erosiones y deformidad, y nefrolitiasis.</p>
+    <p><b>Examen físico</b>: evaluar articulación afectada buscando calor, eritema y dolor extremo al movimiento pasivo; palpar tofos en orejas, codos, dedos, bursas y tendón de Aquiles; explorar signos de hipertensión o enfermedad renal.</p>
+    <p><b>Exámenes complementarios</b>: ácido úrico sérico (puede ser normal durante la crisis), hemograma y reactantes de fase aguda (VSG/CRP elevadas), creatinina y filtrado glomerular, examen de orina para detectar cristales y hematuria.  La ecografía articular muestra el signo del doble contorno (capa ecogénica sobre el cartílago hialino), el signo de tormenta de nieve (eco puntiforme en líquido sinovial) y presencia de tofos intraarticulares.  La radiografía en fases iniciales puede ser normal; en enfermedad avanzada muestra erosiones en sacabocado con bordes escleróticos y respetando el espacio articular hasta etapas tardías.</p>
+    <p><b>Diagnóstico diferencial</b>: artritis séptica (fiebre, neutrofilia, cultivo de líquido sinovial positivo), artritis reactiva, pseudogota (cristales de pirofosfato de calcio; birrefringencia positiva), osteoartritis, artritis reumatoide y trauma.</p>
+
+    <h2>7. Tratamiento</h2>
+    <p><b>Tratamiento de la crisis aguda</b>:</p>
+    <ul>
+      <li><b>Colchicina</b>: 0,5 mg cada 8 h durante 3–5 días (se puede iniciar con 1 mg y repetir 0,5 mg a la hora).  Ajustar dosis en insuficiencia renal o hepática.  Efectos adversos: diarrea, vómitos, mielosupresión.</li>
+      <li><b>Antiinflamatorios no esteroideos (AINEs)</b>: indometacina 50 mg/8 h, naproxeno 500 mg/12 h o ibuprofeno a dosis plenas hasta 5–10 días; contraindicados en insuficiencia renal o úlcera péptica.</li>
+      <li><b>Corticoides</b>: prednisona 30–40 mg/día por vía oral durante 3–5 días con reducción progresiva; intraarticular (40 mg metilprednisolona) en monoartritis con contraindicación a AINEs/colchicina.  Para crisis severas refractarias se pueden usar pulsos de corticoide intravenoso.</li>
+      <li><b>Inhibidores de IL‑1</b>: anakinra (100 mg/día SC durante 3 días) o canakinumab (150 mg SC único) en crisis resistentes o con contraindicación a tratamientos convencionales.  Deben reservarse para casos seleccionados.</li>
+      <li><b>💡</b> Iniciar el tratamiento lo antes posible (idealmente en las primeras 24 h) para mejorar la respuesta y acortar la duración del brote.  Continuar la terapia hipouricemiante si ya está instaurada; no suspenderla durante la crisis.</li>
+    </ul>
+    <p><b>Tratamiento crónico / hipouricemiante</b>:</p>
+    <ul>
+      <li><b>Medidas no farmacológicas</b>: dieta hipopurínica (reducir consumo de carnes rojas, vísceras, mariscos, bebidas azucaradas; aumentar consumo de lácteos descremados, cereales integrales, frutas y verduras), perder peso si hay obesidad, realizar actividad física regular, disminuir consumo de alcohol (especialmente cerveza y licor) y evitar bebidas con fructosa.  Ajustar fármacos que elevan uricemia (cambiar diuréticos por antagonistas del calcio o losartán) y tratar comorbilidades (hipertensión, diabetes, dislipidemia).</li>
+      <li><b>Urate‑lowering therapy (ULT)</b>: indicada en pacientes con uno o más tofos, daño articular radiográfico, ≥ 2 crisis al año, o con nefropatía urática, litiasis renal, uricemia persistente &gt; 9 mg/dl o enfermedad renal crónica estadio ≥ 3.  La meta es uricemia &lt; 6 mg/dl, y &lt; 5 mg/dl si hay tofos.  Durante la introducción de ULT se recomienda profilaxis antiinflamatoria con colchicina 0,5 mg/día o AINEs durante al menos 3–6 meses para prevenir brotes asociados al descenso de urato.</li>
+      <li><b>Xantina oxidasa inhibidores</b>:
+        <ul>
+          <li><b>Alopurinol</b>: fármaco de primera línea; iniciar con 100 mg/día (50 mg si hay filtrado glomerular &lt; 60 ml/min) y titular cada 2–4 semanas hasta lograr el objetivo, usualmente 300–800 mg/día.  Efectos adversos: exantema, leucopenia; el síndrome de hipersensibilidad al alopurinol (HLA‑B*58:01 en población asiática) es raro pero grave.</li>
+          <li><b>Febuxostat</b>: 40 – 80 mg/día; indicado en intolerancia o fracaso de alopurinol o en enfermedad renal avanzada, aunque existe controversia sobre su seguridad cardiovascular (CARES 2018 mostró mayor mortalidad CV, mientras FAST 2020 no encontró diferencias significativas).</li>
+        </ul>
+      </li>
+      <li><b>Uricosúricos</b>: probenecid 250–1000 mg/12 h aumenta la excreción renal de urato; requiere función renal preservada y buena ingesta de líquidos.  Contraindicado en nefrolitiasis o depuración de creatinina &lt; 50 ml/min.</li>
+      <li><b>Agentes biológicos</b>: pegloticase (uricasa recombinante) 8 mg IV cada 2 semanas para gota tofácea refractaria; reduce rápidamente los tofos pero puede provocar reacciones infusionales e inmunogenicidad.</li>
+    </ul>
+
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles clínicos</b>: revisar cada 3–6 meses frecuencia y severidad de crisis, presencia de tofos, adherencia al tratamiento y factores precipitantes.  Evaluar comorbilidades asociadas (hipertensión, obesidad, diabetes, dislipidemia) y ajustarlas.</li>
+      <li><b>Monitoreo del ácido úrico</b>: medir uricemia cada 4–6 semanas durante titulación de ULT y luego cada 6 meses; ajustar dosis de alopurinol o febuxostat hasta alcanzar la meta.  También medir función renal y hepática periódicamente.</li>
+      <li><b>Duración del tratamiento</b>: la ULT es crónica y, en muchos casos, indefinida.  La suspensión puede llevar a recidivas.  El tratamiento antiinflamatorio profiláctico se mantiene por 3–6 meses; suspenderlo sólo cuando los niveles de urato estén en meta y no haya crisis.</li>
+      <li><b>Complicaciones</b>: vigilar efectos adversos de medicamentos (rash, diarrea, alteración hepática con alopurinol/febuxostat; cálculos renales con uricosúricos).  El éxito se valora por reducción del ácido úrico, desaparición de crisis y reabsorción de tofos.  La persistencia de crisis o tofos a pesar de uricemia en meta sugiere mala adherencia, uso de diuréticos, enfermedad renal o necesidad de aumentar la dosis o cambiar de fármaco.</li>
+    </ul>
+  </section>
+
+  <!-- Tema 75: Vasculitis -->
+  <section class="page">
+    <h1>75. Vasculitis: Diagnóstico diferencial y tratamiento</h1>
+    <h2>1. Definición</h2>
+    <p><b>Grupo heterogéneo de enfermedades caracterizadas por inflamación de la pared de los vasos sanguíneos</b> (arterias, arteriolas, capilares, vénulas o venas) que ocasiona estenosis u oclusión con isquemia, debilitamiento con formación de aneurismas y hemorragia por ruptura.  Pueden afectar un solo órgano o ser sistémicas y comprometer múltiples territorios, explicando la diversidad de manifestaciones clínicas.</p>
+
+    <h2>2. Importancia clínica</h2>
+    <ul>
+      <li><b>Epidemiología</b>: la incidencia global es baja (decenas de casos por millón/año) pero cada tipo muestra características distintivas: la arteritis de células gigantes (ACG) afecta a mujeres &gt; 50 años con incidencia 2–3:1, la arteritis de Takayasu aparece en mujeres jóvenes asiáticas (&lt; 50 años), la poliarteritis nodosa (PAN) se asocia a infección por virus hepatitis B, la enfermedad de Kawasaki se observa en niños &lt; 5 años y las vasculitis asociadas a ANCA tienen pico entre 50 y 75 años.  La enfermedad de Behçet es más prevalente en países del Mediterráneo y Medio Oriente y es más grave en varones.</li>
+      <li><b>Complicaciones graves</b>: pueden provocar infartos o hemorragias en casi cualquier órgano; la oclusión de arterias temporales causa ceguera irreversible en la ACG; el compromiso coronario en Kawasaki puede producir aneurismas y muerte súbita; las vasculitis ANCA provocan síndrome pulmón‑riñón con hemorragia alveolar difusa y glomerulonefritis rápidamente progresiva; el retraso en el tratamiento se asocia a mortalidad elevada.</li>
+      <li><b>Asociaciones clínicas</b>: las vasculitis primarias son idiopáticas; las secundarias se relacionan con infecciones (VHB/PAN, VHC/crioglobulinemia, VIH, endocarditis), fármacos (propiltiouracilo, hidralazina, cocaína con levamisol, inhibidores de checkpoint), enfermedades autoinmunes (lupus, artritis reumatoide), neoplasias hematológicas (síndrome VEXAS) o tumores sólidos.  La identificación de causas secundarias es crucial porque el tratamiento dirigido (p. ej., antivirales) puede inducir remisión.</li>
+      <li><b>Impacto diagnóstico/terapéutico</b>: dado su heterogeneidad, el diagnóstico requiere reconocer patrones clínicos y excluir imitadores (infecciones, neoplasias, vasculopatías trombóticas).  El tratamiento ha evolucionado desde un pronóstico desolador a tasas de supervivencia > 80 % gracias al uso de glucocorticoides combinados con inmunosupresores (ciclofosfamida, rituximab) y nuevas terapias dirigidas (tocilizumab, avacopan, mepolizumab).  La rapidez en el inicio de terapia reduce daño irreversible y mejora la supervivencia.</li>
+    </ul>
+
+    <h2>3. Clasificaciones</h2>
+    <ul>
+      <li><b>Por tamaño del vaso (Chapel Hill 2012)</b>:</li>
+    </ul>
+    <table>
+      <tr><th>Tamaño</th><th>Ejemplos</th></tr>
+      <tr><td><b>Grandes vasos</b></td><td><b>Arteritis de células gigantes</b> (ACG): inflamación granulomatosa de aorta y sus ramas en &gt; 50 años; puede cursar con cefalea, claudicación mandibular, visión borrosa o pérdida visual.  <b>Arteritis de Takayasu</b>: granulomatosa de aorta y ramas principales en mujeres jóvenes; provoca pulso ausente, soplos, hipertensión renovascular y síntomas sistémicos.</td></tr>
+      <tr><td><b>Medianos vasos</b></td><td><b>Poliarteritis nodosa</b> (PAN): vasculitis necrosante transmural de arterias medianas; provoca livedo reticularis, úlceras cutáneas, mononeuritis múltiple, dolor abdominal y HTA; no afecta arteriolas ni capilares ni produce glomerulonefritis.  <b>Enfermedad de Kawasaki</b>: proceso inflamatorio agudo en niños con fiebre &gt; 5 días, conjuntivitis, cambios mucocutáneos, linfadenopatía y riesgo de aneurismas coronarios.</td></tr>
+      <tr><td><b>Pequeños vasos</b></td><td><b>Vasculitis asociadas a ANCA</b>: <b>Granulomatosis con poliangeítis</b> (GPA, antiguamente Wegener) asociada a PR3‑ANCA (patrón citoplasmático), presenta sinusitis crónica, nódulos pulmonares cavitados y glomerulonefritis; <b>Poliangeítis microscópica</b> (PAM) asociada a MPO‑ANCA (patrón perinuclear) causa glomerulonefritis y hemorragia alveolar; <b>Granulomatosis eosinofílica con poliangeítis</b> (GEPA) con eosinofilia, asma de inicio tardío y afectación cardiaca.  <b>Vasculitis por inmunocomplejos</b>: Púrpura de Schönlein–Henoch (IgA), vasculitis crioglobulinémica asociada a VHC, vasculitis urticarial hipocomplementémica.  <b>Enfermedad por anticuerpos antimembrana basal glomerular</b> (anti‑MBG) causa síndrome pulmón‑riñón con anticuerpos contra colágeno IV.</td></tr>
+      <tr><td><b>Variable o de un solo órgano</b></td><td><b>Enfermedad de Behçet</b>: vasculitis neutrofílica de arterias y venas de cualquier calibre con úlceras orales/genitales recurrentes, uveítis y aneurismas pulmonares.  <b>Vasculitis cutánea leucocitoclástica</b> y <b>aortitis aislada</b> son ejemplos de vasculitis de un solo órgano.</td></tr>
+    </table>
+
+    <h2>4. Fisiopatología</h2>
+    <p>Las vasculitis comparten el <b>ataque inmunitario a los vasos</b> pero difieren en mecanismos específicos.  En la <b>ACG</b> y Takayasu predomina una inflamación granulomatosa mediada por células T con producción de IL‑6 (justifica el uso de tocilizumab) y, en Takayasu, participación de TNF‑α.  En la <b>VAA</b> (GPA, PAM) los autoanticuerpos anti‑proteínas del neutrófilo (PR3 o MPO) se unen a neutrófilos activados y, junto con la fracción C5a del complemento, desencadenan degranulación y lesión endotelial; la inhibición del receptor C5a (avacopan) o la depleción de linfocitos B (rituximab) son estrategias dirigidas.  En la <b>GEPA</b> predomina la respuesta Th2 con eosinofilia y producción de IL‑5; de allí el uso de mepolizumab (anti‑IL‑5).  Las vasculitis por inmunocomplejos (p. ej., IgA, crioglobulinemia) se originan por depósitos de inmunocomplejos que activan el complemento y reclutan leucocitos.  Las causas secundarias se deben a infección, neoplasia o fármacos que actúan como antígenos desencadenantes.</p>
+
+    <h2>5. Etiología</h2>
+    <p>Se distinguen <b>vasculitis primarias</b>, de etiología idiopática, y <b>vasculitis secundarias</b> asociadas a:</p>
+    <ul>
+      <li><b>Infecciones</b>: hepatitis B (PAN), hepatitis C (crioglobulinemia), VIH, endocarditis, sífilis, tuberculosis diseminada.</li>
+      <li><b>Fármacos y tóxicos</b>: propiltiouracilo, hidralazina, minociclina, cocaína adulterada con levamisol, inhibidores de checkpoint inmunitario.</li>
+      <li><b>Enfermedades autoinmunes</b>: lupus eritematoso sistémico, artritis reumatoide (vasculitis leucocitoclástica en enfermedad prolongada), síndrome de Sjögren, enfermedad mixta del tejido conectivo.</li>
+      <li><b>Neoplasias</b>: linfomas y leucemias (síndrome VEXAS), tumores sólidos (vasculitis paraneoplásicas).</li>
+    </ul>
+
+    <h2>6. Diagnóstico</h2>
+    <p><b>Enfoque en cuatro pasos</b>:</p>
+    <ol>
+      <li><b>Sospecha clínica</b>: presencia de síntomas constitucionales inespecíficos (fiebre, malestar, pérdida de peso) junto con afectación multiorgánica (púrpura palpable, mononeuritis múltiple, síndrome pulmón‑riñón, cefalea de nueva aparición con VSG &gt; 100 en &gt; 50 años, claudicación o asimetría de pulsos en mujer joven).  La tríada de GPA (vía aérea superior, vía aérea inferior y riñón) o la tétrada de IgA (púrpura, artralgias, dolor abdominal, afectación renal) orientan el diagnóstico.</li>
+      <li><b>Exclusión de imitadores</b>: descartar infecciones sistémicas (endocarditis, tuberculosis, sífilis, VIH), neoplasias (linfoma), vasculopatías trombóticas (síndrome antifosfolipídico catastrófico, púrpura trombótica trombocitopénica, coagulación intravascular diseminada) y fenómenos embolígenos.</li>
+      <li><b>Búsqueda de causas secundarias</b>: investigar antecedentes de hepatitis B/C, uso de fármacos asociados, exposiciones tóxicas o enfermedades autoinmunes subyacentes.</li>
+      <li><b>Confirmación y estadificación</b>: dependerá del tipo de vasculitis e incluye pruebas de laboratorio (hemograma, VSG/CRP, función renal, transaminasas, serologías de hepatitis, ANCA, crioglobulinas, C3/C4, anticuerpos anti‑MBG), imagen (ecografía Doppler de arterias temporales, angiotomografía o resonancia de aorta y ramas, angiografía digital para médios vasos, TC de tórax y senos paranasales), y biopsia de vasos o tejidos afectados (arteria temporal en ACG, riñón en glomerulonefritis, piel en púrpura palpable).  Se recomienda confirmar la diagnosis con histología cuando sea seguro y factible.</li>
+    </ol>
+    <p><b>Diagnóstico diferencial</b>: vasculitis debe diferenciarse de aterosclerosis, embolia, vasoespasmo, endocarditis, meningitis meningocócica, síndrome de Möbius, vasculopatías hereditarias como CADASIL, reacciones de hipersensibilidad y trombosis primaria.  En la evaluación de púrpura palpable se consideran vasculitis urticarial, vasculitis cutánea por fármacos y púrpura trombocitopénica idiopática.  En el síndrome pulmón‑riñón se descartan edema pulmonar cardiogénico y nefritis lúpica.</p>
+
+    <h2>7. Tratamiento</h2>
+    <p><b>Estrategia general</b>: el objetivo es inducir remisión rápida evitando daño irreversible y luego mantenerla minimizando toxicidad acumulada.  Se divide en fase de <b>inducción</b> (3–6 meses) con glucocorticoides (prednisona 0,5–1 mg/kg/día o pulsos de metilprednisolona) más inmunosupresores potentes (ciclofosfamida 0,5–1 g/m² IV mensual o rituximab 375 mg/m² semanal × 4 dosis) y fase de <b>mantenimiento</b> (≥ 24 meses) con rituximab 500 mg cada 6 meses, azatioprina 2 mg/kg/día, metotrexato 15–25 mg/semana o micofenolato 1 g/12 h.  Durante toda la terapia se utilizan medidas profilácticas: trimetoprim‑sulfametoxazol para prevenir neumonía por <i>Pneumocystis jirovecii</i> si la prednisona es &gt; 20 mg/día, calcio y vitamina D para prevenir osteoporosis, inhibidores de bomba de protones en pacientes con riesgo de sangrado gastrointestinal.</p>
+    <p><b>Tratamientos específicos</b>:</p>
+    <ul>
+      <li><b>Arteritis de Takayasu</b>: prednisona 0,5–1 mg/kg/día con reducción lenta a lo largo de 1–2 años; añadir metotrexato (15–25 mg/semana), azatioprina (2 mg/kg/día) o micofenolato (1 g/12 h) para prevenir recaídas.  En enfermedad refractaria o corticodependiente, considerar inhibidores de TNF‑α (infliximab, adalimumab) o tocilizumab.  Las estenosis o aneurismas pueden requerir angioplastía o cirugía.</li>
+      <li><b>Arteritis de células gigantes</b>: prednisona 0,5–1 mg/kg/día; tocilizumab se ha convertido en terapia de primera línea junto a los glucocorticoides, permitiendo reducciones más rápidas y sostenidas.  Se añade aspirina en prevención de eventos isquémicos.</li>
+      <li><b>Vasculitis asociadas a ANCA</b> (GPA/PAM): <b>inducción</b> con glucocorticoides más rituximab (375 mg/m² semanal × 4 dosis o 1 g cada 2 semanas × 2) o ciclofosfamida (500 mg IV cada 2 semanas o 15 mg/kg IV cada 3–4 semanas).  Rituximab es preferido en enfermedad recidivante o en PR3‑ANCA por mejor perfil de seguridad.  <b>Avacopan</b>, inhibidor del receptor C5a, se emplea como terapia adyuvante o sustituta de glucocorticoides para reducir su toxicidad.  <b>Mantenimiento</b> con rituximab cada 6 meses es superior a azatioprina según estudios RITAZAREM; la duración mínima es de 24–48 meses.</li>
+      <li><b>Plasmaféresis</b>: indicada en enfermedad por anti‑MBG, vasculitis ANCA con creatinina &gt; 3,4–4 mg/dl o hemorragia alveolar difusa con hipoxemia; reduce la carga de autoanticuerpos y mejora la recuperación renal.</li>
+      <li><b>Granulomatosis eosinofílica con poliangeítis</b>: el tratamiento se estratifica según el Five‑Factor Score (FFS).  En enfermedad grave (FFS ≥ 1) se trata como GPA/PAM con ciclofosfamida o rituximab; en fenotipos predominantemente eosinofílicos y ANCA negativos se utiliza <b>mepolizumab</b> (anti‑IL‑5) 300 mg/mes SC.</li>
+      <li><b>Poliarteritis nodosa</b> (PAN): glucocorticoides a altas dosis; añadir ciclofosfamida en enfermedad grave.  Si se asocia a VHB, administrar antivirales (tenofovir o entecavir) y considerar plasmapféresis.</li>
+      <li><b>Enfermedad de Kawasaki</b>: inmunoglobulina intravenosa 2 g/kg en dosis única más aspirina en dosis antiinflamatoria (30–50 mg/kg/día) durante la fase aguda; después se reduce a dosis antiagregante (3–5 mg/kg/día).  La terapia precoz disminuye el riesgo de aneurismas coronarios.  En casos refractarios se emplean infliximab, ciclosporina o corticoides.</li>
+      <li><b>Crioglobulinemia y vasculitis IgA</b>: tratar la causa subyacente (p. ej., antivirales para VHC) y usar glucocorticoides e inmunosupresores en compromiso severo.  En vasculitis IgA del adulto con afectación renal, micofenolato o ciclofosfamida pueden ser necesarios.</li>
+    </ul>
+    <p><b>💡</b> El tratamiento debe individualizarse según tipo de vasculitis, severidad, edad, comorbilidades y deseo de fertilidad.  Minimizar la exposición a glucocorticoides, utilizar las terapias dirigidas disponibles y monitorizar de cerca la respuesta y los efectos adversos.</p>
+
+    <h2>8. Seguimiento</h2>
+    <ul>
+      <li><b>Controles regulares</b>: evaluar cada 1–3 meses durante la fase de inducción y luego cada 3–6 meses.  Monitorizar síntomas constitucionales, signos de recaída (púrpura, hematuria, hemoptisis, claudicación), presión arterial, peso y signos de infección.</li>
+      <li><b>Laboratorios y estudios</b>: hemograma, VSG/CRP, creatinina, examen de orina, ANCA y complementos según el tipo de vasculitis.  Realizar ECG y ecocardiograma en enfermedades con riesgo cardiovascular (Kawasaki, Behçet) y estudios de imagen (angiografía, RM) periódicos para controlar estenosis o aneurismas.  Vigilar niveles de ciclofosfamida y ajustar dosis según leucocitos; monitorizar concentraciones de CD19+ si se usa rituximab para individualizar la redosificación.</li>
+      <li><b>Duración y mantenimiento</b>: continuar la terapia de mantenimiento al menos 24–48 meses; algunos pacientes requieren tratamiento indefinido.  Reducir dosis gradualmente bajo vigilancia, considerando riesgo de recaída.</li>
+      <li><b>Complicaciones y éxito</b>: el éxito se expresa en remisión clínica y normalización de biomarcadores sin necesidad de glucocorticoides.  Las complicaciones incluyen infecciones oportunistas (neumonía por <i>Pneumocystis</i>, herpes zóster), toxicidad de fármacos (cistitis hemorrágica con ciclofosfamida, leucopenia, hepatotoxicidad), osteoporosis y neoplasias secundarias.  Se requiere profilaxis, vacunación (gripe, neumococo), suplementos de calcio/vitamina D y vigilancia periódica de cáncer.</li>
+    </ul>
+  </section>
+</body>
+</html>
