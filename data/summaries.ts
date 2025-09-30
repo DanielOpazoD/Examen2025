@@ -78,6 +78,130 @@ const specialtySources: Record<SpecialtyName, SpecialtySource> = {
 
 const cleanText = (html: string) => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
+const sanitizeSection = (section: Element) => {
+    const doc = section.ownerDocument;
+
+    if (!doc) {
+        return;
+    }
+
+    section.querySelectorAll('style, script, link, meta').forEach(node => node.remove());
+
+    section.querySelectorAll('font').forEach(fontEl => {
+        const span = doc.createElement('span');
+        span.innerHTML = fontEl.innerHTML;
+        fontEl.replaceWith(span);
+    });
+
+    const attributesToRemove = [
+        'style',
+        'class',
+        'id',
+        'align',
+        'color',
+        'face',
+        'size',
+        'bgcolor',
+        'width',
+        'height',
+        'cellpadding',
+        'cellspacing',
+        'border',
+    ];
+
+    const elements = Array.from(section.querySelectorAll('*'));
+
+    elements.forEach(el => {
+        attributesToRemove.forEach(attr => {
+            if (el.hasAttribute(attr)) {
+                el.removeAttribute(attr);
+            }
+        });
+
+        Array.from(el.childNodes).forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent) {
+                node.textContent = node.textContent.replace(/\u00a0/g, ' ');
+            }
+        });
+
+        if (el.tagName === 'P' && (el.textContent ?? '').trim().length === 0) {
+            el.remove();
+            return;
+        }
+
+        switch (el.tagName.toLowerCase()) {
+            case 'h2':
+                el.classList.add(
+                    'text-lg',
+                    'font-semibold',
+                    'text-slate-900',
+                    'mt-8',
+                    'mb-3',
+                    'border-b',
+                    'border-slate-200',
+                    'pb-1',
+                    'first:mt-0'
+                );
+                break;
+            case 'h3':
+            case 'h4':
+                el.classList.add('text-base', 'font-semibold', 'text-slate-900', 'mt-6', 'mb-2');
+                break;
+            case 'p':
+                el.classList.add('text-base', 'leading-relaxed', 'text-slate-700');
+                break;
+            case 'ul':
+                el.classList.add('list-disc', 'pl-6', 'space-y-2', 'text-slate-700');
+                if (el.parentElement && el.parentElement.tagName.toLowerCase() === 'li') {
+                    el.classList.add('mt-3');
+                }
+                break;
+            case 'ol':
+                el.classList.add('list-decimal', 'pl-6', 'space-y-2', 'text-slate-700');
+                if (el.parentElement && el.parentElement.tagName.toLowerCase() === 'li') {
+                    el.classList.add('mt-3');
+                }
+                break;
+            case 'li':
+                el.classList.add('leading-relaxed');
+                if (el.parentElement && el.parentElement.tagName.toLowerCase() === 'ul') {
+                    el.classList.add('marker:text-slate-400');
+                }
+                break;
+            case 'table':
+                el.classList.add(
+                    'w-full',
+                    'text-sm',
+                    'text-left',
+                    'border',
+                    'border-slate-200',
+                    'border-collapse',
+                    'rounded-md'
+                );
+                break;
+            case 'thead':
+                el.classList.add('bg-slate-100');
+                break;
+            case 'th':
+                el.classList.add('border', 'border-slate-200', 'px-3', 'py-2', 'text-sm', 'font-semibold', 'text-slate-900');
+                break;
+            case 'td':
+                el.classList.add('border', 'border-slate-200', 'px-3', 'py-2', 'align-top', 'text-slate-700');
+                break;
+            case 'blockquote':
+                el.classList.add('border-l-4', 'border-blue-300', 'pl-4', 'italic', 'text-slate-700');
+                break;
+            case 'hr':
+                el.classList.add('my-8', 'border-slate-200');
+                break;
+            default:
+                break;
+        }
+    });
+
+    section.removeAttribute('class');
+};
+
 const createShortTitle = (fullTitle: string) => {
     const [firstPart] = fullTitle.split(/[:–—-]/);
     const candidate = firstPart?.trim();
@@ -99,31 +223,33 @@ const ensureUniqueTitle = (baseTitle: string, existing: Record<string, unknown>)
 
 const parseSpecialtyTopics = (html: string) => {
     const topics: { fullTitle: string; shortTitle: string; content: string }[] = [];
-    const containerRegex = /<(?:section|div)[^>]*class=["']page["'][^>]*>([\s\S]*?)<\/(?:section|div)>/gi;
-    let match: RegExpExecArray | null;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
 
-    while ((match = containerRegex.exec(html)) !== null) {
-        const innerHtml = match[1]?.trim();
-        if (!innerHtml) {
-            continue;
+    doc.querySelectorAll('.toolbar').forEach(node => node.remove());
+
+    const sections = Array.from(doc.querySelectorAll('.page')) as Element[];
+
+    sections.forEach(section => {
+        const heading = section.querySelector('h1');
+        if (!heading) {
+            return;
         }
 
-        const headingMatch = innerHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-        if (!headingMatch) {
-            continue;
-        }
-
-        const headingHtml = headingMatch[0];
-        const rawTitle = cleanText(headingMatch[1] ?? '');
-        const fullTitle = rawTitle.replace(/^\d+\.?\s*/, '').trim();
+        const rawTitle = cleanText(heading.innerHTML ?? '');
+        const fullTitle = rawTitle.replace(/^\d+[\.\s-]*/, '').trim();
         if (!fullTitle) {
-            continue;
+            return;
         }
+
+        heading.remove();
+
+        sanitizeSection(section);
 
         const shortTitle = createShortTitle(fullTitle);
-        const bodyHtml = innerHtml.replace(headingHtml, '').trim();
+        const bodyHtml = section.innerHTML.trim();
         const wrappedBody = bodyHtml
-            ? `<div class="space-y-4 text-sm leading-relaxed">${bodyHtml}</div>`
+            ? `<article class="space-y-6 text-base leading-relaxed text-slate-700">${bodyHtml}</article>`
             : '';
 
         topics.push({
@@ -131,7 +257,7 @@ const parseSpecialtyTopics = (html: string) => {
             shortTitle,
             content: wrappedBody,
         });
-    }
+    });
 
     return topics;
 };

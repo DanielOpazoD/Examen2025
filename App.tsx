@@ -2,7 +2,7 @@ import React, { useState, useMemo, useRef } from 'react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
-import { allTopics, orderedSpecialties, summaries } from './data/summaries';
+import { allTopics } from './data/summaries';
 
 const App: React.FC = () => {
   const [activeTopicId, setActiveTopicId] = useState<string>(allTopics[0]?.id || '1');
@@ -10,6 +10,8 @@ const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   
   const mainContentRef = useRef<HTMLDivElement>(null);
+
+  const activeTopic = useMemo(() => allTopics.find(t => t.id === activeTopicId), [activeTopicId]);
 
   const handleTopicSelect = (topicId: string) => {
     setActiveTopicId(topicId);
@@ -42,7 +44,6 @@ const App: React.FC = () => {
   };
 
   const handlePrintSection = () => {
-    const activeTopic = allTopics.find(t => t.id === activeTopicId);
     if (!activeTopic) return;
 
     const topicIdsInSection = allTopics
@@ -79,10 +80,12 @@ const App: React.FC = () => {
           onPrintTopic={handlePrintTopic}
           onPrintSection={handlePrintSection}
           onPrintAll={handlePrintAll}
+          activeTopicTitle={activeTopic?.fullTitle ?? ''}
+          activeSpecialty={activeTopic?.specialty ?? ''}
         />
-        <MainContent 
+        <MainContent
           ref={mainContentRef}
-          activeTopicId={activeTopicId} 
+          activeTopicId={activeTopicId}
         />
       </div>
     </div>
