@@ -1,0 +1,5 @@
+{
+  "name": "Compendio de Medicina Interna",
+  "description": "Una aplicación web interactiva para buscar y leer resúmenes de medicina interna, basada en una plantilla HTML y convertida a React.",
+  "requestFramePermissions": []
+}
