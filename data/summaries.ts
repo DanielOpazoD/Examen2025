@@ -25,6 +25,7 @@ type SpecialtyName = typeof orderedSpecialties[number];
 type TopicDefinition = {
     fullTitle: string;
     content: string;
+    hyperSummary: string;
 };
 
 type SpecialtyDefinition = {
@@ -202,6 +203,106 @@ const sanitizeSection = (section: Element) => {
     section.removeAttribute('class');
 };
 
+const generateHyperSummary = (section: Element, title: string) => {
+    const maxWords = 250;
+    const minWords = 200;
+    const summaryChunks: string[] = [];
+    let currentWordCount = 0;
+
+    const addChunk = (rawText: string, options: { prefix?: string } = {}) => {
+        if (!rawText) {
+            return;
+        }
+
+        const prefix = options.prefix ?? '';
+        const cleaned = cleanText(rawText);
+        if (!cleaned) {
+            return;
+        }
+
+        const words = cleaned.split(/\s+/).filter(Boolean);
+        if (words.length === 0) {
+            return;
+        }
+
+        const targetWords = [] as string[];
+        for (const word of words) {
+            if (currentWordCount >= maxWords) {
+                break;
+            }
+            targetWords.push(word);
+            currentWordCount += 1;
+        }
+
+        if (targetWords.length > 0) {
+            summaryChunks.push(`${prefix}${targetWords.join(' ')}`.trim());
+        }
+    };
+
+    const traverse = (node: Element) => {
+        if (currentWordCount >= maxWords) {
+            return;
+        }
+
+        const tag = node.tagName.toLowerCase();
+
+        if (['h2', 'h3', 'h4'].includes(tag)) {
+            addChunk(node.textContent ?? '', { prefix: '' });
+            return;
+        }
+
+        if (tag === 'p') {
+            addChunk(node.textContent ?? '');
+            return;
+        }
+
+        if (tag === 'li') {
+            addChunk(node.textContent ?? '', { prefix: '• ' });
+            return;
+        }
+
+        if (['table', 'figure'].includes(tag)) {
+            return;
+        }
+
+        Array.from(node.children).forEach(child => traverse(child));
+    };
+
+    Array.from(section.children).forEach(child => {
+        if (currentWordCount < maxWords) {
+            traverse(child as Element);
+        }
+    });
+
+    if (currentWordCount < minWords) {
+        const fallbackText = cleanText(section.textContent ?? '');
+        const additionalWords = fallbackText.split(/\s+/).filter(Boolean);
+        let index = 0;
+        while (currentWordCount < minWords && index < additionalWords.length) {
+            const chunkWords: string[] = [];
+            while (currentWordCount < minWords && index < additionalWords.length && chunkWords.length < 40) {
+                chunkWords.push(additionalWords[index]);
+                currentWordCount += 1;
+                index += 1;
+            }
+            if (chunkWords.length > 0) {
+                summaryChunks.push(chunkWords.join(' '));
+            }
+        }
+    }
+
+    const titleHtml = `<p class="text-sm font-semibold uppercase tracking-wide text-blue-700">${title}</p>`;
+    if (summaryChunks.length === 0) {
+        summaryChunks.push('Resumen detallado en preparación.');
+    }
+
+    const summaryHtml = summaryChunks
+        .map(chunk => `<p class="text-sm leading-snug text-slate-700">${chunk}</p>`)
+        .join('');
+
+    return `<div class="space-y-2">${titleHtml}${summaryHtml}</div>`;
+};
+
 const createShortTitle = (fullTitle: string) => {
     const [firstPart] = fullTitle.split(/[:–—-]/);
     const candidate = firstPart?.trim();
@@ -222,7 +323,7 @@ const ensureUniqueTitle = (baseTitle: string, existing: Record<string, unknown>)
 };
 
 const parseSpecialtyTopics = (html: string) => {
-    const topics: { fullTitle: string; shortTitle: string; content: string }[] = [];
+    const topics: { fullTitle: string; shortTitle: string; content: string; hyperSummary: string }[] = [];
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
 
@@ -252,10 +353,13 @@ const parseSpecialtyTopics = (html: string) => {
             ? `<article class="space-y-3 text-sm leading-tight text-slate-700">${bodyHtml}</article>`
             : '';
 
+        const hyperSummary = generateHyperSummary(section, fullTitle);
+
         topics.push({
             fullTitle,
             shortTitle,
             content: wrappedBody,
+            hyperSummary,
         });
     });
 
@@ -267,9 +371,9 @@ export const summaries: Record<SpecialtyName, SpecialtyDefinition> = orderedSpec
     const parsedTopics = parseSpecialtyTopics(source.html);
     const topicsMap: Record<string, TopicDefinition> = {};
 
-    parsedTopics.forEach(({ fullTitle, shortTitle, content }) => {
+    parsedTopics.forEach(({ fullTitle, shortTitle, content, hyperSummary }) => {
         const key = ensureUniqueTitle(shortTitle, topicsMap);
-        topicsMap[key] = { fullTitle, content };
+        topicsMap[key] = { fullTitle, content, hyperSummary };
     });
 
     acc[specialty] = {
@@ -290,6 +394,7 @@ interface Topic {
     title: string;
     fullTitle: string;
     content: string;
+    summary: string;
     specialty: string;
 }
 
@@ -309,13 +414,16 @@ const processSummaries = (): Topic[] => {
                     finalContent = placeholderContent(topicData.fullTitle, id);
                 }
 
-                const fullContentHtml = `<h2 class="text-lg font-semibold mb-2 text-blue-800">${id}. ${topicData.fullTitle}</h2>${finalContent}`;
+                const finalSummary = topicData.hyperSummary?.trim()
+                    ? topicData.hyperSummary
+                    : `<div class="space-y-2"><p class="text-sm font-semibold uppercase tracking-wide text-blue-700">${topicData.fullTitle}</p><p class="text-sm leading-snug text-slate-700">Resumen detallado en preparación.</p></div>`;
 
                 topics.push({
                     id,
                     title: topicKey,
                     fullTitle: topicData.fullTitle,
-                    content: fullContentHtml,
+                    content: finalContent,
+                    summary: finalSummary,
                     specialty: specialtyName,
                 });
                 topicCounter++;
