@@ -25,6 +25,7 @@ type SpecialtyName = typeof orderedSpecialties[number];
 type TopicDefinition = {
     fullTitle: string;
     content: string;
+    hyperSummary: string;
 };
 
 type SpecialtyDefinition = {
@@ -202,6 +203,306 @@ const sanitizeSection = (section: Element) => {
     section.removeAttribute('class');
 };
 
+const splitIntoSentences = (text: string) => {
+    const normalized = cleanText(text);
+    if (!normalized) {
+        return [];
+    }
+
+    const segments = normalized
+        .split(/(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ0-9])/u)
+        .map(segment => segment.trim())
+        .filter(Boolean);
+
+    if (segments.length === 0) {
+        return normalized ? [normalized] : [];
+    }
+
+    return segments;
+};
+
+const countWords = (text: string) => text.split(/\s+/).filter(Boolean).length;
+
+const truncateToWordCount = (text: string, allowed: number) => {
+    if (allowed <= 0) {
+        return '';
+    }
+
+    const words = text.split(/\s+/).filter(Boolean);
+    if (words.length <= allowed) {
+        return words.join(' ');
+    }
+
+    return `${words.slice(0, allowed).join(' ')}…`;
+};
+
+const limitSentence = (sentence: string, maxWords = 42) => {
+    const trimmed = sentence.trim();
+    if (!trimmed) {
+        return '';
+    }
+
+    const words = trimmed.split(/\s+/).filter(Boolean);
+    if (words.length <= maxWords) {
+        return words.join(' ');
+    }
+
+    return `${words.slice(0, maxWords).join(' ')}…`;
+};
+
+const headingLabelMappings: { test: RegExp; label: string }[] = [
+    { test: /definición|concepto|resumen/i, label: 'Concepto clave' },
+    { test: /epidemiolog|factores|etiolog/i, label: 'Contexto y factores' },
+    { test: /fisiopat/i, label: 'Fisiopatología esencial' },
+    { test: /cl[íi]nica|manifest/i, label: 'Clínica dominante' },
+    { test: /diagn[oó]stic|evaluaci[óo]n|laboratorio/i, label: 'Diagnóstico esencial' },
+    { test: /tratamiento|manejo|terapia/i, label: 'Tratamiento base' },
+    { test: /complicaci|pron[oó]stico|evoluci[óo]n/i, label: 'Complicaciones y pronóstico' },
+    { test: /prevenci|seguimiento|educaci/i, label: 'Prevención y seguimiento' },
+];
+
+const normalizeHeadingLabel = (heading: string) => {
+    const cleanedHeading = heading.replace(/^\d+[\.\)\s-]*/, '').trim();
+    const lower = cleanedHeading.toLowerCase();
+
+    for (const mapping of headingLabelMappings) {
+        if (mapping.test.test(lower)) {
+            return mapping.label;
+        }
+    }
+
+    if (cleanedHeading.length === 0) {
+        return 'Aspectos clave';
+    }
+
+    return cleanedHeading.charAt(0).toUpperCase() + cleanedHeading.slice(1);
+};
+
+const extractSentencesFromElement = (element: Element): string[] => {
+    const tag = element.tagName.toLowerCase();
+    const sentences: string[] = [];
+
+    if (tag === 'p' || tag === 'blockquote') {
+        sentences.push(...splitIntoSentences(element.textContent ?? ''));
+    } else if (tag === 'li') {
+        sentences.push(cleanText(element.textContent ?? ''));
+    } else if (tag === 'ul' || tag === 'ol') {
+        Array.from(element.children).forEach(child => {
+            if (child instanceof Element && child.tagName.toLowerCase() === 'li') {
+                sentences.push(cleanText(child.textContent ?? ''));
+            }
+        });
+    } else {
+        Array.from(element.children).forEach(child => {
+            if (child instanceof Element) {
+                sentences.push(...extractSentencesFromElement(child));
+            }
+        });
+    }
+
+    return sentences
+        .map(sentence => limitSentence(sentence))
+        .filter(sentence => sentence.length > 0);
+};
+
+const generateHyperSummary = (section: Element, title: string) => {
+    const maxWords = 250;
+    const minWords = 200;
+    const structuredSegments: { label: string; sentences: string[] }[] = [];
+    const globalSentences: string[] = [];
+
+    const registerSentences = (sentences: string[], target?: string[]) => {
+        sentences.forEach(sentence => {
+            const normalized = sentence.trim();
+            if (!normalized) {
+                return;
+            }
+
+            if (target) {
+                target.push(normalized);
+            }
+
+            globalSentences.push(normalized);
+        });
+    };
+
+    const children = Array.from(section.children).filter((child): child is Element => child instanceof Element);
+    let index = 0;
+
+    const getHeadingLevel = (tagName: string) => {
+        if (tagName === 'h2') {
+            return 2;
+        }
+        if (tagName === 'h3') {
+            return 3;
+        }
+        return 99;
+    };
+
+    while (index < children.length) {
+        const node = children[index];
+        const tag = node.tagName.toLowerCase();
+
+        if (tag === 'h2' || tag === 'h3') {
+            const headingText = cleanText(node.textContent ?? '');
+            const label = normalizeHeadingLabel(headingText);
+            const segmentSentences: string[] = [];
+            const currentLevel = getHeadingLevel(tag);
+
+            index += 1;
+
+            while (index < children.length) {
+                const lookahead = children[index];
+                const lookaheadTag = lookahead.tagName.toLowerCase();
+
+                if (lookaheadTag === 'h2' || lookaheadTag === 'h3') {
+                    const lookaheadLevel = getHeadingLevel(lookaheadTag);
+                    if (lookaheadLevel <= currentLevel) {
+                        break;
+                    }
+                }
+
+                registerSentences(extractSentencesFromElement(lookahead), segmentSentences);
+                index += 1;
+            }
+
+            if (segmentSentences.length > 0) {
+                structuredSegments.push({ label, sentences: segmentSentences });
+            }
+
+            continue;
+        }
+
+        registerSentences(extractSentencesFromElement(node));
+        index += 1;
+    }
+
+    const summaryBlocks: string[] = [];
+    let totalWords = 0;
+    const usedSentences = new Set<string>();
+
+    const appendBlock = (label: string, sentences: string[]) => {
+        if (totalWords >= maxWords) {
+            return;
+        }
+
+        const blockSentences: string[] = [];
+
+        for (const sentence of sentences) {
+            if (totalWords >= maxWords) {
+                break;
+            }
+
+            if (usedSentences.has(sentence)) {
+                continue;
+            }
+
+            const wordsInSentence = countWords(sentence);
+            if (wordsInSentence === 0) {
+                continue;
+            }
+
+            const available = maxWords - totalWords;
+            let sentenceToUse = sentence;
+
+            if (wordsInSentence > available) {
+                sentenceToUse = truncateToWordCount(sentence, available);
+            }
+
+            const effectiveWords = countWords(sentenceToUse);
+            if (effectiveWords === 0) {
+                continue;
+            }
+
+            blockSentences.push(sentenceToUse);
+            usedSentences.add(sentence);
+            totalWords += effectiveWords;
+        }
+
+        if (blockSentences.length > 0) {
+            const items = blockSentences
+                .map(sentence => `<li class="text-sm leading-snug text-slate-700">${sentence}</li>`)
+                .join('');
+
+            summaryBlocks.push(
+                `<div class="space-y-1"><p class="text-xs font-semibold uppercase tracking-wide text-slate-500">${label}</p><ul class="list-disc pl-4 space-y-1 marker:text-blue-400">${items}</ul></div>`
+            );
+        }
+    };
+
+    structuredSegments.forEach(segment => {
+        if (totalWords < maxWords) {
+            appendBlock(segment.label, segment.sentences.slice(0, 4));
+        }
+    });
+
+    if (totalWords < minWords) {
+        const additionalSentences: string[] = [];
+
+        for (const sentence of globalSentences) {
+            if (totalWords >= minWords) {
+                break;
+            }
+
+            if (usedSentences.has(sentence)) {
+                continue;
+            }
+
+            const available = maxWords - totalWords;
+            if (available <= 0) {
+                break;
+            }
+
+            const wordsInSentence = countWords(sentence);
+            let sentenceToUse = sentence;
+
+            if (wordsInSentence > available) {
+                sentenceToUse = truncateToWordCount(sentence, available);
+            }
+
+            const effectiveWords = countWords(sentenceToUse);
+            if (effectiveWords === 0) {
+                continue;
+            }
+
+            additionalSentences.push(sentenceToUse);
+            usedSentences.add(sentence);
+            totalWords += effectiveWords;
+        }
+
+        if (additionalSentences.length > 0) {
+            const items = additionalSentences
+                .map(sentence => `<li class="text-sm leading-snug text-slate-700">${sentence}</li>`)
+                .join('');
+
+            summaryBlocks.push(
+                `<div class="space-y-1"><p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Detalles ampliados</p><ul class="list-disc pl-4 space-y-1 marker:text-blue-400">${items}</ul></div>`
+            );
+        }
+    }
+
+    if (totalWords < minWords) {
+        const fallbackWords = cleanText(section.textContent ?? '').split(/\s+/).filter(Boolean);
+        const remaining = Math.min(minWords - totalWords, maxWords - totalWords);
+        if (remaining > 0 && fallbackWords.length > 0) {
+            const chunk = fallbackWords.slice(0, remaining).join(' ');
+            summaryBlocks.push(
+                `<p class="text-sm leading-snug text-slate-700">${chunk}</p>`
+            );
+            totalWords += countWords(chunk);
+        }
+    }
+
+    if (summaryBlocks.length === 0) {
+        summaryBlocks.push(
+            `<p class="text-sm leading-snug text-slate-700">Resumen detallado en preparación.</p>`
+        );
+    }
+
+    const titleHtml = `<p class="text-sm font-semibold uppercase tracking-wide text-blue-700">${title}</p>`;
+    return `<div class="space-y-3">${titleHtml}${summaryBlocks.join('')}</div>`;
+};
+
 const createShortTitle = (fullTitle: string) => {
     const [firstPart] = fullTitle.split(/[:–—-]/);
     const candidate = firstPart?.trim();
@@ -222,7 +523,7 @@ const ensureUniqueTitle = (baseTitle: string, existing: Record<string, unknown>)
 };
 
 const parseSpecialtyTopics = (html: string) => {
-    const topics: { fullTitle: string; shortTitle: string; content: string }[] = [];
+    const topics: { fullTitle: string; shortTitle: string; content: string; hyperSummary: string }[] = [];
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
 
@@ -252,10 +553,13 @@ const parseSpecialtyTopics = (html: string) => {
             ? `<article class="space-y-3 text-sm leading-tight text-slate-700">${bodyHtml}</article>`
             : '';
 
+        const hyperSummary = generateHyperSummary(section, fullTitle);
+
         topics.push({
             fullTitle,
             shortTitle,
             content: wrappedBody,
+            hyperSummary,
         });
     });
 
@@ -267,9 +571,9 @@ export const summaries: Record<SpecialtyName, SpecialtyDefinition> = orderedSpec
     const parsedTopics = parseSpecialtyTopics(source.html);
     const topicsMap: Record<string, TopicDefinition> = {};
 
-    parsedTopics.forEach(({ fullTitle, shortTitle, content }) => {
+    parsedTopics.forEach(({ fullTitle, shortTitle, content, hyperSummary }) => {
         const key = ensureUniqueTitle(shortTitle, topicsMap);
-        topicsMap[key] = { fullTitle, content };
+        topicsMap[key] = { fullTitle, content, hyperSummary };
     });
 
     acc[specialty] = {
@@ -290,6 +594,7 @@ interface Topic {
     title: string;
     fullTitle: string;
     content: string;
+    summary: string;
     specialty: string;
 }
 
@@ -309,13 +614,16 @@ const processSummaries = (): Topic[] => {
                     finalContent = placeholderContent(topicData.fullTitle, id);
                 }
 
-                const fullContentHtml = `<h2 class="text-lg font-semibold mb-2 text-blue-800">${id}. ${topicData.fullTitle}</h2>${finalContent}`;
+                const finalSummary = topicData.hyperSummary?.trim()
+                    ? topicData.hyperSummary
+                    : `<div class="space-y-2"><p class="text-sm font-semibold uppercase tracking-wide text-blue-700">${topicData.fullTitle}</p><p class="text-sm leading-snug text-slate-700">Resumen detallado en preparación.</p></div>`;
 
                 topics.push({
                     id,
                     title: topicKey,
                     fullTitle: topicData.fullTitle,
-                    content: fullContentHtml,
+                    content: finalContent,
+                    summary: finalSummary,
                     specialty: specialtyName,
                 });
                 topicCounter++;
