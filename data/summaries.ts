@@ -134,18 +134,18 @@ const sanitizeSection = (section: Element) => {
                 el.classList.add(
                     'text-lg',
                     'font-semibold',
-                    'text-slate-900',
+                    'text-blue-700',
                     'mt-8',
                     'mb-3',
                     'border-b',
-                    'border-slate-200',
+                    'border-blue-100',
                     'pb-1',
                     'first:mt-0'
                 );
                 break;
             case 'h3':
             case 'h4':
-                el.classList.add('text-base', 'font-semibold', 'text-slate-900', 'mt-6', 'mb-2');
+                el.classList.add('text-base', 'font-semibold', 'text-sky-700', 'mt-6', 'mb-2');
                 break;
             case 'p':
                 el.classList.add('text-base', 'leading-relaxed', 'text-slate-700');
@@ -309,7 +309,7 @@ const processSummaries = (): Topic[] => {
                     finalContent = placeholderContent(topicData.fullTitle, id);
                 }
 
-                const fullContentHtml = `<h2 class="text-2xl font-bold mb-4 text-slate-900">${id}. ${topicData.fullTitle}</h2>${finalContent}`;
+                const fullContentHtml = `<h2 class="text-2xl font-bold mb-4 text-blue-800">${id}. ${topicData.fullTitle}</h2>${finalContent}`;
 
                 topics.push({
                     id,

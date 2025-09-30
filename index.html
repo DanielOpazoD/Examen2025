@@ -26,6 +26,10 @@
             background: #64748b; /* slate-500 */
         }
         
+        @page {
+            margin: 18mm;
+        }
+
         /* Estilos para impresión general (Guardar todo) */
         @media print {
             body {
@@ -42,14 +46,11 @@
                 box-shadow: none !important;
             }
             .content-section {
-                display: block !important; 
+                display: block !important;
                 page-break-before: always;
             }
              .content-section:first-of-type {
                 page-break-before: auto;
-            }
-            h1, h2, h3, h4 {
-                color: #000 !important;
             }
         }
     </style>
